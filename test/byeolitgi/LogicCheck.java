@@ -90,7 +90,34 @@ public final class LogicCheck {
         check(awards.size() == 1 && awards.get(0).points() == 15, "어려움 30점 × 힌트 50% = 15점");
         check(n.submit().isEmpty() && n.score() == 15, "같은 플레이에서 중복 득점 없음");
         Constellation target = n.revealTarget(null);
-        check(target != null && n.reveal(target) && n.score() == 15, "정답 보기는 0점");
+        List<String> members = List.copyOf(target.starIds());
+        Edge wrongInside = null;
+        for (int i = 0; i < members.size() && wrongInside == null; i++) {
+            for (int j = i + 1; j < members.size(); j++) {
+                Edge e = new Edge(members.get(i), members.get(j));
+                if (!target.lines().contains(e)) {
+                    wrongInside = e;
+                    break;
+                }
+            }
+        }
+        Edge wrongOutside = new Edge(members.get(0), "alf_PsA");
+        Edge otherFigure = new Edge("bet_Peg", "alf_And");
+        n.board().add(wrongInside);
+        n.board().add(wrongOutside);
+        n.board().add(otherFigure);
+        check(n.reveal(target) && n.score() == 15, "정답 보기는 0점");
+        check(!n.board().contains(wrongInside) && !n.board().contains(wrongOutside)
+                        && n.board().edges().containsAll(target.lines()) && n.board().contains(otherFigure),
+                "밤하늘 정답 보기: 오답 선 제거, 다른 별자리 선은 유지");
+        check(!n.board().undo(), "정답 보기 후 실행 취소로 오답 선이 되살아나지 않음");
+
+        BasicGame br = BasicGame.start(catalog, StarSystem.IAU, Difficulty.HARD, new Random(2));
+        List<String> bm = List.copyOf(br.current().starIds());
+        br.board().add(new Edge(bm.get(0), "alf_PsA"));
+        br.board().add(br.current().lines().iterator().next());
+        check(br.reveal() && br.board().edges().equals(br.current().lines()),
+                "기본 문제 정답 보기: 연결선이 정답 도안으로 바뀜");
 
         // 저장·불러오기 왕복
         Path tmp = Files.createTempFile("byeolitgi", ".properties");

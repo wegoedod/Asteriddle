@@ -107,8 +107,12 @@ public final class BasicGame {
         if (!editable()) {
             return false;
         }
+        Constellation c = current();
+        List<Edge> wrong = new ArrayList<>(board.edges());
+        wrong.removeAll(c.lines());
+        board.applyAnswer(wrong, c.lines());
         state = CompletionState.REVEALED;
-        revealed.add(current().id());
+        revealed.add(c.id());
         return true;
     }
 

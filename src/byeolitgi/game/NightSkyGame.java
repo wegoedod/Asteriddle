@@ -136,9 +136,34 @@ public final class NightSkyGame {
         if (!observable.contains(c) || state(c) != CompletionState.INCOMPLETE) {
             return false;
         }
+        board.applyAnswer(wrongLinesAround(c), c.lines());
         states.put(c.id(), CompletionState.REVEALED);
         earned.put(c.id(), 0);
         return true;
+    }
+
+    /**
+     * 공개 대상의 구성 별에 닿은 선 중 오답인 선.
+     * 같은 별을 공유하는 다른 별자리의 기준 선(예: β Peg–α And)은 오답으로 보지 않는다.
+     */
+    private List<Edge> wrongLinesAround(Constellation c) {
+        List<Edge> wrong = new ArrayList<>();
+        for (Edge e : board.edges()) {
+            if (!(c.contains(e.a()) || c.contains(e.b())) || c.lines().contains(e)) {
+                continue;
+            }
+            boolean otherFigure = false;
+            for (Constellation other : catalog.constellations(system)) {
+                if (other != c && other.lines().contains(e)) {
+                    otherFigure = true;
+                    break;
+                }
+            }
+            if (!otherFigure) {
+                wrong.add(e);
+            }
+        }
+        return wrong;
     }
 
     private List<Constellation> helpCandidates() {

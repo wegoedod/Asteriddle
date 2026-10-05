@@ -371,6 +371,11 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
             status("새로 완성된 별자리가 없습니다.", Theme.ERROR);
             return;
         }
+        for (NightSkyGame.Award a : awards) {
+            if (selected != null && a.constellation().contains(selected)) {
+                selected = null;
+            }
+        }
         frame.autoSave();
         refresh();
         StringBuilder msg = new StringBuilder("완성! ");
@@ -416,7 +421,7 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
         if (session.mode() == GameMode.BASIC) {
             BasicGame b = session.basic();
             int answer = JOptionPane.showConfirmDialog(this,
-                    "정답 도안과 별 이름을 공개합니다.\n이 문제는 '정답 공개 완료'로 기록됩니다.\n\n계속할까요?",
+                    "정답 도안과 별 이름을 공개합니다. 잘못 이은 선은 지워집니다.\n이 문제는 '정답 공개 완료'로 기록됩니다.\n\n계속할까요?",
                     "정답 보기", JOptionPane.OK_CANCEL_OPTION);
             if (answer == JOptionPane.OK_OPTION && b.reveal()) {
                 selected = null;
@@ -435,6 +440,7 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
         canvas.setHighlight(target.starIds());
         int answer = JOptionPane.showConfirmDialog(this,
                 "하늘색 원으로 표시한 별자리의 정답 도안과 별 이름을 공개합니다.\n"
+                        + "이 별자리의 별에 잘못 이은 선은 지워지며, 실행 취소 기록도 초기화됩니다.\n"
                         + "공개한 별자리는 이번 밤하늘 플레이에서 0점 처리되며 다시 득점할 수 없습니다.\n\n계속할까요?",
                 "정답 보기", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         canvas.setHighlight(Set.of());

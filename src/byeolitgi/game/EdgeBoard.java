@@ -69,6 +69,16 @@ public final class EdgeBoard {
         edges.add(e);
     }
 
+    /**
+     * 정답 보기: 오답 선을 지우고 정답 선으로 바꾼다.
+     * 실행 취소로 지운 오답 선이 되살아나지 않도록 편집 기록을 비운다.
+     */
+    public void applyAnswer(Collection<Edge> wrong, Collection<Edge> answer) {
+        edges.removeAll(wrong);
+        edges.addAll(answer);
+        history.clear();
+    }
+
     /** 저장 파일에서 복원. 편집 기록은 저장하지 않으므로 비운다. */
     public void restore(Collection<Edge> saved) {
         edges.clear();
