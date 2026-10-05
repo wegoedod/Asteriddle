@@ -1,0 +1,275 @@
+# 별잇기 별 목록
+# 형식: id | 고유 이름(없으면 -) | 표기 | 적경(h m s, J2000) | 적위(d m s, J2000) | 겉보기 등급
+# id 에는 '-' 와 '|' 를 쓰지 않는다. 육안 관측 가능 별(6등급 이하)을 원칙으로 한다.
+
+# 큰곰자리
+alf_UMa | 두베 Dubhe | α UMa | 11 03 43.7 | +61 45 03 | 1.79
+bet_UMa | 메라크 Merak | β UMa | 11 01 50.5 | +56 22 57 | 2.37
+gam_UMa | 페크다 Phecda | γ UMa | 11 53 49.8 | +53 41 41 | 2.44
+del_UMa | 메그레즈 Megrez | δ UMa | 12 15 25.6 | +57 01 57 | 3.31
+eps_UMa | 알리오스 Alioth | ε UMa | 12 54 01.7 | +55 57 35 | 1.77
+zet_UMa | 미자르 Mizar | ζ UMa | 13 23 55.5 | +54 55 31 | 2.27
+eta_UMa | 알카이드 Alkaid | η UMa | 13 47 32.4 | +49 18 48 | 1.86
+omi_UMa | 무스키다 Muscida | ο UMa | 08 30 15.9 | +60 43 05 | 3.36
+h_UMa | - | 23 UMa | 09 31 31.7 | +63 03 43 | 3.67
+ups_UMa | - | υ UMa | 09 50 59.4 | +59 02 19 | 3.80
+the_UMa | - | θ UMa | 09 32 51.4 | +51 40 38 | 3.17
+iot_UMa | 탈리타 Talitha | ι UMa | 08 59 12.5 | +48 02 30 | 3.14
+kap_UMa | 알카프라 Alkaphrah | κ UMa | 09 03 37.5 | +47 09 24 | 3.60
+lam_UMa | 타니아 보레알리스 Tania Borealis | λ UMa | 10 17 05.8 | +42 54 52 | 3.45
+mu_UMa | 타니아 아우스트랄리스 Tania Australis | μ UMa | 10 22 19.7 | +41 29 58 | 3.05
+psi_UMa | - | ψ UMa | 11 09 39.8 | +44 29 55 | 3.01
+nu_UMa | 알룰라 보레알리스 Alula Borealis | ν UMa | 11 18 28.7 | +33 05 39 | 3.49
+xi_UMa | 알룰라 아우스트랄리스 Alula Australis | ξ UMa | 11 18 10.9 | +31 31 45 | 3.79
+chi_UMa | - | χ UMa | 11 46 03.0 | +47 46 46 | 3.69
+
+# 작은곰자리
+alf_UMi | 폴라리스 Polaris | α UMi | 02 31 49.1 | +89 15 51 | 1.98
+del_UMi | 일둔 Yildun | δ UMi | 17 32 13.0 | +86 35 11 | 4.35
+eps_UMi | - | ε UMi | 16 45 58.2 | +82 02 14 | 4.21
+zet_UMi | - | ζ UMi | 15 44 03.5 | +77 47 40 | 4.32
+bet_UMi | 코카브 Kochab | β UMi | 14 50 42.3 | +74 09 20 | 2.08
+gam_UMi | 페르카드 Pherkad | γ UMi | 15 20 43.7 | +71 50 02 | 3.05
+eta_UMi | - | η UMi | 16 17 30.3 | +75 45 19 | 4.95
+
+# 카시오페이아자리
+bet_Cas | 카프 Caph | β Cas | 00 09 10.7 | +59 08 59 | 2.27
+alf_Cas | 셰다르 Schedar | α Cas | 00 40 30.4 | +56 32 14 | 2.24
+gam_Cas | 나비 Navi | γ Cas | 00 56 42.5 | +60 43 00 | 2.47
+del_Cas | 루크바 Ruchbah | δ Cas | 01 25 49.0 | +60 14 07 | 2.68
+eps_Cas | 세긴 Segin | ε Cas | 01 54 23.7 | +63 40 12 | 3.37
+
+# 오리온자리
+alf_Ori | 베텔게우스 Betelgeuse | α Ori | 05 55 10.3 | +07 24 25 | 0.50
+bet_Ori | 리겔 Rigel | β Ori | 05 14 32.3 | -08 12 06 | 0.13
+gam_Ori | 벨라트릭스 Bellatrix | γ Ori | 05 25 07.9 | +06 20 59 | 1.64
+del_Ori | 민타카 Mintaka | δ Ori | 05 32 00.4 | -00 17 57 | 2.23
+eps_Ori | 알닐람 Alnilam | ε Ori | 05 36 12.8 | -01 12 07 | 1.69
+zet_Ori | 알니탁 Alnitak | ζ Ori | 05 40 45.5 | -01 56 34 | 1.77
+kap_Ori | 사이프 Saiph | κ Ori | 05 47 45.4 | -09 40 11 | 2.06
+lam_Ori | 메이사 Meissa | λ Ori | 05 35 08.3 | +09 56 03 | 3.39
+pi3_Ori | 타비트 Tabit | π3 Ori | 04 49 50.4 | +06 57 41 | 3.19
+
+# 백조자리
+alf_Cyg | 데네브 Deneb | α Cyg | 20 41 25.9 | +45 16 49 | 1.25
+gam_Cyg | 사드르 Sadr | γ Cyg | 20 22 13.7 | +40 15 24 | 2.23
+bet_Cyg | 알비레오 Albireo | β Cyg | 19 30 43.3 | +27 57 35 | 3.05
+del_Cyg | 파와리스 Fawaris | δ Cyg | 19 44 58.5 | +45 07 51 | 2.87
+eps_Cyg | 알자나 Aljanah | ε Cyg | 20 46 12.7 | +33 58 13 | 2.48
+zet_Cyg | - | ζ Cyg | 21 12 56.2 | +30 13 37 | 3.21
+eta_Cyg | - | η Cyg | 19 56 18.4 | +35 05 00 | 3.89
+iot_Cyg | - | ι Cyg | 19 29 42.4 | +51 43 47 | 3.76
+kap_Cyg | - | κ Cyg | 19 17 06.2 | +53 22 07 | 3.80
+
+# 거문고자리
+alf_Lyr | 베가 Vega | α Lyr | 18 36 56.3 | +38 47 01 | 0.03
+eps_Lyr | - | ε Lyr | 18 44 20.3 | +39 40 12 | 4.67
+zet_Lyr | - | ζ Lyr | 18 44 46.4 | +37 36 18 | 4.36
+del_Lyr | - | δ2 Lyr | 18 54 30.3 | +36 53 55 | 4.30
+gam_Lyr | 술라파트 Sulafat | γ Lyr | 18 58 56.6 | +32 41 22 | 3.24
+bet_Lyr | 셸리아크 Sheliak | β Lyr | 18 50 04.8 | +33 21 46 | 3.52
+
+# 독수리자리
+alf_Aql | 알타이르 Altair | α Aql | 19 50 47.0 | +08 52 06 | 0.77
+bet_Aql | 알샤인 Alshain | β Aql | 19 55 18.8 | +06 24 24 | 3.71
+gam_Aql | 타라제드 Tarazed | γ Aql | 19 46 15.6 | +10 36 48 | 2.72
+del_Aql | - | δ Aql | 19 25 29.9 | +03 06 53 | 3.36
+zet_Aql | 오카브 Okab | ζ Aql | 19 05 24.6 | +13 51 48 | 2.99
+the_Aql | - | θ Aql | 20 11 18.3 | -00 49 17 | 3.23
+lam_Aql | - | λ Aql | 19 06 14.9 | -04 52 57 | 3.43
+
+# 사자자리
+alf_Leo | 레굴루스 Regulus | α Leo | 10 08 22.3 | +11 58 02 | 1.35
+bet_Leo | 데네볼라 Denebola | β Leo | 11 49 03.6 | +14 34 19 | 2.13
+gam_Leo | 알기에바 Algieba | γ Leo | 10 19 58.4 | +19 50 29 | 2.08
+del_Leo | 조스마 Zosma | δ Leo | 11 14 06.5 | +20 31 25 | 2.56
+eps_Leo | - | ε Leo | 09 45 51.1 | +23 46 27 | 2.98
+zet_Leo | 아다페라 Adhafera | ζ Leo | 10 16 41.4 | +23 25 02 | 3.44
+eta_Leo | - | η Leo | 10 07 19.9 | +16 45 45 | 3.48
+the_Leo | 셰르탄 Chertan | θ Leo | 11 14 14.4 | +15 25 46 | 3.33
+mu_Leo | 라살라스 Rasalas | μ Leo | 09 52 45.8 | +26 00 25 | 3.88
+
+# 쌍둥이자리
+alf_Gem | 카스토르 Castor | α Gem | 07 34 35.9 | +31 53 18 | 1.58
+bet_Gem | 폴룩스 Pollux | β Gem | 07 45 18.9 | +28 01 34 | 1.14
+gam_Gem | 알헤나 Alhena | γ Gem | 06 37 42.7 | +16 23 57 | 1.93
+del_Gem | 와사트 Wasat | δ Gem | 07 20 07.4 | +21 58 56 | 3.53
+eps_Gem | 메브수타 Mebsuta | ε Gem | 06 43 55.9 | +25 07 52 | 2.98
+zet_Gem | 메크부다 Mekbuda | ζ Gem | 07 04 06.5 | +20 34 13 | 3.79
+eta_Gem | 프로푸스 Propus | η Gem | 06 14 52.7 | +22 30 24 | 3.28
+mu_Gem | 테자트 Tejat | μ Gem | 06 22 57.6 | +22 30 49 | 2.88
+xi_Gem | 알지르 Alzirr | ξ Gem | 06 45 17.4 | +12 53 44 | 3.36
+tau_Gem | - | τ Gem | 07 11 08.4 | +30 14 43 | 4.41
+the_Gem | - | θ Gem | 06 52 47.3 | +33 57 40 | 3.60
+iot_Gem | - | ι Gem | 07 25 43.6 | +27 47 53 | 3.79
+lam_Gem | - | λ Gem | 07 18 05.6 | +16 32 25 | 3.58
+nu_Gem | - | ν Gem | 06 28 57.8 | +20 12 44 | 4.15
+
+# 황소자리
+alf_Tau | 알데바란 Aldebaran | α Tau | 04 35 55.2 | +16 30 33 | 0.85
+bet_Tau | 엘나트 Elnath | β Tau | 05 26 17.5 | +28 36 27 | 1.65
+zet_Tau | 티안관 Tianguan | ζ Tau | 05 37 38.7 | +21 08 33 | 2.97
+gam_Tau | 프리마 히아둠 Prima Hyadum | γ Tau | 04 19 47.6 | +15 37 39 | 3.65
+del_Tau | 세쿤다 히아둠 Secunda Hyadum | δ1 Tau | 04 22 56.1 | +17 32 33 | 3.76
+eps_Tau | 아인 Ain | ε Tau | 04 28 37.0 | +19 10 50 | 3.53
+the_Tau | 차무쿠이 Chamukuy | θ2 Tau | 04 28 39.7 | +15 52 15 | 3.40
+lam_Tau | - | λ Tau | 04 00 40.8 | +12 29 25 | 3.47
+omi_Tau | - | ο Tau | 03 24 48.8 | +09 01 44 | 3.60
+xi_Tau | - | ξ Tau | 03 27 10.2 | +09 43 58 | 3.73
+eta_Tau | 알키오네 Alcyone | η Tau | 03 47 29.1 | +24 06 18 | 2.87
+
+# 전갈자리
+alf_Sco | 안타레스 Antares | α Sco | 16 29 24.5 | -26 25 55 | 1.06
+bet_Sco | 아크라브 Acrab | β1 Sco | 16 05 26.2 | -19 48 19 | 2.62
+del_Sco | 주바 Dschubba | δ Sco | 16 00 20.0 | -22 37 18 | 2.29
+pi_Sco | 팡 Fang | π Sco | 15 58 51.1 | -26 06 51 | 2.89
+rho_Sco | - | ρ Sco | 15 56 53.1 | -29 12 51 | 3.88
+sig_Sco | 알니야트 Alniyat | σ Sco | 16 21 11.3 | -25 35 34 | 2.90
+tau_Sco | 파이카우할레 Paikauhale | τ Sco | 16 35 53.0 | -28 12 58 | 2.82
+eps_Sco | 라라와그 Larawag | ε Sco | 16 50 09.8 | -34 17 36 | 2.29
+mu_Sco | - | μ1 Sco | 16 51 52.2 | -38 02 51 | 3.04
+zet_Sco | - | ζ2 Sco | 16 54 35.0 | -42 21 41 | 3.62
+eta_Sco | - | η Sco | 17 12 09.2 | -43 14 21 | 3.32
+the_Sco | 사르가스 Sargas | θ Sco | 17 37 19.1 | -42 59 52 | 1.86
+iot_Sco | - | ι1 Sco | 17 47 35.1 | -40 07 37 | 2.99
+kap_Sco | 기르타브 Girtab | κ Sco | 17 42 29.3 | -39 01 48 | 2.39
+lam_Sco | 샤울라 Shaula | λ Sco | 17 33 36.5 | -37 06 14 | 1.62
+ups_Sco | 레사트 Lesath | υ Sco | 17 30 45.8 | -37 17 45 | 2.70
+
+# 궁수자리
+gam_Sgr | 알나슬 Alnasl | γ2 Sgr | 18 05 48.5 | -30 25 27 | 2.98
+del_Sgr | 카우스 메디아 Kaus Media | δ Sgr | 18 20 59.6 | -29 49 41 | 2.70
+eps_Sgr | 카우스 아우스트랄리스 Kaus Australis | ε Sgr | 18 24 10.3 | -34 23 05 | 1.85
+lam_Sgr | 카우스 보레알리스 Kaus Borealis | λ Sgr | 18 27 58.2 | -25 25 18 | 2.81
+phi_Sgr | - | φ Sgr | 18 45 39.4 | -26 59 27 | 3.17
+sig_Sgr | 눈키 Nunki | σ Sgr | 18 55 15.9 | -26 17 48 | 2.05
+tau_Sgr | - | τ Sgr | 19 06 56.4 | -27 40 13 | 3.32
+zet_Sgr | 아스켈라 Ascella | ζ Sgr | 19 02 36.7 | -29 52 49 | 2.60
+mu_Sgr | - | μ Sgr | 18 13 45.8 | -21 03 32 | 3.84
+eta_Sgr | - | η Sgr | 18 17 37.6 | -36 45 42 | 3.10
+
+# 목동자리
+alf_Boo | 아르크투루스 Arcturus | α Boo | 14 15 39.7 | +19 10 57 | -0.05
+eps_Boo | 이자르 Izar | ε Boo | 14 44 59.2 | +27 04 27 | 2.37
+eta_Boo | 무프리드 Muphrid | η Boo | 13 54 41.1 | +18 23 52 | 2.68
+gam_Boo | 세기누스 Seginus | γ Boo | 14 32 04.7 | +38 18 30 | 3.03
+bet_Boo | 네카르 Nekkar | β Boo | 15 01 56.8 | +40 23 26 | 3.49
+del_Boo | - | δ Boo | 15 15 30.2 | +33 18 53 | 3.47
+rho_Boo | - | ρ Boo | 14 31 49.8 | +30 22 17 | 3.58
+zet_Boo | - | ζ Boo | 14 41 08.9 | +13 43 42 | 3.78
+
+# 북쪽왕관자리
+alf_CrB | 알페카 Alphecca | α CrB | 15 34 41.3 | +26 42 53 | 2.23
+bet_CrB | 누사칸 Nusakan | β CrB | 15 27 49.7 | +29 06 21 | 3.68
+the_CrB | - | θ CrB | 15 32 55.8 | +31 21 33 | 4.14
+gam_CrB | - | γ CrB | 15 42 44.6 | +26 17 44 | 3.84
+del_CrB | - | δ CrB | 15 49 35.6 | +26 04 06 | 4.63
+eps_CrB | - | ε CrB | 15 57 35.3 | +26 52 40 | 4.15
+iot_CrB | - | ι CrB | 16 01 26.6 | +29 51 04 | 4.98
+
+# 페가수스자리
+alf_Peg | 마르카브 Markab | α Peg | 23 04 45.7 | +15 12 19 | 2.48
+bet_Peg | 셰아트 Scheat | β Peg | 23 03 46.5 | +28 04 58 | 2.42
+gam_Peg | 알게니브 Algenib | γ Peg | 00 13 14.2 | +15 11 01 | 2.83
+eps_Peg | 에니프 Enif | ε Peg | 21 44 11.2 | +09 52 30 | 2.38
+zet_Peg | 호맘 Homam | ζ Peg | 22 41 27.7 | +10 49 53 | 3.40
+the_Peg | 비함 Biham | θ Peg | 22 10 12.0 | +06 11 52 | 3.53
+eta_Peg | 마타르 Matar | η Peg | 22 43 00.1 | +30 13 17 | 2.94
+mu_Peg | 사달바리 Sadalbari | μ Peg | 22 50 00.2 | +24 36 06 | 3.48
+lam_Peg | - | λ Peg | 22 46 31.9 | +23 33 56 | 3.95
+iot_Peg | - | ι Peg | 22 07 00.7 | +25 20 42 | 3.76
+kap_Peg | - | κ Peg | 21 44 38.7 | +25 38 42 | 4.13
+
+# 안드로메다자리
+alf_And | 알페라츠 Alpheratz | α And | 00 08 23.3 | +29 05 26 | 2.06
+del_And | - | δ And | 00 39 19.7 | +30 51 40 | 3.27
+bet_And | 미라크 Mirach | β And | 01 09 43.9 | +35 37 14 | 2.05
+gam_And | 알마크 Almach | γ1 And | 02 03 54.0 | +42 19 47 | 2.26
+mu_And | - | μ And | 00 56 45.2 | +38 29 58 | 3.87
+nu_And | - | ν And | 00 49 48.8 | +41 04 44 | 4.53
+pi_And | - | π And | 00 36 52.9 | +33 43 10 | 4.34
+
+# 큰개자리
+alf_CMa | 시리우스 Sirius | α CMa | 06 45 08.9 | -16 42 58 | -1.46
+bet_CMa | 미르잠 Mirzam | β CMa | 06 22 42.0 | -17 57 21 | 1.98
+del_CMa | 웨젠 Wezen | δ CMa | 07 08 23.5 | -26 23 36 | 1.84
+eps_CMa | 아다라 Adhara | ε CMa | 06 58 37.5 | -28 58 20 | 1.50
+eta_CMa | 알루드라 Aludra | η CMa | 07 24 05.7 | -29 18 11 | 2.45
+zet_CMa | 푸루드 Furud | ζ CMa | 06 20 18.8 | -30 03 48 | 3.02
+omi2_CMa | - | ο2 CMa | 07 03 01.5 | -23 49 59 | 3.02
+gam_CMa | 물리페인 Muliphein | γ CMa | 07 03 45.5 | -15 37 59 | 4.12
+iot_CMa | - | ι CMa | 06 56 08.2 | -17 03 15 | 4.37
+
+# 작은개자리
+alf_CMi | 프로키온 Procyon | α CMi | 07 39 18.1 | +05 13 30 | 0.34
+bet_CMi | 고메이사 Gomeisa | β CMi | 07 27 09.0 | +08 17 21 | 2.89
+
+# 마차부자리
+alf_Aur | 카펠라 Capella | α Aur | 05 16 41.4 | +45 59 53 | 0.08
+bet_Aur | 멘칼리난 Menkalinan | β Aur | 05 59 31.7 | +44 56 51 | 1.90
+the_Aur | 마하심 Mahasim | θ Aur | 05 59 43.3 | +37 12 45 | 2.62
+iot_Aur | 하살레 Hassaleh | ι Aur | 04 56 59.6 | +33 09 58 | 2.69
+eps_Aur | 알마즈 Almaaz | ε Aur | 05 01 58.1 | +43 49 24 | 2.99
+eta_Aur | 하이두스 Haedus | η Aur | 05 06 30.9 | +41 14 04 | 3.17
+zet_Aur | 사클라테니 Saclateni | ζ Aur | 05 02 28.7 | +41 04 33 | 3.75
+
+# 돌고래자리
+alf_Del | 수알로킨 Sualocin | α Del | 20 39 38.3 | +15 54 43 | 3.77
+bet_Del | 로타네브 Rotanev | β Del | 20 37 32.9 | +14 35 43 | 3.63
+gam_Del | - | γ2 Del | 20 46 39.5 | +16 07 27 | 4.27
+del_Del | - | δ Del | 20 43 27.5 | +15 04 29 | 4.43
+eps_Del | 알둘핀 Aldulfin | ε Del | 20 33 12.8 | +11 18 12 | 4.03
+
+# 까마귀자리
+gam_Crv | 기에나 Gienah | γ Crv | 12 15 48.4 | -17 32 31 | 2.58
+bet_Crv | 크라즈 Kraz | β Crv | 12 34 23.2 | -23 23 48 | 2.65
+del_Crv | 알고랍 Algorab | δ Crv | 12 29 51.9 | -16 30 56 | 2.95
+eps_Crv | 민카르 Minkar | ε Crv | 12 10 07.5 | -22 37 11 | 3.02
+alf_Crv | 알키바 Alchiba | α Crv | 12 08 24.8 | -24 43 44 | 4.02
+
+# 처녀자리 (28수: 각수·항수)
+alf_Vir | 스피카 Spica | α Vir | 13 25 11.6 | -11 09 41 | 0.97
+zet_Vir | - | ζ Vir | 13 34 41.6 | -00 35 45 | 3.37
+kap_Vir | - | κ Vir | 14 12 53.7 | -10 16 25 | 4.19
+iot_Vir | - | ι Vir | 14 16 00.9 | -06 00 02 | 4.08
+phi_Vir | - | φ Vir | 14 28 12.1 | -02 13 41 | 4.81
+lam_Vir | - | λ Vir | 14 19 06.6 | -13 22 16 | 4.52
+gam_Vir | 포리마 Porrima | γ Vir | 12 41 39.6 | -01 26 58 | 2.74
+eps_Vir | 빈데미아트릭스 Vindemiatrix | ε Vir | 13 02 10.6 | +10 57 33 | 2.79
+
+# 천칭자리 (28수: 저수)
+alf_Lib | 주벤엘게누비 Zubenelgenubi | α2 Lib | 14 50 52.7 | -16 02 30 | 2.75
+bet_Lib | 주벤에샤말리 Zubeneschamali | β Lib | 15 17 00.4 | -09 22 59 | 2.61
+gam_Lib | 주벤엘하크라비 Zubenelhakrabi | γ Lib | 15 35 31.6 | -14 47 22 | 3.91
+iot_Lib | - | ι Lib | 15 12 13.3 | -19 47 30 | 4.54
+
+# 양자리 (28수: 루수)
+alf_Ari | 하말 Hamal | α Ari | 02 07 10.4 | +23 27 45 | 2.01
+bet_Ari | 셰라탄 Sheratan | β Ari | 01 54 38.4 | +20 48 29 | 2.64
+gam_Ari | 메사르팀 Mesarthim | γ Ari | 01 53 31.8 | +19 17 45 | 3.88
+
+# 게자리 (28수: 귀수)
+gam_Cnc | 아셀루스 보레알리스 Asellus Borealis | γ Cnc | 08 43 17.1 | +21 28 07 | 4.66
+del_Cnc | 아셀루스 아우스트랄리스 Asellus Australis | δ Cnc | 08 44 41.1 | +18 09 15 | 3.94
+eta_Cnc | - | η Cnc | 08 32 42.5 | +20 26 28 | 5.33
+the_Cnc | - | θ Cnc | 08 31 35.7 | +18 05 40 | 5.35
+
+# 주변 밝은 별 (도안에는 쓰이지 않으며 밤하늘 배경 및 주변 별 구분용)
+alf_PsA | 포말하우트 Fomalhaut | α PsA | 22 57 39.0 | -29 37 20 | 1.16
+bet_Per | 알골 Algol | β Per | 03 08 10.1 | +40 57 20 | 2.12
+alf_Per | 미르파크 Mirfak | α Per | 03 24 19.4 | +49 51 40 | 1.79
+alf_Hya | 알파르드 Alphard | α Hya | 09 27 35.2 | -08 39 31 | 1.98
+alf_Oph | 라살하게 Rasalhague | α Oph | 17 34 56.1 | +12 33 36 | 2.07
+eta_Oph | 사비크 Sabik | η Oph | 17 10 22.7 | -15 43 29 | 2.43
+gam_Dra | 엘타닌 Eltanin | γ Dra | 17 56 36.4 | +51 29 20 | 2.23
+bet_Dra | 라스타반 Rastaban | β Dra | 17 30 26.0 | +52 18 05 | 2.79
+bet_Cet | 디프다 Diphda | β Cet | 00 43 35.4 | -17 59 12 | 2.04
+alf_Cet | 멘카르 Menkar | α Cet | 03 02 16.8 | +04 05 23 | 2.54
+bet_Her | 코르네포로스 Kornephoros | β Her | 16 30 13.2 | +21 29 23 | 2.77
+zet_Her | - | ζ Her | 16 41 17.2 | +31 36 10 | 2.81
+alf_Ser | 우누칼하이 Unukalhai | α Ser | 15 44 16.1 | +06 25 32 | 2.63
+del_Cap | 데네브 알게디 Deneb Algedi | δ Cap | 21 47 02.4 | -16 07 38 | 2.81
+bet_Cap | 다비 Dabih | β Cap | 20 21 00.7 | -14 46 53 | 3.08
+alf_Aqr | 사달멜리크 Sadalmelik | α Aqr | 22 05 47.0 | -00 19 11 | 2.94
+bet_Aqr | 사달수드 Sadalsuud | β Aqr | 21 31 33.5 | -05 34 16 | 2.87
+alf_Col | 팍트 Phact | α Col | 05 39 38.9 | -34 04 27 | 2.65

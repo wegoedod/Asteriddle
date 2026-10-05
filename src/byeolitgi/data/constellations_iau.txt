@@ -1,0 +1,26 @@
+# IAU 별자리 기준 도안 (정답 기준)
+# 형식: id | 이름 | 부제 | 연결선 목록(별id-별id, 공백 구분)
+# 도안은 Stellarium modern 스카이컬처 도안을 참고하여 육안 관측 가능한 별 위주로 단순화했다.
+# 현재 21개 수록. 나머지 별자리는 같은 형식으로 줄을 추가하면 된다.
+
+Cas | 카시오페이아자리 | Cassiopeia | bet_Cas-alf_Cas alf_Cas-gam_Cas gam_Cas-del_Cas del_Cas-eps_Cas
+CMi | 작은개자리 | Canis Minor | alf_CMi-bet_CMi
+Del | 돌고래자리 | Delphinus | eps_Del-bet_Del bet_Del-alf_Del alf_Del-gam_Del gam_Del-del_Del del_Del-bet_Del
+CrB | 북쪽왕관자리 | Corona Borealis | the_CrB-bet_CrB bet_CrB-alf_CrB alf_CrB-gam_CrB gam_CrB-del_CrB del_CrB-eps_CrB eps_CrB-iot_CrB
+Crv | 까마귀자리 | Corvus | alf_Crv-eps_Crv eps_Crv-gam_Crv gam_Crv-del_Crv del_Crv-bet_Crv bet_Crv-eps_Crv
+UMi | 작은곰자리 | Ursa Minor | alf_UMi-del_UMi del_UMi-eps_UMi eps_UMi-zet_UMi zet_UMi-bet_UMi bet_UMi-gam_UMi gam_UMi-eta_UMi eta_UMi-zet_UMi
+Lyr | 거문고자리 | Lyra | alf_Lyr-eps_Lyr eps_Lyr-zet_Lyr zet_Lyr-alf_Lyr zet_Lyr-bet_Lyr bet_Lyr-gam_Lyr gam_Lyr-del_Lyr del_Lyr-zet_Lyr
+Cyg | 백조자리 | Cygnus | alf_Cyg-gam_Cyg gam_Cyg-eta_Cyg eta_Cyg-bet_Cyg gam_Cyg-del_Cyg del_Cyg-iot_Cyg iot_Cyg-kap_Cyg gam_Cyg-eps_Cyg eps_Cyg-zet_Cyg
+Aql | 독수리자리 | Aquila | gam_Aql-alf_Aql alf_Aql-bet_Aql alf_Aql-del_Aql del_Aql-lam_Aql del_Aql-zet_Aql bet_Aql-the_Aql
+Boo | 목동자리 | Boötes | alf_Boo-eps_Boo eps_Boo-del_Boo del_Boo-bet_Boo bet_Boo-gam_Boo gam_Boo-rho_Boo rho_Boo-alf_Boo alf_Boo-eta_Boo alf_Boo-zet_Boo
+And | 안드로메다자리 | Andromeda | alf_And-del_And del_And-bet_And bet_And-gam_And del_And-pi_And bet_And-mu_And mu_And-nu_And
+CMa | 큰개자리 | Canis Major | bet_CMa-alf_CMa alf_CMa-iot_CMa iot_CMa-gam_CMa alf_CMa-omi2_CMa omi2_CMa-del_CMa del_CMa-eps_CMa eps_CMa-zet_CMa del_CMa-eta_CMa
+Tau | 황소자리 | Taurus | bet_Tau-eps_Tau eps_Tau-del_Tau del_Tau-gam_Tau gam_Tau-the_Tau the_Tau-alf_Tau alf_Tau-zet_Tau gam_Tau-lam_Tau lam_Tau-omi_Tau omi_Tau-xi_Tau
+Ori | 오리온자리 | Orion | lam_Ori-alf_Ori lam_Ori-gam_Ori alf_Ori-zet_Ori gam_Ori-del_Ori del_Ori-eps_Ori eps_Ori-zet_Ori zet_Ori-kap_Ori del_Ori-bet_Ori gam_Ori-pi3_Ori
+Aur | 마차부자리 | Auriga | alf_Aur-bet_Aur bet_Aur-the_Aur the_Aur-bet_Tau bet_Tau-iot_Aur iot_Aur-eta_Aur eta_Aur-alf_Aur alf_Aur-eps_Aur eps_Aur-zet_Aur zet_Aur-eta_Aur
+Leo | 사자자리 | Leo | alf_Leo-eta_Leo eta_Leo-gam_Leo gam_Leo-zet_Leo zet_Leo-mu_Leo mu_Leo-eps_Leo gam_Leo-del_Leo del_Leo-bet_Leo bet_Leo-the_Leo the_Leo-alf_Leo del_Leo-the_Leo
+Sgr | 궁수자리 | Sagittarius | gam_Sgr-del_Sgr del_Sgr-eps_Sgr eps_Sgr-gam_Sgr del_Sgr-lam_Sgr lam_Sgr-phi_Sgr phi_Sgr-del_Sgr phi_Sgr-sig_Sgr sig_Sgr-tau_Sgr tau_Sgr-zet_Sgr zet_Sgr-phi_Sgr zet_Sgr-eps_Sgr
+Peg | 페가수스자리 | Pegasus | alf_Peg-bet_Peg bet_Peg-alf_And alf_And-gam_Peg gam_Peg-alf_Peg alf_Peg-zet_Peg zet_Peg-the_Peg the_Peg-eps_Peg bet_Peg-eta_Peg bet_Peg-mu_Peg mu_Peg-lam_Peg lam_Peg-iot_Peg iot_Peg-kap_Peg
+Gem | 쌍둥이자리 | Gemini | alf_Gem-tau_Gem tau_Gem-the_Gem tau_Gem-eps_Gem eps_Gem-nu_Gem eps_Gem-mu_Gem mu_Gem-eta_Gem tau_Gem-iot_Gem iot_Gem-bet_Gem iot_Gem-del_Gem del_Gem-zet_Gem zet_Gem-gam_Gem del_Gem-lam_Gem lam_Gem-xi_Gem
+Sco | 전갈자리 | Scorpius | bet_Sco-del_Sco del_Sco-pi_Sco del_Sco-sig_Sco sig_Sco-alf_Sco alf_Sco-tau_Sco tau_Sco-eps_Sco eps_Sco-mu_Sco mu_Sco-zet_Sco zet_Sco-eta_Sco eta_Sco-the_Sco the_Sco-iot_Sco iot_Sco-kap_Sco kap_Sco-lam_Sco lam_Sco-ups_Sco
+UMa | 큰곰자리 | Ursa Major | eta_UMa-zet_UMa zet_UMa-eps_UMa eps_UMa-del_UMa del_UMa-alf_UMa alf_UMa-bet_UMa bet_UMa-gam_UMa gam_UMa-del_UMa alf_UMa-h_UMa h_UMa-omi_UMa h_UMa-ups_UMa ups_UMa-the_UMa the_UMa-iot_UMa the_UMa-kap_UMa gam_UMa-chi_UMa chi_UMa-psi_UMa psi_UMa-mu_UMa mu_UMa-lam_UMa chi_UMa-nu_UMa nu_UMa-xi_UMa

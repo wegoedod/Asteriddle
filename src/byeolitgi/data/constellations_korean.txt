@@ -1,0 +1,24 @@
+# 3원 28수 성관 기준 도안 (정답 기준)
+# 형식: id | 이름 | 부제 | 연결선 목록(별id-별id, 공백 구분)
+# 현재 28수 중 16개와 관련 성관 3개 수록 (초안).
+# 성관-별 대응과 연결 모양은 천상열차분야지도 원본과의 대조 검증이 필요하다 (보완 항목: 기준 도안).
+
+Gak | 각수 | 角宿 | alf_Vir-zet_Vir
+Hang | 항수 | 亢宿 | kap_Vir-iot_Vir iot_Vir-phi_Vir kap_Vir-lam_Vir
+Jeo | 저수 | 氐宿 | alf_Lib-iot_Lib iot_Lib-gam_Lib gam_Lib-bet_Lib bet_Lib-alf_Lib
+Bang | 방수 | 房宿 | bet_Sco-del_Sco del_Sco-pi_Sco pi_Sco-rho_Sco
+Sim | 심수 | 心宿 | sig_Sco-alf_Sco alf_Sco-tau_Sco
+Mi | 미수 | 尾宿 | eps_Sco-mu_Sco mu_Sco-zet_Sco zet_Sco-eta_Sco eta_Sco-the_Sco the_Sco-iot_Sco iot_Sco-kap_Sco kap_Sco-lam_Sco lam_Sco-ups_Sco
+Gi | 기수 | 箕宿 | gam_Sgr-del_Sgr del_Sgr-eps_Sgr eps_Sgr-eta_Sgr eta_Sgr-gam_Sgr
+Du | 두수 | 斗宿 | zet_Sgr-tau_Sgr tau_Sgr-sig_Sgr sig_Sgr-phi_Sgr phi_Sgr-lam_Sgr lam_Sgr-mu_Sgr
+Sil | 실수 | 室宿 | alf_Peg-bet_Peg
+Byeok | 벽수 | 壁宿 | gam_Peg-alf_And
+Ru | 루수 | 婁宿 | alf_Ari-bet_Ari bet_Ari-gam_Ari
+Pil | 필수 | 畢宿 | eps_Tau-del_Tau del_Tau-gam_Tau gam_Tau-the_Tau the_Tau-alf_Tau gam_Tau-lam_Tau
+Sam | 삼수 | 參宿 | alf_Ori-gam_Ori gam_Ori-del_Ori del_Ori-eps_Ori eps_Ori-zet_Ori zet_Ori-alf_Ori del_Ori-bet_Ori bet_Ori-kap_Ori kap_Ori-zet_Ori
+Jeong | 정수 | 井宿 | mu_Gem-nu_Gem nu_Gem-gam_Gem gam_Gem-xi_Gem mu_Gem-eps_Gem eps_Gem-zet_Gem zet_Gem-lam_Gem
+Gwi | 귀수 | 鬼宿 | the_Cnc-eta_Cnc eta_Cnc-gam_Cnc gam_Cnc-del_Cnc del_Cnc-the_Cnc
+Jin | 진수 | 軫宿 | gam_Crv-del_Crv del_Crv-bet_Crv bet_Crv-eps_Crv eps_Crv-gam_Crv
+Bukdu | 북두 | 北斗 · 자미원 | alf_UMa-bet_UMa bet_UMa-gam_UMa gam_UMa-del_UMa del_UMa-alf_UMa del_UMa-eps_UMa eps_UMa-zet_UMa zet_UMa-eta_UMa
+Jiknyeo | 직녀 | 織女 | alf_Lyr-eps_Lyr eps_Lyr-zet_Lyr zet_Lyr-alf_Lyr
+Hago | 하고 | 河鼓 | gam_Aql-alf_Aql alf_Aql-bet_Aql
