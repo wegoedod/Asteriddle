@@ -1,7 +1,8 @@
 # IAU 별자리 기준 도안 (정답 기준)
 # 형식: id | 이름 | 부제 | 연결선 목록(별id-별id, 공백 구분)
-# 도안은 Stellarium modern 스카이컬처 도안을 참고하여 육안 관측 가능한 별 위주로 단순화했다.
-# 현재 21개 수록. 나머지 별자리는 같은 형식으로 줄을 추가하면 된다.
+# 도안은 Stellarium modern 스카이컬처(skycultures/modern) 도안을 기준으로 한다.
+# 앞의 21개는 육안 관측 가능한 별 위주로 단순화한 도안이고, 뒤의 67개는 Stellarium 도안을 그대로 옮겼다.
+# IAU 88개 전체 수록.
 
 Cas | 카시오페이아자리 | Cassiopeia | bet_Cas-alf_Cas alf_Cas-gam_Cas gam_Cas-del_Cas del_Cas-eps_Cas
 CMi | 작은개자리 | Canis Minor | alf_CMi-bet_CMi
@@ -24,3 +25,71 @@ Peg | 페가수스자리 | Pegasus | alf_Peg-bet_Peg bet_Peg-alf_And alf_And-gam
 Gem | 쌍둥이자리 | Gemini | alf_Gem-tau_Gem tau_Gem-the_Gem tau_Gem-eps_Gem eps_Gem-nu_Gem eps_Gem-mu_Gem mu_Gem-eta_Gem tau_Gem-iot_Gem iot_Gem-bet_Gem iot_Gem-del_Gem del_Gem-zet_Gem zet_Gem-gam_Gem del_Gem-lam_Gem lam_Gem-xi_Gem
 Sco | 전갈자리 | Scorpius | bet_Sco-del_Sco del_Sco-pi_Sco del_Sco-sig_Sco sig_Sco-alf_Sco alf_Sco-tau_Sco tau_Sco-eps_Sco eps_Sco-mu_Sco mu_Sco-zet_Sco zet_Sco-eta_Sco eta_Sco-the_Sco the_Sco-iot_Sco iot_Sco-kap_Sco kap_Sco-lam_Sco lam_Sco-ups_Sco
 UMa | 큰곰자리 | Ursa Major | eta_UMa-zet_UMa zet_UMa-eps_UMa eps_UMa-del_UMa del_UMa-alf_UMa alf_UMa-bet_UMa bet_UMa-gam_UMa gam_UMa-del_UMa alf_UMa-h_UMa h_UMa-omi_UMa h_UMa-ups_UMa ups_UMa-the_UMa the_UMa-iot_UMa the_UMa-kap_UMa gam_UMa-chi_UMa chi_UMa-psi_UMa psi_UMa-mu_UMa mu_UMa-lam_UMa chi_UMa-nu_UMa nu_UMa-xi_UMa
+
+Ant | 공기펌프자리 | Antlia | alf_Ant-eta_Ant
+Aps | 극락조자리 | Apus | alf_Aps-gam_Aps gam_Aps-bet_Aps
+Aqr | 물병자리 | Aquarius | bet_Aqr-alf_Aqr alf_Aqr-gam_Aqr gam_Aqr-zet1_Aqr zet1_Aqr-eta_Aqr eta_Aqr-lam_Aqr lam_Aqr-psi1_Aqr psi1_Aqr-b1_Aqr alf_Aqr-the_Aqr the_Aqr-iot_Aqr the_Aqr-sig_Aqr sig_Aqr-tau2_Aqr tau2_Aqr-del_Aqr del_Aqr-c2_Aqr eps_Aqr-bet_Aqr
+Ara | 제단자리 | Ara | the_Ara-alf_Ara alf_Ara-zet_Ara zet_Ara-eta_Ara eta_Ara-del_Ara del_Ara-gam_Ara gam_Ara-bet_Ara bet_Ara-the_Ara
+Ari | 양자리 | Aries | c_Ari-alf_Ari alf_Ari-bet_Ari bet_Ari-gam_Ari
+CVn | 사냥개자리 | Canes Venatici | bet_CVn-alf2_CVn
+Cae | 조각칼자리 | Caelum | del_Cae-alf_Cae alf_Cae-bet_Cae
+Cam | 기린자리 | Camelopardalis | HIP16228-HIP18505 HIP18505-alf_Cam HIP16228-gam_Cam gam_Cam-alf_Cam gam_Cam-HIP25110
+Cap | 염소자리 | Capricornus | alf2_Cap-bet_Cap bet_Cap-the_Cap the_Cap-iot_Cap iot_Cap-gam_Cap gam_Cap-del_Cap iot_Cap-zet_Cap zet_Cap-the_Cap bet_Cap-psi_Cap the_Cap-ome_Cap
+Car | 용골자리 | Carina | bet_Car-ome_Car ome_Car-the_Car the_Car-w_Car w_Car-x_Car x_Car-u_Car u_Car-s_Car s_Car-q_Car q_Car-iot_Car d_Car-eps_Car eps_Car-alf_Car a_Car-iot_Car a_Car-d_Car alf_Car-nu_Pup eps_Car-zet_Pup
+Cen | 센타우루스자리 | Centaurus | alf_Cen-bet_Cen bet_Cen-eps_Cen eps_Cen-zet_Cen zet_Cen-ups1_Cen ups1_Cen-mu_Cen mu_Cen-nu_Cen nu_Cen-d_Cen d_Cen-iot_Cen nu_Cen-the_Cen mu_Cen-eta_Cen eta_Cen-kap_Cen zet_Cen-gam_Cen gam_Cen-sig_Cen sig_Cen-del_Cen del_Cen-A_Cen A_Cen-lam_Cen
+Cep | 케페우스자리 | Cepheus | zet_Cep-iot_Cep iot_Cep-bet_Cep bet_Cep-alf_Cep alf_Cep-zet_Cep iot_Cep-gam_Cep gam_Cep-bet_Cep
+Cet | 고래자리 | Cetus | xi1_Cet-xi2_Cet tau_Cet-bet_Cet bet_Cet-iot_Cet bet_Cet-eta_Cet eta_Cet-the_Cet the_Cet-zet_Cet zet_Cet-rho_Cet rho_Cet-eps_Cet eps_Cet-pi_Cet pi_Cet-sig_Cet sig_Cet-tau_Cet omi_Cet-eps_Cet omi_Cet-del_Cet del_Cet-gam_Cet gam_Cet-alf_Cet alf_Cet-lam_Cet lam_Cet-mu_Cet mu_Cet-xi2_Cet xi2_Cet-nu_Cet nu_Cet-gam_Cet
+Cha | 카멜레온자리 | Chamaeleon | alf_Cha-gam_Cha gam_Cha-bet_Cha
+Cir | 컴퍼스자리 | Circinus | alf_Cir-gam_Cir alf_Cir-bet_Cir
+Cnc | 게자리 | Cancer | iot_Cnc-gam_Cnc gam_Cnc-chi_Cnc gam_Cnc-del_Cnc del_Cnc-bet_Cnc del_Cnc-alf_Cnc
+Col | 비둘기자리 | Columba | del_Col-kap_Col kap_Col-gam_Col gam_Col-bet_Col bet_Col-eta_Col bet_Col-alf_Col alf_Col-eps_Col
+Com | 머리털자리 | Coma Berenices | alf_Com-bet_Com bet_Com-gam_Com
+CrA | 남쪽왕관자리 | Corona Australis | lam_CrA-HIP92989 HIP92989-eps_CrA eps_CrA-gam_CrA gam_CrA-alf_CrA alf_CrA-bet_CrA bet_CrA-del_CrA del_CrA-zet_CrA zet_CrA-HIP92953 lam_CrA-HIP90887
+Crt | 컵자리 | Crater | alf_Crt-bet_Crt bet_Crt-gam_Crt gam_Crt-del_Crt del_Crt-alf_Crt del_Crt-eps_Crt eps_Crt-the_Crt the_Crt-eta_Crt eta_Crt-zet_Crt zet_Crt-gam_Crt
+Cru | 남십자자리 | Crux | gam_Cru-alf1_Cru bet_Cru-del_Cru
+Dor | 황새치자리 | Dorado | del_Dor-36_Dor 36_Dor-bet_Dor bet_Dor-del_Dor bet_Dor-alf_Dor alf_Dor-gam_Dor
+Dra | 용자리 | Draco | xi_Dra-gam_Dra gam_Dra-bet_Dra bet_Dra-nu2_Dra nu2_Dra-xi_Dra xi_Dra-del_Dra del_Dra-eps_Dra eps_Dra-tau_Dra tau_Dra-chi_Dra chi_Dra-zet_Dra zet_Dra-eta_Dra eta_Dra-the_Dra the_Dra-iot_Dra iot_Dra-alf_Dra alf_Dra-kap_Dra kap_Dra-lam_Dra
+Equ | 조랑말자리 | Equuleus | gam_Equ-del_Equ del_Equ-bet_Equ bet_Equ-alf_Equ alf_Equ-gam_Equ
+Eri | 에리다누스자리 | Eridanus | alf_Eri-chi_Eri chi_Eri-phi_Eri phi_Eri-kap_Eri kap_Eri-s_Eri s_Eri-iot_Eri iot_Eri-the1_Eri the1_Eri-e_Eri e_Eri-f_Eri f_Eri-g_Eri g_Eri-ups4_Eri ups4_Eri-d_Eri d_Eri-ups2_Eri ups2_Eri-tau6_Eri tau6_Eri-tau5_Eri tau5_Eri-tau4_Eri tau4_Eri-tau3_Eri tau3_Eri-tau1_Eri tau1_Eri-eta_Eri eta_Eri-zet_Eri zet_Eri-eps_Eri eps_Eri-del_Eri del_Eri-nu_Eri nu_Eri-mu_Eri mu_Eri-ome_Eri ome_Eri-bet_Eri bet_Eri-lam_Eri lam_Eri-l_Eri
+For | 화로자리 | Fornax | bet_For-alf_For
+Gru | 두루미자리 | Grus | the_Gru-del1_Gru del1_Gru-alf_Gru alf_Gru-bet_Gru bet_Gru-iot_Gru iot_Gru-the_Gru bet_Gru-zet_Gru bet_Gru-eps_Gru alf_Gru-lam_Gru lam_Gru-gam_Gru
+Her | 헤르쿨레스자리 | Hercules | iot_Her-the_Her the_Her-rho_Her rho_Her-e_Her e_Her-pi_Her pi_Her-eta_Her eta_Her-sig_Her sig_Her-tau_Her tau_Her-chi_Her eta_Her-zet_Her zet_Her-bet_Her bet_Her-gam_Her zet_Her-eps_Her eps_Her-lam_Her lam_Her-del_Her mu_Her-xi_Her xi_Her-omi_Her eps_Her-pi_Her mu_Her-lam_Her
+Hor | 시계자리 | Horologium | alf_Hor-zet_Hor zet_Hor-mu_Hor
+Hya | 바다뱀자리 | Hydra | eta_Hya-sig_Hya sig_Hya-del_Hya del_Hya-eps_Hya eps_Hya-rho_Hya rho_Hya-eta_Hya rho_Hya-zet_Hya zet_Hya-the_Hya the_Hya-tau2_Hya tau2_Hya-tau1_Hya tau1_Hya-alf_Hya alf_Hya-26_Hya 26_Hya-kap_Hya kap_Hya-ups1_Hya ups1_Hya-lam_Hya lam_Hya-mu_Hya mu_Hya-nu_Hya nu_Hya-chi1_Hya chi1_Hya-xi_Hya xi_Hya-bet_Hya bet_Hya-psi_Hya psi_Hya-gam_Hya gam_Hya-pi_Hya pi_Hya-50_Hya 50_Hya-k_Hya k_Hya-E_Hya
+Hyi | 물뱀자리 | Hydrus | bet_Hyi-gam_Hyi gam_Hyi-eps_Hyi eps_Hyi-del_Hyi del_Hyi-alf_Hyi
+Ind | 인디언자리 | Indus | the_Ind-alf_Ind alf_Ind-bet_Ind bet_Ind-the_Ind
+LMi | 작은사자자리 | Leo Minor | 46_LMi-bet_LMi bet_LMi-21_LMi 21_LMi-10_LMi 21_LMi-46_LMi
+Lac | 도마뱀자리 | Lacerta | 1_Lac-6_Lac 6_Lac-5_Lac 5_Lac-4_Lac 4_Lac-bet_Lac bet_Lac-alf_Lac alf_Lac-5_Lac
+Lep | 토끼자리 | Lepus | the_Lep-eta_Lep eta_Lep-zet_Lep zet_Lep-alf_Lep alf_Lep-mu_Lep alf_Lep-del_Lep del_Lep-gam_Lep gam_Lep-bet_Lep bet_Lep-eps_Lep alf_Lep-bet_Lep mu_Lep-lam_Lep mu_Lep-kap_Lep eps_Lep-mu_Lep kap_Lep-iot_Lep lam_Lep-nu_Lep
+Lib | 천칭자리 | Libra | the_Lib-gam_Lib gam_Lib-bet_Lib bet_Lib-alf_Lib alf_Lib-sig_Lib sig_Lib-gam_Lib
+Lup | 이리자리 | Lupus | chi_Lup-HIP78970 HIP78970-eta_Lup eta_Lup-chi_Lup eta_Lup-gam_Lup gam_Lup-del_Lup del_Lup-phi1_Lup del_Lup-bet_Lup gam_Lup-ome_Lup ome_Lup-zet_Lup zet_Lup-alf_Lup zet_Lup-rho_Lup alf_Lup-tau2_Lup alf_Lup-bet_Lup
+Lyn | 살쾡이자리 | Lynx | alf_Lyn-38_Lyn 38_Lyn-HIP44700 HIP44700-10_UMa 10_UMa-31_Lyn 31_Lyn-21_Lyn 21_Lyn-15_Lyn 15_Lyn-2_Lyn
+Men | 테이블산자리 | Mensa | gam_Men-mu_Men
+Mic | 현미경자리 | Microscopium | eps_Mic-gam_Mic gam_Mic-alf_Mic
+Mon | 외뿔소자리 | Monoceros | gam_Mon-del_Mon bet_Mon-del_Mon del_Mon-17_Mon 17_Mon-eps_Mon eps_Mon-13_Mon 13_Mon-S_Mon 17_Mon-S_Mon S_Mon-HIP30665 del_Mon-28_Mon 28_Mon-zet_Mon 28_Mon-alf_Mon
+Mus | 파리자리 | Musca | bet_Mus-lam_Mus lam_Mus-gam_Mus gam_Mus-alf_Mus alf_Mus-bet_Mus
+Nor | 직각자자리 | Norma | kap_Nor-gam2_Nor gam2_Nor-eps_Nor eps_Nor-eta_Nor eta_Nor-gam2_Nor eta_Nor-kap_Nor
+Oct | 팔분의자리 | Octans | nu_Oct-bet_Oct bet_Oct-del_Oct del_Oct-nu_Oct
+Oph | 뱀주인자리 | Ophiuchus | alf_Oph-bet_Oph eta_Oph-bet_Oph alf_Oph-kap_Oph kap_Oph-eps_Oph eps_Oph-zet_Oph zet_Oph-eta_Oph eta_Oph-c_Oph
+Pav | 공작자리 | Pavo | alf_Pav-gam_Pav gam_Pav-bet_Pav bet_Pav-del_Pav del_Pav-alf_Pav del_Pav-eps_Pav eps_Pav-zet_Pav zet_Pav-kap_Pav kap_Pav-del_Pav kap_Pav-lam_Pav lam_Pav-xi_Pav xi_Pav-pi_Pav pi_Pav-lam_Pav pi_Pav-eta_Pav
+Per | 페르세우스자리 | Perseus | omi_Per-zet_Per zet_Per-xi_Per xi_Per-eps_Per eps_Per-del_Per del_Per-alf_Per alf_Per-gam_Per gam_Per-eta_Per alf_Per-bet_Per bet_Per-rho_Per rho_Per-16_Per
+Phe | 봉황새자리 | Phoenix | zet_Phe-bet_Phe bet_Phe-kap_Phe kap_Phe-zet_Phe bet_Phe-del_Phe del_Phe-psi_Phe psi_Phe-bet_Phe bet_Phe-gam_Phe gam_Phe-kap_Phe kap_Phe-alf_Phe alf_Phe-eps_Phe eps_Phe-kap_Phe
+Pic | 화가자리 | Pictor | alf_Pic-gam_Pic gam_Pic-bet_Pic
+PsA | 남쪽물고기자리 | Piscis Austrinus | alf_PsA-eps_PsA eps_PsA-eta_PsA eta_PsA-the_PsA the_PsA-tau_PsA tau_PsA-bet_PsA bet_PsA-del_PsA
+Psc | 물고기자리 | Pisces | sig_Psc-phi_Psc sig_Psc-ups_Psc ups_Psc-phi_Psc phi_Psc-eta_Psc eta_Psc-omi_Psc omi_Psc-alf_Psc alf_Psc-xi_Psc xi_Psc-nu_Psc nu_Psc-mu_Psc mu_Psc-eps_Psc eps_Psc-62_Psc 62_Psc-d_Psc d_Psc-ome_Psc ome_Psc-iot_Psc iot_Psc-TX_Psc TX_Psc-lam_Psc lam_Psc-kap_Psc kap_Psc-gam_Psc gam_Psc-b_Psc b_Psc-the_Psc the_Psc-iot_Psc
+Pup | 고물자리 | Puppis | rho_Pup-188_Pup 188_Pup-pi_Pup pi_Pup-nu_Pup nu_Pup-tau_Pup tau_Pup-sig_Pup sig_Pup-zet_Pup zet_Pup-rho_Pup
+Pyx | 나침반자리 | Pyxis | bet_Pyx-alf_Pyx alf_Pyx-gam_Pyx
+Ret | 그물자리 | Reticulum | alf_Ret-eps_Ret eps_Ret-del_Ret del_Ret-bet_Ret bet_Ret-alf_Ret
+Scl | 조각가자리 | Sculptor | bet_Scl-alf_Scl alf_Scl-gam_Scl gam_Scl-bet_Scl
+Sct | 방패자리 | Scutum | bet_Sct-R_Sct R_Sct-HIP92814 HIP92814-gam_Sct gam_Sct-alf_Sct alf_Sct-bet_Sct
+Ser | 뱀자리 | Serpens | del_Oph-mu_Ser mu_Ser-eps_Ser eps_Ser-alf_Ser alf_Ser-del_Ser del_Ser-bet_Ser bet_Ser-gam_Ser gam_Ser-kap_Ser kap_Ser-bet_Ser the1_Ser-d_Ser d_Ser-eta_Ser eta_Ser-HIP88670 HIP88670-nu_Oph nu_Oph-omi_Ser omi_Ser-xi_Ser xi_Ser-nu_Ser
+Sex | 육분의자리 | Sextans | bet_Sex-alf_Sex
+Sge | 화살자리 | Sagitta | bet_Sge-del_Sge del_Sge-alf_Sge del_Sge-gam_Sge gam_Sge-eta_Sge
+Tel | 망원경자리 | Telescopium | zet_Tel-alf_Tel
+TrA | 남쪽삼각형자리 | Triangulum Australe | alf_TrA-gam_TrA gam_TrA-bet_TrA bet_TrA-alf_TrA
+Tri | 삼각형자리 | Triangulum | gam_Tri-bet_Tri bet_Tri-alf_Tri alf_Tri-gam_Tri
+Tuc | 큰부리새자리 | Tucana | alf_Tuc-gam_Tuc gam_Tuc-zet_Tuc gam_Tuc-bet1_Tuc
+Vel | 돛자리 | Vela | gam2_Vel-omi_Vel omi_Vel-del_Vel del_Vel-kap_Vel kap_Vel-phi_Vel phi_Vel-mu_Vel mu_Vel-p_Vel p_Vel-q_Vel q_Vel-psi_Vel psi_Vel-lam_Vel lam_Vel-gam2_Vel
+Vir | 처녀자리 | Virgo | nu_Vir-eta_Vir eta_Vir-gam_Vir gam_Vir-alf_Vir alf_Vir-kap_Vir kap_Vir-iot_Vir iot_Vir-mu_Vir alf_Vir-zet_Vir zet_Vir-tau_Vir tau_Vir-109_Vir zet_Vir-del_Vir del_Vir-eps_Vir del_Vir-gam_Vir
+Vol | 날치자리 | Volans | zet_Vol-gam2_Vol gam2_Vol-eps_Vol eps_Vol-zet_Vol eps_Vol-del_Vol eps_Vol-bet_Vol bet_Vol-alf_Vol alf_Vol-eps_Vol
+Vul | 여우자리 | Vulpecula | alf_Vul-15_Vul

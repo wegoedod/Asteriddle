@@ -1,24 +1,313 @@
 # 3원 28수 성관 기준 도안 (정답 기준)
 # 형식: id | 이름 | 부제 | 연결선 목록(별id-별id, 공백 구분)
-# 현재 28수 중 16개와 관련 성관 3개 수록 (초안).
-# 성관-별 대응과 연결 모양은 천상열차분야지도 원본과의 대조 검증이 필요하다 (보완 항목: 기준 도안).
+# 도안과 성관-별 대응은 천상열차분야지도를 바탕으로 한 Stellarium korean 스카이컬처(skycultures/korean)를 기준으로 한다.
+# 같은 영역(3원 또는 같은 수)에서 같은 이름으로 나뉘어 있는 성관(예: 자미원 좌·우 담장)은 하나로 합쳤다.
+# 별 하나로 이루어져 연결선이 없는 성관 63개는 판정 방식이 정해질 때까지 제외한다 (보완 항목: 특수 성관 처리).
+# 제외: 천일(天一), 태일(太一), 여사(女史), 주하사(柱下史), 천황대제(天皇大帝), 태존(太尊), 태양수(太陽守), 상(相), 현과(玄戈), 보(輔), 알자(謁者), 행신(幸臣), 태자(太子), 종관(從官), 낭장(郎將), 호분(虎賁), 후(候), 제좌(帝座), 진현(進賢), 대각(大角), 천유(天乳), 초요(招搖), 기진장군(騎陣將軍), 건폐(鍵閉), 일(日), 부열(傅說), 어(魚), 신궁(神宮), 강(糠), 농장인(農丈人), 십이국(十二國), 월(越), 진(晉), 한(韓), 위(魏), 초(楚), 연(燕), 제(齊), 정(鄭), 북락사문(北落師門), 천강(天綱), 토사공(司空), 군남문(軍南門), 부로(附路), 책(策), 적시(積尸), 적수(積水), 천아(天阿), 월(月), 천참(天讒), 부이(附耳), 천관(天關), 천시(天矢), 월(鉞), 적수(積水), 적신(積薪), 야계(野雞), 낭성(狼星), 노인(老人), 적시(積尸), 장사(長沙), 좌할(左轄), 우할(右轄)
 
+# 28수
 Gak | 각수 | 角宿 | alf_Vir-zet_Vir
-Hang | 항수 | 亢宿 | kap_Vir-iot_Vir iot_Vir-phi_Vir kap_Vir-lam_Vir
-Jeo | 저수 | 氐宿 | alf_Lib-iot_Lib iot_Lib-gam_Lib gam_Lib-bet_Lib bet_Lib-alf_Lib
-Bang | 방수 | 房宿 | bet_Sco-del_Sco del_Sco-pi_Sco pi_Sco-rho_Sco
+Hang | 항수 | 亢宿 | lam_Vir-kap_Vir kap_Vir-iot_Vir iot_Vir-phi_Vir
+Jeo | 저수 | 氐宿 | alf_Lib-iot_Lib iot_Lib-gam_Lib gam_Lib-bet_Lib
+Bang | 방수 | 房宿 | rho_Sco-pi_Sco pi_Sco-del_Sco del_Sco-bet_Sco bet_Sco-ome1_Sco
 Sim | 심수 | 心宿 | sig_Sco-alf_Sco alf_Sco-tau_Sco
-Mi | 미수 | 尾宿 | eps_Sco-mu_Sco mu_Sco-zet_Sco zet_Sco-eta_Sco eta_Sco-the_Sco the_Sco-iot_Sco iot_Sco-kap_Sco kap_Sco-lam_Sco lam_Sco-ups_Sco
-Gi | 기수 | 箕宿 | gam_Sgr-del_Sgr del_Sgr-eps_Sgr eps_Sgr-eta_Sgr eta_Sgr-gam_Sgr
+Mi | 미수 | 尾宿 | eps_Sco-mu_Sco mu_Sco-zet_Sco zet_Sco-eta_Sco eta_Sco-the_Sco the_Sco-iot_Sco iot_Sco-kap_Sco kap_Sco-lam_Sco lam_Sco-ups_Sco mu_Sco-mu2_Sco
+Gi | 기수 | 箕宿 | gam_Sgr-del_Sgr del_Sgr-eps_Sgr eps_Sgr-eta_Sgr
 Du | 두수 | 斗宿 | zet_Sgr-tau_Sgr tau_Sgr-sig_Sgr sig_Sgr-phi_Sgr phi_Sgr-lam_Sgr lam_Sgr-mu_Sgr
+U | 우수 | 牛宿 | alf2_Cap-bet_Cap bet_Cap-pi_Cap pi_Cap-omi_Cap omi_Cap-rho_Cap rho_Cap-bet_Cap bet_Cap-nu_Cap
+Yeo | 여수 | 女宿 | eps_Aqr-mu_Aqr mu_Aqr-5_Aqr 5_Aqr-k_Aqr
+Heo | 허수 | 虛宿 | bet_Aqr-alf_Equ
+Wi | 위수 | 危宿 | alf_Aqr-the_Peg the_Peg-eps_Peg the_Peg-pi_Aqr
 Sil | 실수 | 室宿 | alf_Peg-bet_Peg
 Byeok | 벽수 | 壁宿 | gam_Peg-alf_And
-Ru | 루수 | 婁宿 | alf_Ari-bet_Ari bet_Ari-gam_Ari
-Pil | 필수 | 畢宿 | eps_Tau-del_Tau del_Tau-gam_Tau gam_Tau-the_Tau the_Tau-alf_Tau gam_Tau-lam_Tau
-Sam | 삼수 | 參宿 | alf_Ori-gam_Ori gam_Ori-del_Ori del_Ori-eps_Ori eps_Ori-zet_Ori zet_Ori-alf_Ori del_Ori-bet_Ori bet_Ori-kap_Ori kap_Ori-zet_Ori
-Jeong | 정수 | 井宿 | mu_Gem-nu_Gem nu_Gem-gam_Gem gam_Gem-xi_Gem mu_Gem-eps_Gem eps_Gem-zet_Gem zet_Gem-lam_Gem
+Gyu | 규수 | 奎宿 | zet_And-eps_And eps_And-del_And del_And-pi_And pi_And-HIP2942 HIP2942-32_And 32_And-M31 M31-nu_And nu_And-mu_And mu_And-bet_And bet_And-g_Psc g_Psc-tau_Psc tau_Psc-ups_Psc ups_Psc-phi_Psc phi_Psc-chi_Psc chi_Psc-eta_And eta_And-zet_And
+Ru | 루수 | 婁宿 | gam_Ari-bet_Ari bet_Ari-alf_Ari
+Wi_17 | 위수 | 胃宿 | 35_Ari-39_Ari 39_Ari-c_Ari c_Ari-35_Ari
+Myo | 묘수 | 昴宿 | 16_Tau-q_Tau q_Tau-17_Tau 17_Tau-20_Tau 20_Tau-23_Tau 23_Tau-eta_Tau eta_Tau-27_Tau q_Tau-20_Tau 20_Tau-eta_Tau 16_Tau-17_Tau 17_Tau-23_Tau
+Pil | 필수 | 畢宿 | eps_Tau-68_Tau 68_Tau-del_Tau del_Tau-gam_Tau sig2_Tau-alf_Tau alf_Tau-the_Tau the_Tau-71_Tau 71_Tau-gam_Tau gam_Tau-lam_Tau
+Ja | 자수 | 觜宿 | phi1_Ori-lam_Ori lam_Ori-phi2_Ori phi2_Ori-phi1_Ori
+Sam | 삼수 | 參宿 | del_Ori-eps_Ori eps_Ori-zet_Ori zet_Ori-alf_Ori gam_Ori-del_Ori del_Ori-bet_Ori zet_Ori-kap_Ori eps_Ori-c_Ori
+Jeong | 정수 | 井宿 | mu_Gem-nu_Gem nu_Gem-gam_Gem gam_Gem-xi_Gem eps_Gem-d_Gem d_Gem-zet_Gem zet_Gem-lam_Gem nu_Gem-d_Gem mu_Gem-eta_Gem
 Gwi | 귀수 | 鬼宿 | the_Cnc-eta_Cnc eta_Cnc-gam_Cnc gam_Cnc-del_Cnc del_Cnc-the_Cnc
-Jin | 진수 | 軫宿 | gam_Crv-del_Crv del_Crv-bet_Crv bet_Crv-eps_Crv eps_Crv-gam_Crv
-Bukdu | 북두 | 北斗 · 자미원 | alf_UMa-bet_UMa bet_UMa-gam_UMa gam_UMa-del_UMa del_UMa-alf_UMa del_UMa-eps_UMa eps_UMa-zet_UMa zet_UMa-eta_UMa
-Jiknyeo | 직녀 | 織女 | alf_Lyr-eps_Lyr eps_Lyr-zet_Lyr zet_Lyr-alf_Lyr
-Hago | 하고 | 河鼓 | gam_Aql-alf_Aql alf_Aql-bet_Aql
+Yu | 유수 | 柳宿 | rho_Hya-eta_Hya eta_Hya-sig_Hya sig_Hya-del_Hya del_Hya-eps_Hya eps_Hya-zet_Hya zet_Hya-ome_Hya ome_Hya-the_Hya
+Seong | 성수 | 星宿 | iot_Hya-tau2_Hya tau2_Hya-tau1_Hya tau1_Hya-HIP46404 HIP46404-alf_Hya alf_Hya-P_Hya P_Hya-26_Hya
+Jang | 장수 | 張宿 | ups1_Hya-lam_Hya lam_Hya-mu_Hya mu_Hya-HIP49321 HIP49321-ups1_Hya ups1_Hya-kap_Hya mu_Hya-phi_Hya
+Ik | 익수 | 翼宿 | alf_Crt-del_Crt del_Crt-gam_Crt gam_Crt-bet_Crt bet_Crt-alf_Crt alf_Crt-nu_Hya gam_Crt-zet_Crt del_Crt-HIP54029 HIP54029-HIP52948 HIP52948-HIP51933 iot_Crt-eps_Crt eps_Crt-HIP54029 eps_Crt-the_Crt the_Crt-HIP58576 bet_Crt-chi1_Hya chi1_Hya-HIP54477 HIP54477-17_Crt chi1_Hya-HIP52407 HIP52407-iot_Ant iot_Ant-HIP55588 HIP55588-omi_Hya omi_Hya-bet_Hya HIP52407-alf_Ant
+Jin | 진수 | 軫宿 | alf_Crv-eps_Crv eps_Crv-gam_Crv gam_Crv-del_Crv del_Crv-bet_Crv bet_Crv-eps_Crv eps_Crv-zet_Crv del_Crv-eta_Crv
+
+# 자미원
+Bukgeuk | 북극 | 北極 · 자미원 | gam_UMi-bet_UMi bet_UMi-5_UMi 5_UMi-4_UMi 4_UMi-HIP62572
+Sabo | 사보 | 四輔 · 자미원 | HIP72573-HIP59767 HIP59767-HIP51384 HIP51384-HIP56253
+Jami | 자미 | 紫微 · 자미원 | 4_Dra-kap_Dra kap_Dra-6_Dra 6_Dra-lam_Dra lam_Dra-HIP52425 HIP52425-27_UMa 27_UMa-HIP40793 HIP40793-HIP33694 HIP33694-HIP25110 alf_Dra-iot_Dra iot_Dra-the_Dra the_Dra-eta_Dra eta_Dra-zet_Dra zet_Dra-ome_Dra ome_Dra-phi_Dra phi_Dra-HIP92056
+Eumdeok | 음덕 | 陰德 · 자미원 | HIP74605-RR_UMi
+Sangseo | 상서 | 尚書 · 자미원 | HIP75974-HIP77277 HIP77277-HIP75696 HIP75260-HIP77277 HIP77277-HIP75256
+Yeoeogung | 여어궁 | 女御宮 · 자미원 | 35_Dra-HIP84769 HIP84769-HIP90182 HIP90182-HIP92040 HIP92040-35_Dra
+Cheonju | 천주 | 天柱 · 자미원 | HIP79414-HIP80682 HIP80682-A_Dra A_Dra-HIP80161 HIP80161-HIP78893
+Daeri | 대리 | 大理 · 자미원 | HIP69373-HIP67589
+Gujin | 구진 | 勾陳 · 자미원 | zet_UMi-eps_UMi eps_UMi-del_UMi del_UMi-alf_UMi alf_UMi-HIP16489 HIP16489-HIP4283
+Yukgap | 육갑 | 六甲 · 자미원 | HIP105727-HIP102599 HIP102599-74_Dra 74_Dra-75_Dra 75_Dra-76_Dra 76_Dra-HIP104756 HIP104756-HIP105727
+Ojejwa | 오제좌 | 五帝坐 · 자미원 | 73_Dra-kap_Cep kap_Cep-HIP95167 59_Dra-kap_Cep kap_Cep-77_Dra
+Hwagae | 화개 | 華蓋 · 자미원 | 16_Cep-bet_Cep bet_Cep-11_Cep 11_Cep-24_Cep 24_Cep-31_Cep 31_Cep-pi_Cep pi_Cep-gam_Cep gam_Cep-16_Cep 11_Cep-16_Cep 16_Cep-pi_Cep 24_Cep-16_Cep 16_Cep-31_Cep
+Gang | 강 | 杠 · 자미원 | HIP5928-HIP115746 HIP115746-HIP109693 HIP109693-HIP113116 HIP113116-HIP112519 HIP112519-rho_Cep rho_Cep-HIP108420 HIP108420-78_Dra HIP108420-HIP111660
+Jeonsa | 전사 | 傳舍 · 자미원 | eta_Cep-alf_Cep alf_Cep-xi_Cep xi_Cep-26_Cep 26_Cep-iot_Cep iot_Cep-HIP113864 HIP113864-omi_Cep omi_Cep-50_Cas 50_Cas-HIP14862
+Naegye | 내계 | 內階 · 자미원 | A_UMa-pi2_UMa pi2_UMa-rho_UMa rho_UMa-sig2_UMa sig2_UMa-d_UMa d_UMa-HIP47594
+Cheonju_P22 | 천주 | 天厨 · 자미원 | del_Dra-eps_Dra eps_Dra-rho_Dra rho_Dra-pi_Dra pi_Dra-del_Dra del_Dra-ups_Dra ups_Dra-tau_Dra tau_Dra-eps_Dra
+Palgok | 팔곡 | 八穀 · 자미원 | 9_Aur-7_Cam 7_Cam-16_Cam 16_Cam-bet_Cam bet_Cam-alf_Cam alf_Cam-HIP29997 HIP29997-15_Lyn 15_Lyn-del_Aur del_Aur-16_Cam
+Cheonbong | 천봉 | 天棓 · 자미원 | iot_Her-gam_Dra gam_Dra-bet_Dra bet_Dra-nu1_Dra nu1_Dra-xi_Dra
+Cheonsang | 천상 | 天床 · 자미원 | 8_Dra-HIP62402 HIP62402-HIP63584 HIP63584-HIP63952 HIP63952-HIP67485 HIP67485-HIP71111
+Naeju | 내주 | 內厨 · 자미원 | 3_Dra-HIP55564
+Munchang | 문창 | 文昌 · 자미원 | omi_UMa-tau_UMa tau_UMa-h_UMa h_UMa-ups_UMa ups_UMa-phi_UMa phi_UMa-the_UMa the_UMa-f_UMa
+Samgong | 삼공 | 三公 · 자미원 | HIP50933-38_UMa 38_UMa-HIP51448 HIP51448-HIP50933
+Cheolloe | 천뢰 | 天牢 · 자미원 | 36_UMa-37_UMa 37_UMa-39_UMa 39_UMa-43_UMa 43_UMa-44_UMa 44_UMa-HIP52136 HIP52136-36_UMa
+Se | 세 | 勢 · 자미원 | HIP56731-HIP55086 HIP55086-HIP53781 HIP53781-HIP56170 HIP56170-HIP56731
+Samgong_P34 | 삼공 | 三公 · 자미원 | 21_CVn-HIP65550 HIP65550-24_CVn 24_CVn-21_CVn
+Cheolli | 천리 | 天理 · 자미원 | HIP57477-66_UMa 66_UMa-HIP56035 HIP56035-HIP55148 HIP55148-HIP57477
+Bukdu | 북두 | 北斗 · 자미원 | alf_UMa-bet_UMa bet_UMa-gam_UMa gam_UMa-del_UMa del_UMa-eps_UMa eps_UMa-zet_UMa zet_UMa-eta_UMa zet_UMa-g_UMa
+Cheonchang | 천창 | 天槍 · 자미원 | kap2_Boo-the_Boo the_Boo-iot_Boo
+
+# 태미원
+Taemi | 태미 | 太微 · 태미원 | bet_Vir-sig_Leo sig_Leo-iot_Leo iot_Leo-the_Leo the_Leo-del_Leo eta_Vir-gam_Vir gam_Vir-del_Vir del_Vir-eps_Vir eps_Vir-alf_Com
+Samgongnaejwa | 삼공내좌 | 三公內坐 · 태미원 | rho_Vir-33_Vir 33_Vir-d2_Vir d2_Vir-rho_Vir
+Gugyeong | 구경 | 九卿 · 태미원 | 27_Com-32_Com 32_Com-36_Com
+Ojehu | 오제후 | 五諸侯 · 태미원 | 6_Com-11_Com 11_Com-24_Com 24_Com-35_Com 35_Com-bet_Com
+Naebyeong | 내병 | 內屏 · 태미원 | xi_Vir-nu_Vir nu_Vir-pi_Vir pi_Vir-omi_Vir
+Oje | 오제 | 五帝 · 태미원 | o_Leo-bet_Leo bet_Leo-HIP57606 HIP57646-bet_Leo bet_Leo-HIP57779
+Sangjin | 상진 | 常陳 · 태미원 | 61_UMa-HIP58654 HIP58654-2_CVn 2_CVn-bet_CVn HIP59856-6_CVn 6_CVn-bet_CVn bet_CVn-Y_CVn
+Nangwi | 낭위 | 郎位 · 태미원 | gam_Com-14_Com 14_Com-16_Com 16_Com-17_Com 17_Com-21_Com 21_Com-18_Com 18_Com-HIP60599 HIP60599-8_Com 8_Com-7_Com 7_Com-HIP60066 HIP60066-HIP60170 HIP60170-HIP60197 HIP60197-gam_Com 16_Com-13_Com 13_Com-HIP60170 17_Com-HIP60525 HIP60525-12_Com 12_Com-HIP60066 14_Com-13_Com 13_Com-12_Com 12_Com-HIP60599 HIP60599-HIP60066 HIP60066-8_Com HIP60197-13_Com 13_Com-17_Com 13_Com-HIP60525 HIP60525-18_Com HIP60525-HIP60599
+Myeongdang | 명당 | 明堂 · 태미원 | phi_Leo-e_Leo e_Leo-ups_Leo
+Yeongdae | 영대 | 靈臺 · 태미원 | d_Leo-c_Leo c_Leo-chi_Leo
+Somi | 소미 | 少微 · 태미원 | b_Leo-54_Leo 54_Leo-37_LMi 37_LMi-bet_LMi
+Jangwon | 장원 | 長垣 · 태미원 | l_Leo-k_Leo k_Leo-m_Leo m_Leo-41_LMi
+SamdaeSangdae | 삼대 | 상대)(三台(上台) · 태미원 | iot_UMa-kap_UMa
+SamdaeJungdae | 삼대 | 중대)(三台(中台) · 태미원 | lam_UMa-mu_UMa
+SamdaeHadae | 삼대 | 하대)(三台(下台) · 태미원 | nu_UMa-xi_UMa
+Samdae | 삼대 | 三台 · 태미원 | iot_UMa-kap_UMa kap_UMa-lam_UMa lam_UMa-mu_UMa mu_UMa-nu_UMa nu_UMa-xi_UMa
+
+# 천시원
+Cheonsi | 천시 | 天市 · 천시원 | bet_Her-gam_Her gam_Her-kap_Her kap_Her-gam_Ser gam_Ser-bet_Ser bet_Ser-del_Ser del_Ser-alf_Ser alf_Ser-eps_Ser eps_Ser-del_Oph del_Oph-eps_Oph eps_Oph-zet_Oph del_Her-lam_Her lam_Her-mu_Her mu_Her-omi_Her omi_Her-110_Her 110_Her-zet_Aql zet_Aql-the1_Ser the1_Ser-eta_Ser eta_Ser-nu_Oph nu_Oph-xi_Ser xi_Ser-eta_Oph
+Siru | 시루 | 市樓 · 천시원 | omi_Ser-nu_Ser nu_Ser-mu_Oph mu_Oph-tau_Oph tau_Oph-HIP88684 HIP88684-zet_Ser zet_Ser-omi_Ser
+Geosa | 거사 | 車肆 · 천시원 | 47_Oph-sig_Oph
+Jongjeong | 종정 | 宗正 · 천시원 | bet_Oph-gam_Oph
+Jongin | 종인 | 宗人 · 천시원 | 66_Oph-p_Oph p_Oph-68_Oph p_Oph-67_Oph
+Jongseong | 종성 | 宗星 · 천시원 | 71_Oph-72_Oph
+Baekdo | 백도 | 帛度 · 천시원 | 95_Her-102_Her
+Dosa | 도사 | 屠肆 · 천시원 | 106_Her-109_Her
+Hwanja | 환자 | 宦者 · 천시원 | 60_Her-32_Oph 32_Oph-54_Her 54_Her-HIP82764
+Yeolsa | 열사 | 列肆 · 천시원 | ome_Her-o_Her
+Du_H14 | 두 | 斗 · 천시원 | kap_Oph-iot_Oph iot_Oph-i_Her i_Her-k_Her k_Her-l_Her
+Gok | 곡 | 斛 · 천시원 | lam_Oph-12_Oph 12_Oph-30_Oph 30_Oph-41_Oph
+Gwansaek | 관색 | 貫索 · 천시원 | the_CrB-bet_CrB bet_CrB-alf_CrB alf_CrB-gam_CrB gam_CrB-del_CrB del_CrB-eps_CrB eps_CrB-iot_CrB iot_CrB-rho_CrB rho_CrB-kap_CrB
+Chilgong | 칠공 | 七公 · 천시원 | del_Boo-mu1_Boo mu1_Boo-chi_Her chi_Her-phi_Her phi_Her-tau_Her tau_Her-sig_Her sig_Her-eta_Her
+Cheongi | 천기 | 天紀 · 천시원 | xi_CrB-nu1_CrB nu1_CrB-zet_Her zet_Her-eps_Her eps_Her-d_Her d_Her-u_Her u_Her-the_Her the_Her-kap_Lyr kap_Lyr-mu_Lyr
+Yeosang | 여상 | 女牀 · 천시원 | pi_Her-e_Her e_Her-rho_Her
+Jongdaebu | 종대부 | 宗大夫 · 천시원 | 74_Oph-HIP89772 HIP89772-HIP91217 HIP91217-HIP91237 HIP91237-74_Oph
+
+# 각수 영역
+Pyeongdo | 평도 | 平道 · 각수 | l_Vir-66_Vir
+Cheonjeon | 천전 | 天田 · 각수 | sig_Vir-o_Vir
+Jujeong | 주정 | 周鼎 · 각수 | 1_Boo-2_Boo 2_Boo-9_Boo
+Cheonmun | 천문 | 天門 · 각수 | 53_Vir-89_Vir
+Pyeong | 평 | 平 · 각수 | gam_Hya-47_Hya
+Goru | 고루 | 庫樓 · 각수 | zet_Cen-alf_Lup alf_Lup-eta_Cen eta_Cen-the_Cen the_Cen-iot_Cen iot_Cen-HIP64348 HIP64348-gam_Cen gam_Cen-tau_Cen tau_Cen-sig_Cen sig_Cen-G_Cen G_Cen-gam_Cen
+Ju | 주 | 柱 · 각수 | ups2_Cen-HIP68079 HIP68079-ups1_Cen iot_Lup-tau2_Lup tau2_Lup-HIP70104 HIP69598-HIP70580 HIP70580-a_Cen k_Cen-g_Cen g_Cen-i_Cen d_Cen-HIP66656 HIP66656-HIP65535
+Hyeong | 형 | 衡 · 각수 | nu_Cen-phi_Cen mu_Cen-phi_Cen phi_Cen-chi_Cen
+Nammun | 남문 | 南門 · 각수 | xi2_Cen-eps_Cen
+
+# 항수 영역
+Jeolwi | 절위 | 折威 · 항수 | 95_Vir-HIP69269 HIP69269-HIP69658 HIP69658-HIP69792 HIP69792-CS_Vir CS_Vir-HIP70518 HIP70518-HIP70469
+Saptje | 섭제 | 攝提 · 항수 | eta_Boo-tau_Boo tau_Boo-ups_Boo zet_Boo-pi1_Boo pi1_Boo-omi_Boo
+Donwan | 돈완 | 頓頑 · 항수 | k_Hya-l_Hya
+Yangmun | 양문 | 陽門 · 항수 | pi_Hya-50_Hya
+
+# 저수 영역
+Gyeongha | 경하 | 梗河 · 저수 | rho_Boo-sig_Boo sig_Boo-eps_Boo
+Jeseok | 제석 | 帝席 · 저수 | e_Boo-d_Boo d_Boo-26_Boo
+Hangji | 항지 | 亢池 · 저수 | 15_Boo-HIP68498 HIP68498-HIP68707 HIP68707-HIP69389 HIP69389-HIP70400 HIP70400-HIP70327 HIP70327-15_Boo
+Gigwan | 기관 | 騎官 · 저수 | f_Lup-i_Lup i_Lup-HIP73624 HIP73624-HIP73049 HIP73049-c1_Cen c1_Cen-HIP72800 HIP72800-b_Cen b_Cen-kap_Cen kap_Cen-bet_Lup bet_Lup-omi_Lup omi_Lup-lam_Lup lam_Lup-mu_Lup HIP73111-lam_Lup lam_Lup-pi_Lup pi_Lup-kap1_Lup kap_Cen-del_Lup del_Lup-gam_Lup gam_Lup-ome_Lup ome_Lup-eps_Lup ome_Lup-del_Nor del_Lup-k_Lup k_Lup-phi2_Lup phi2_Lup-phi1_Lup phi1_Lup-HIP73624 HIP73624-HIP73937 gam_Lup-h_Lup h_Lup-psi1_Lup psi1_Lup-psi2_Lup
+Jingeo | 진거 | 陣車 · 저수 | sig_Lib-f_Lup f_Lup-E_Hya
+Geogi | 거기 | 車騎 · 저수 | d_Lup-HIP76397 HIP76397-g_Lup g_Lup-d_Lup
+Cheonbok | 천복 | 天輻 · 저수 | ups_Lib-tau_Lib
+
+# 방수 영역
+Gugeom | 구검 | 鈎鈐 · 방수 | ome1_Sco-ome2_Sco
+Beol | 벌 | 罰 · 방수 | psi_Oph-chi_Oph chi_Oph-phi_Oph
+Dongham | 동함 | 東咸 · 방수 | 24_Sco-HIP81754 HIP81754-ome_Oph ome_Oph-i_Sco
+Seoham | 서함 | 西咸 · 방수 | psi_Sco-xi_Sco xi_Sco-the_Lib the_Lib-lam_Lib
+Jonggwan | 종관 | 從官 · 방수 | chi_Lup-xi1_Lup
+
+# 심수 영역
+Jeokjol | 적졸 | 積卒 · 심수 | eta_Lup-HIP79320 HIP79320-the_Nor the_Nor-gam2_Nor HIP78323-HIP79320 HIP79320-HIP80390 HIP80390-H_Sco eta_Nor-the_Nor the_Nor-mu_Nor mu_Nor-HIP81972 HIP81847-mu_Nor mu_Nor-HIP80390 HIP80390-N_Sco
+
+# 미수 영역
+Gwi_06B | 귀 | 龜 · 미수 | alf_Ara-sig_Ara sig_Ara-HIP87846 HIP87846-eps_Tel eps_Tel-the_Ara the_Ara-alf_Ara
+Cheongang | 천강 | 天江 · 미수 | A_Oph-the_Oph the_Oph-b_Oph b_Oph-c_Oph
+
+# 기수 영역
+Oejeo | 외저 | 外杵 · 기수 | zet_Tel-alf_Tel alf_Tel-the_CrA
+
+# 두수 영역
+Geonseong | 건성 | 建星 · 두수 | xi2_Sgr-omi_Sgr omi_Sgr-pi_Sgr d_Sgr-rho1_Sgr rho1_Sgr-ups_Sgr
+Cheonbyeon | 천변 | 天弁 · 두수 | alf_Sct-del_Sct del_Sct-eps_Sct eps_Sct-R_Sct R_Sct-bet_Sct bet_Sct-eta_Sct eta_Sct-i_Aql i_Aql-lam_Aql lam_Aql-g_Aql
+Byeol | 별 | 鱉 · 두수 | HIP92989-eps_CrA eps_CrA-gam_CrA gam_CrA-alf_CrA alf_CrA-bet_CrA bet_CrA-del_CrA del_CrA-zet_CrA zet_CrA-HIP92953 HIP92953-HIP92608 HIP92608-mu_CrA mu_CrA-HIP91989 HIP91989-lam_CrA lam_CrA-HIP91901 HIP91901-HIP91918 HIP91918-HIP92989
+Cheongye | 천계 | 天雞 · 두수 | e2_Sgr-g_Sgr
+Cheonyak | 천약 | 天鑰 · 두수 | 4_Sgr-63_Oph 63_Oph-HIP87836 HIP87836-HIP88012 HIP88012-HIP88839 HIP88839-HIP89678 HIP89678-HIP89980 HIP89980-11_Sgr 11_Sgr-4_Sgr
+Guguk | 구국 | 狗國 · 두수 | HIP95077-chi1_Sgr chi1_Sgr-h2_Sgr h2_Sgr-f_Sgr
+Cheonyeon | 천연 | 天淵 · 두수 | alf_Sgr-bet1_Sgr bet1_Sgr-HIP96178 HIP96178-HIP96721 HIP96721-HIP97131 HIP97131-HIP96234 HIP96234-alf_Sgr HIP94986-alf_Sgr HIP94712-bet1_Sgr HIP97598-HIP96721 HIP97131-HIP98461
+Gu | 구 | 狗 · 두수 | HIP93134-HIP93667
+
+# 우수 영역
+Cheonjeon_09B | 천전 | 天田 · 우수 | b1_Sgr-ome_Sgr ome_Sgr-HIP98575 HIP98575-4_Cap 4_Cap-HIP101090 HIP101090-HIP101384 HIP101384-HIP100738 HIP100738-c_Sgr c_Sgr-b1_Sgr ome_Sgr-A_Sgr A_Sgr-HIP101384 c_Sgr-A_Sgr A_Sgr-4_Cap
+Gugam | 구감 | 九坎 · 우수 | iot_Sgr-HIP98761 HIP98761-the1_Sgr HIP99461-HIP100852 HIP100852-kap1_Sgr HIP102014-HIP102916 HIP102916-iot_Mic HIP98761-HIP100852 HIP100852-HIP102916
+Hago | 하고 | 河鼓 · 우수 | gam_Aql-alf_Aql alf_Aql-bet_Aql
+Jiknyeo | 직녀 | 織女 · 우수 | eps_Lyr-alf_Lyr alf_Lyr-zet_Lyr
+Jwagi | 좌기 | 左旗 · 우수 | alf_Sge-del_Sge bet_Sge-del_Sge del_Sge-gam_Sge gam_Sge-HIP98738 HIP98738-13_Sge 13_Sge-15_Sge 15_Sge-14_Sge 14_Sge-rho_Aql
+Ugi | 우기 | 右旗 · 우수 | mu_Aql-del_Aql sig_Aql-del_Aql del_Aql-nu_Aql nu_Aql-iot_Aql iot_Aql-eta_Aql eta_Aql-the_Aql the_Aql-69_Aql 69_Aql-HIP101345
+Cheonbu | 천부 | 天桴 · 우수 | HIP100541-tau_Aql tau_Aql-HIP98526 HIP98526-phi_Aql
+Naeon | 나언 | 羅堰 · 우수 | ups_Cap-HIP102026 HIP102026-tau_Cap
+Jeomdae | 점대 | 漸臺 · 우수 | bet_Lyr-gam_Lyr gam_Lyr-iot_Lyr iot_Lyr-del_Lyr
+Yeondo | 연도 | 輦道 · 우수 | R_Lyr-eta_Lyr eta_Lyr-the_Lyr the_Lyr-4_Cyg 4_Cyg-8_Cyg 8_Cyg-17_Cyg
+
+# 여수 영역
+Ju_10D | 주 | 周 · 여수 | eta_Cap-the_Cap
+Jin_10E | 진 | 秦 · 여수 | phi_Cap-iot_Cap
+Dae | 대 | 代 · 여수 | eps_Mic-2_PsA
+Jo | 조 | 趙 · 여수 | psi_Cap-ome_Cap
+Iju | 이주 | 離珠 · 여수 | HIP102561-70_Aql 70_Aql-l_Aql l_Aql-1_Aqr 1_Aqr-HIP102770
+Paego | 패고 | 敗苽 · 여수 | eta_Del-iot_Del iot_Del-kap_Del kap_Del-eps_Del eps_Del-eta_Del eta_Del-17_Del
+Go | 고 | 苽 · 여수 | zet_Del-bet_Del bet_Del-del_Del del_Del-gam_Del gam_Del-alf_Del alf_Del-bet_Del
+Cheonjin | 천진 | 天津 · 여수 | del_Cyg-omi1_Cyg omi1_Cyg-alf_Cyg alf_Cyg-nu_Cyg nu_Cyg-tau_Cyg tau_Cyg-ups_Cyg ups_Cyg-zet_Cyg zet_Cyg-eps_Cyg eps_Cyg-gam_Cyg gam_Cyg-del_Cyg
+Haejung | 해중 | 奚仲 · 여수 | kap_Cyg-iot_Cyg iot_Cyg-the_Cyg the_Cyg-HIP96014
+Bugwang | 부광 | 扶筐 · 여수 | 36_Dra-HIP91315 HIP91315-omi_Dra omi_Dra-d_Dra 42_Dra-HIP91315 b_Dra-omi_Dra omi_Dra-HIP91784
+
+# 허수 영역
+Samyeong | 사명 | 司命 · 허수 | gam_Equ-del_Equ
+Sarok | 사록 | 司祿 · 허수 | 1_Peg-HIP105860
+Sawi | 사위 | 司危 · 허수 | HIP105652-2_Peg
+Sabi | 사비 | 司非 · 허수 | HIP106003-HIP106661
+Gok_11F | 곡 | 哭 · 허수 | nu_Aqr-xi_Aqr
+Eup | 읍 | 泣 · 허수 | c_Cap-HIP108102
+Cheolluseong | 천루성 | 天壘城 · 허수 | zet_Cap-b_Cap b_Cap-eps_Cap eps_Cap-gam_Cap gam_Cap-del_Cap del_Cap-HIP108784 HIP108784-35_Aqr 35_Aqr-41_Aqr 41_Aqr-HIP110018 HIP110018-HIP109737 HIP109737-HIP109667 HIP109667-eta_PsA eta_PsA-8_PsA 8_PsA-zet_Cap
+Paegu | 패구 | 敗臼 · 허수 | the_PsA-iot_PsA iot_PsA-ups_PsA ups_PsA-mu_PsA
+Iyu | 이유 | 離瑜 · 허수 | 6_PsA-HIP105228 HIP105228-33_Cap
+
+# 위수 영역
+Inseong | 인성 | 人星 · 위수 | 15_Peg-14_Peg 14_Peg-mu1_Cyg 16_Peg-14_Peg 14_Peg-kap_Peg
+Naejeo | 내저 | 內杵 · 위수 | pi_Peg-HIP109654 HIP109654-1_Lac
+Gu_12D | 구 | 臼 · 위수 | 23_Peg-iot_Peg iot_Peg-HIP109602 HIP109602-32_Peg
+Chabu | 차부 | 車府 · 위수 | 72_Cyg-79_Cyg 79_Cyg-V460_Cyg V460_Cyg-70_Cyg 70_Cyg-72_Cyg 72_Cyg-HIP109102 HIP109102-2_Lac 2_Lac-5_Lac
+Gu_12F | 구 | 鈎 · 위수 | 55_Cyg-57_Cyg 57_Cyg-xi_Cyg xi_Cyg-A_Cyg A_Cyg-rho_Cyg rho_Cyg-pi2_Cyg pi2_Cyg-pi1_Cyg pi1_Cyg-mu_Cep mu_Cep-nu_Cep
+Jobu | 조부 | 造父 · 위수 | eps_Cep-del_Cep del_Cep-HIP109592 zet_Cep-del_Cep del_Cep-lam_Cep
+Bunmyo | 분묘 | 墳墓 · 위수 | gam_Aqr-zet1_Aqr pi_Aqr-zet1_Aqr zet1_Aqr-eta_Aqr
+Heoryang | 허량 | 虛梁 · 위수 | e_Aqr-the_Aqr the_Aqr-51_Aqr 51_Aqr-kap_Aqr
+Cheonjeon_12J | 천전 | 天錢 · 위수 | bet_PsA-HIP111600 HIP111600-HIP111934 HIP111934-19_PsA 19_PsA-eps_PsA eps_PsA-HIP111515 HIP111515-HIP110746 HIP110746-49_Aqr 49_Aqr-HIP109990 HIP109990-lam_PsA lam_PsA-bet_PsA
+Gaeok | 개옥 | 蓋屋 · 위수 | 30_Aqr-omi_Aqr
+
+# 실수 영역
+Igung | 이궁 | 離宮 · 실수 | lam_Peg-mu_Peg mu_Peg-bet_Peg omi_Peg-eta_Peg eta_Peg-bet_Peg bet_Peg-tau_Peg tau_Peg-ups_Peg
+Noejeon | 뇌전 | 雷電 · 실수 | sig_Peg-HIP113445 HIP113445-rho_Peg 58_Peg-55_Peg 55_Peg-59_Peg HIP113445-55_Peg
+Nubyeokjin | 누벽진 | 壘壁陣 · 실수 | sig_Aqr-50_Aqr 50_Aqr-39_Aqr 39_Aqr-42_Aqr 42_Aqr-sig_Aqr sig_Aqr-lam_Aqr lam_Aqr-HIP113686 HIP113686-HIP115953 HIP115953-20_Psc 20_Psc-HIP417 HIP417-44_Psc 44_Psc-14_Cet 14_Cet-HIP1939 HIP1939-HIP417
+Urimgun | 우림군 | 羽林軍 · 실수 | c1_Aqr-c3_Aqr c3_Aqr-c2_Aqr c2_Aqr-del_Aqr del_Aqr-tau2_Aqr tau2_Aqr-74_Aqr 74_Aqr-94_Aqr b3_Aqr-b2_Aqr b2_Aqr-b1_Aqr b1_Aqr-97_Aqr 97_Aqr-94_Aqr 94_Aqr-psi3_Aqr psi3_Aqr-psi2_Aqr psi2_Aqr-psi1_Aqr psi1_Aqr-chi_Aqr chi_Aqr-phi_Aqr phi_Aqr-h_Aqr phi_Aqr-HIP116060 psi3_Aqr-HIP116591 HIP116591-HIP116853 HIP116853-HIP117314 HIP117314-h_Aqr_2 HIP116591-ome1_Aqr ome1_Aqr-ome2_Aqr ome2_Aqr-HIP116957 HIP116957-A2_Aqr A2_Aqr-i2_Aqr i2_Aqr-i3_Aqr ome2_Aqr-HIP117567 HIP117567-3_Cet 3_Cet-HIP873 HIP873-6_Cet 6_Cet-2_Cet 2_Cet-HIP983 HIP983-7_Cet HIP1191-3_Cet 3_Cet-HIP671 HIP671-HIP1158 HIP1158-iot_Cet 27_Psc-29_Psc 29_Psc-5_Cet 30_Psc-33_Psc 33_Psc-HIP840 29_Psc-33_Psc 33_Psc-HIP671
+Buwol | 부월 | 鈇鉞 · 실수 | HIP113562-HIP113673 HIP113673-HIP113204
+Palgwae | 팔괴 | 八魁 · 실수 | phi_Gru-the_Gru the_Gru-iot_Gru the_Gru-iot_Phe iot_Phe-HIP116602 HIP116602-eps_Phe HIP116602-alf_Phe alf_Phe-kap_Phe kap_Phe-mu_Phe
+Togongni | 토공리 | 土公吏 · 실수 | zet_Peg-xi_Peg
+Deungsa | 등사 | 騰蛇 · 실수 | HIP113288-3_And 3_And-7_And 7_And-8_And 8_And-lam_And lam_And-kap_And kap_And-iot_And iot_And-10_And 10_And-omi_And omi_And-15_Lac EW_Lac-3_And 3_And-HIP114162 HIP114162-HIP112641 HIP113501-HIP114162 HIP114162-HIP114924 HIP114924-sig_Cas sig_Cas-rho_Cas rho_Cas-tau_Cas tau_Cas-AR_Cas AR_Cas-1_Cas 1_Cas-HIP113561 HIP113561-HIP114622 HIP114622-AR_Cas
+
+# 벽수 영역
+Byeongnyeok | 벽력 | 霹靂 · 벽수 | bet_Psc-b_Psc b_Psc-the_Psc the_Psc-iot_Psc iot_Psc-ome_Psc
+Unu | 운우 | 雲雨 · 벽수 | gam_Psc-kap_Psc kap_Psc-lam_Psc lam_Psc-TX_Psc
+Cheongu | 천구 | 天厩 · 벽수 | 22_And-26_And 26_And-HIP2225 HIP2225-HIP2900 HIP2900-pi_Cas pi_Cas-68_Cas 68_Cas-omi_Cas omi_Cas-HIP3083 HIP3083-HIP1639 HIP1639-HIP1372 HIP1372-22_And
+Bujil | 부질 | 鈇鑕 · 벽수 | HIP2381-HIP2661 HIP2661-iot_Scl iot_Scl-HIP1288 HIP1288-eta_Scl
+Togong | 토공 | 土公 · 벽수 | TV_Psc-53_Psc
+
+# 규수 영역
+Oebyeong | 외병 | 外屏 · 규수 | 51_Psc-del_Psc del_Psc-eps_Psc eps_Psc-zet_Psc zet_Psc-mu_Psc mu_Psc-nu_Psc nu_Psc-xi_Psc
+Cheonhon | 천혼 | 天溷 · 규수 | 20_Cet-13_Cet 13_Cet-HIP3193 HIP3193-25_Cet 25_Cet-39_Cet 39_Cet-42_Cet 42_Cet-f_Psc f_Psc-20_Cet
+Gakdo | 각도 | 閣道 · 규수 | xi_Cas-nu_Cas nu_Cas-the_Cas the_Cas-phi_Cas phi_Cas-del_Cas del_Cas-eps_Cas
+Wangnyang | 왕량 | 王良 · 규수 | zet_Cas-bet_Cas bet_Cas-gam_Cas alf_Cas-bet_Cas bet_Cas-eta_Cas
+
+# 루수 영역
+Jwagyeong | 좌경 | 左更 · 루수 | nu_Ari-eta_Ari eta_Ari-15_Ari 15_Ari-19_Ari 19_Ari-the_Ari the_Ari-eta_Ari
+Ugyeong | 우경 | 右更 · 루수 | iot_Ari-HIP7447 HIP7447-eta_Psc eta_Psc-pi_Psc pi_Psc-105_Psc 105_Psc-HIP7447
+Cheonchang_16D | 천창 | 天倉 · 루수 | phi1_Cet-eta_Cet eta_Cet-the_Cet the_Cet-zet_Cet zet_Cet-tau_Cet tau_Cet-ups_Cet
+Cheonyu | 천유 | 天庾 · 루수 | 48_Cet-HIP7679 HIP7679-eps_Scl eps_Scl-48_Cet
+Cheonganggun | 천장군 | 天將軍 · 루수 | gam_And-55_And 55_And-ups_And ups_And-ome_And ome_And-51_And 51_And-phi_Per 55_And-56_And 56_And-bet_Tri bet_Tri-del_Tri del_Tri-gam_Tri gam_Tri-14_Tri
+
+# 위수 영역
+Cheolleum | 천름 | 天廩 · 위수 | omi_Tau-xi_Tau xi_Tau-s_Tau s_Tau-f_Tau
+Cheongyun | 천균 | 天囷 · 위수 | lam_Cet-mu_Cet mu_Cet-xi2_Cet xi2_Cet-xi1_Cet xi1_Cet-alf_Psc alf_Psc-60_Cet 60_Cet-66_Cet 66_Cet-omi_Cet omi_Cet-del_Cet del_Cet-gam_Cet gam_Cet-alf_Cet alf_Cet-kap_Cet kap_Cet-10_Tau
+Daereung | 대릉 | 大陵 · 위수 | eta_Per-tau_Per tau_Per-iot_Per iot_Per-kap_Per kap_Per-bet_Per bet_Per-rho_Per rho_Per-16_Per 16_Per-12_Per
+Cheonseon | 천선 | 天船 · 위수 | gam_Per-alf_Per alf_Per-psi_Per psi_Per-del_Per del_Per-c_Per c_Per-mu_Per mu_Per-b_Per b_Per-HIP19949 HIP19949-HIP19018
+
+# 묘수 영역
+Cheoneum | 천음 | 天陰 · 묘수 | e_Tau-nu_Tau nu_Tau-w_Eri u_Tau-nu_Tau nu_Tau-12_Tau
+Chugo | 추고 | 芻藁 · 묘수 | HIP11029-HIP12444 HIP12444-rho_Cet rho_Cet-eps_Cet eps_Cet-sig_Cet sig_Cet-HIP12562
+Cheonwon | 천원 | 天苑 · 묘수 | HIP19398-gam_Eri gam_Eri-pi_Eri pi_Eri-del_Eri del_Eri-eps_Eri eps_Eri-zet_Eri zet_Eri-rho3_Eri rho3_Eri-eta_Eri eta_Eri-pi_Cet pi_Cet-tau1_Eri tau1_Eri-tau2_Eri tau2_Eri-tau3_Eri tau3_Eri-tau4_Eri tau4_Eri-tau5_Eri tau5_Eri-tau6_Eri tau6_Eri-tau9_Eri
+Gwonseol | 권설 | 卷舌 · 묘수 | 36_Per-nu_Per nu_Per-eps_Per eps_Per-xi_Per xi_Per-zet_Per zet_Per-omi_Per
+Ryeoseok | 려석 | 礪石 · 묘수 | 2_Aur-1_Aur 1_Aur-e_Per e_Per-d_Per
+
+# 필수 영역
+Cheonga | 천가 | 天街 · 필수 | kap_Tau-ups_Tau
+Cheonjeol | 천절 | 天節 · 필수 | c1_Tau-rho_Tau rho_Tau-pi_Tau rho_Tau-83_Tau 83_Tau-b_Tau b_Tau-HIP20804 HIP20804-r_Tau r_Tau-HIP20715
+Jewang | 제왕 | 諸王 · 필수 | 36_Tau-p_Tau p_Tau-phi_Tau phi_Tau-HIP21689 HIP21689-k_Tau k_Tau-103_Tau
+Cheongo | 천고 | 天高 · 필수 | i_Tau-iot_Tau iot_Tau-n_Tau n_Tau-m_Tau m_Tau-i_Tau
+Gujusugu | 구주수구 | 九州殊口 · 필수 | omi1_Eri-omi2_Eri omi2_Eri-xi_Eri xi_Eri-nu_Eri nu_Eri-56_Eri 56_Eri-HIP21644 HIP21644-HIP20922 HIP20922-A_Eri A_Eri-HIP19511 HIP19511-omi1_Eri
+Ogeo | 오거 | 五車 · 필수 | iot_Aur-alf_Aur alf_Aur-bet_Aur bet_Aur-the_Aur the_Aur-bet_Tau bet_Tau-iot_Aur
+Ju_19I | 주 | 柱 · 필수 | zet_Aur-eps_Aur eps_Aur-eta_Aur tau_Aur-ups_Aur ups_Aur-nu_Aur chi_Aur-26_Aur 26_Aur-HIP25291
+Cheonhwang | 천황 | 天潢 · 필수 | 14_Aur-AE_Aur AE_Aur-sig_Aur 16_Aur-AE_Aur AE_Aur-19_Aur
+Hamji | 함지 | 咸池 · 필수 | mu_Aur-lam_Aur lam_Aur-rho_Aur
+Samgi | 삼기 | 參旗 · 필수 | pi6_Ori-pi5_Ori pi5_Ori-pi4_Ori pi4_Ori-pi3_Ori pi3_Ori-pi2_Ori pi2_Ori-pi1_Ori pi1_Ori-g_Ori g_Ori-omi2_Ori omi2_Ori-11_Ori
+Guyu | 구유 | 九斿 · 필수 | HIP21743-HIP22086 HIP22086-54_Eri 54_Eri-60_Eri 60_Eri-S_Eri S_Eri-63_Eri 63_Eri-psi_Eri psi_Eri-ome_Eri ome_Eri-mu_Eri
+Cheonwon_19Q | 천원 | 天園 · 필수 | ups1_Eri-ups2_Eri ups2_Eri-d_Eri d_Eri-ups4_Eri ups4_Eri-g_Eri g_Eri-f_Eri f_Eri-h_Eri h_Eri-y_Eri y_Eri-HIP16285 HIP16285-e_Eri e_Eri-the1_Eri the1_Eri-iot_Eri iot_Eri-s_Eri s_Eri-kap_Eri
+
+# 자수 영역
+Jwagi_20B | 좌기 | 坐旗 · 자수 | o_Tau-132_Tau 132_Tau-136_Tau 136_Tau-kap_Aur kap_Aur-UU_Aur UU_Aur-psi7_Aur psi7_Aur-psi4_Aur psi4_Aur-16_Lyn 16_Lyn-HIP34912
+Sagwae | 사괴 | 司恠 · 자수 | HIP27747-chi1_Ori chi1_Ori-chi2_Ori chi2_Ori-71_Ori
+
+# 삼수 영역
+Beol_21B | 벌 | 伐 · 삼수 | c_Ori-the1_Ori the1_Ori-iot_Ori
+Okjeong | 옥정 | 玉井 · 삼수 | lam_Eri-psi_Eri psi_Eri-bet_Eri bet_Eri-tau_Ori
+Byeong | 병 | 屏 · 삼수 | eps_Lep-mu_Lep
+Gunjeong | 군정 | 軍井 · 삼수 | iot_Lep-kap_Lep kap_Lep-lam_Lep lam_Lep-nu_Lep
+Cheuk | 측 | 廁 · 삼수 | alf_Lep-bet_Lep bet_Lep-gam_Lep gam_Lep-del_Lep
+
+# 정수 영역
+Namha | 남하 | 南河 · 정수 | alf_CMi-bet_CMi bet_CMi-gam_CMi
+Bukha | 북하 | 北河 · 정수 | bet_Gem-alf_Gem alf_Gem-rho_Gem
+Cheonjun | 천준 | 天樽 · 정수 | del_Gem-56_Gem 56_Gem-63_Gem 63_Gem-del_Gem
+Ojehu_22F | 오제후 | 五諸侯 · 정수 | the_Gem-tau_Gem tau_Gem-iot_Gem iot_Gem-ups_Gem ups_Gem-kap_Gem
+Subu | 수부 | 水府 · 정수 | nu_Ori-xi_Ori xi_Ori-f2_Ori f2_Ori-f1_Ori f1_Ori-nu_Ori
+Suwi | 수위 | 水位 · 정수 | 6_CMi-68_Gem 68_Gem-f_Gem f_Gem-g_Gem
+Sadok | 사독 | 四瀆 · 정수 | eps_Mon-13_Mon 13_Mon-S_Mon S_Mon-e_Gem
+Gunsi | 군시 | 軍市 · 정수 | 17_Lep-the_Lep the_Lep-HIP29735 HIP29735-HIP30214 HIP30214-HIP30457 HIP30457-HIP31084 HIP31084-HIP31827 HIP31827-nu3_CMa nu3_CMa-nu2_CMa nu2_CMa-xi2_CMa xi2_CMa-xi1_CMa xi1_CMa-HIP29150 HIP29150-19_Lep 19_Lep-17_Lep
+Son | 손 | 孫 · 정수 | kap_Col-del_Col
+Ja_22O | 자 | 子 · 정수 | bet_Col-gam_Col
+Jangin | 장인 | 丈人 · 정수 | eps_Col-alf_Col
+Gwolgu | 궐구 | 闕丘 · 정수 | del_Mon-G_CMi
+Ho | 호 | 弧 · 정수 | eps_CMa-eta_CMa eta_CMa-kap1_Pup kap1_Pup-xi_Pup xi_Pup-HIP39095 HIP39095-n_Pup n_Pup-tau_CMa tau_CMa-del_CMa del_CMa-eps_CMa eta_CMa-omi2_CMa omi2_CMa-kap1_Pup
+
+# 귀수 영역
+Gwan | 관 | 爟 · 귀수 | iot_Cnc-rho2_Cnc rho2_Cnc-tau_Cnc tau_Cnc-sig3_Cnc sig3_Cnc-iot_Cnc
+Cheongu_23D | 천구 | 天狗 · 귀수 | HIP28413-gam_Mon gam_Mon-bet_Mon bet_Mon-HIP31121 HIP31121-HIP32064 HIP32064-HIP32558 HIP30093-gam_Mon
+Oeju | 외주 | 外厨 · 귀수 | HIP43142-HIP42028 HIP42028-C_Hya C_Hya-HIP40107 HIP40107-19_Pup 19_Pup-20_Pup
+Cheonsa | 천사 | 天社 · 귀수 | tau_Pup-L2_Pup L2_Pup-nu_Pup L2_Pup-sig_Pup zet_Pup-sig_Pup sig_Pup-gam2_Vel
+
+# 유수 영역
+Jugi | 주기 | 酒旗 · 유수 | xi_Leo-h_Leo h_Leo-ome_Leo ome_Leo-xi_Leo
+
+# 성수 영역
+Heonwon | 헌원 | 軒轅 · 성수 | 31_Lyn-35_Lyn 35_Lyn-10_UMa 10_UMa-HIP44700 HIP44700-38_Lyn 38_Lyn-alf_Lyn alf_Lyn-kap_Leo kap_Leo-lam_Leo lam_Leo-eps_Leo eps_Leo-mu_Leo mu_Leo-zet_Leo zet_Leo-gam_Leo gam_Leo-eta_Leo eta_Leo-alf_Leo alf_Leo-omi_Leo alf_Leo-rho_Leo alf_Leo-A_Leo
+Naepyeong | 내평 | 內平 · 성수 | 10_LMi-HIP47029 HIP47029-19_LMi HIP47029-21_LMi
+Cheonsang_25D | 천상 | 天相 · 성수 | A_Hya-HIP46893 HIP46893-HIP46869
+Jik | 직 | 稷 · 성수 | omi_Vel-del_Vel del_Vel-kap_Vel kap_Vel-iot_Car iot_Car-eps_Car eps_Car-del_Vel
+
+# 장수 영역
+Cheonmyo | 천묘 | 天廟 · 장수 | alf_Pyx-h_Vel h_Vel-eps_Ant eps_Ant-zet1_Ant zet1_Ant-lam_Pyx lam_Pyx-HIP46810 HIP46810-HIP47199 HIP47199-HIP47224 HIP47224-HIP49769 HIP49769-HIP50456 HIP50456-the_Ant the_Ant-I_Hya I_Hya-kap_Pyx kap_Pyx-eps_Pyx eps_Pyx-alf_Pyx
+
+# 익수 영역
+Donggu | 동구 | 東甌 · 익수 | q_Vel-s_Vel s_Vel-t_Vel t_Vel-p_Vel p_Vel-mu_Vel
+
+# 진수 영역
+Gunmun | 군문 | 軍門 · 진수 | HIP61621-HIP60603
+Tosagong | 토사공 | 土司空 · 진수 | HIP60735-x1_Cen x1_Cen-u_Cen u_Cen-l_Cen
+Cheonggu | 청구 | 青丘 · 진수 | r_Cen-HIP63530 HIP63530-p_Cen p_Cen-HIP61720 HIP61720-HIP62131 HIP62131-HIP62500 HIP62500-HIP64375 HIP64375-r_Cen
+Gibu | 기부 | 器府 · 진수 | i_Vel-HIP54360 HIP54360-HIP55667 HIP55667-HIP56000 HIP56000-HIP57013 HIP57013-HIP58803 HIP53762-HIP54811 HIP54811-HIP55528 HIP55528-HIP57371 HIP57371-B_Cen B_Cen-HIP59229 HIP54137-HIP54718 HIP54718-C2_Cen C2_Cen-C3_Cen C3_Cen-HIP58242 HIP58242-E_Cen HIP54185-HIP54746 HIP54746-HIP56497 HIP56497-HIP57322 HIP57322-HIP58453 HIP58453-del_Cen HIP54840-pi_Cen pi_Cen-A_Cen A_Cen-HIP56970 HIP56970-rho_Cen i_Vel-HIP53762 HIP53762-HIP54137 HIP54137-HIP54185 HIP54185-HIP54840 HIP54840-HIP54746 HIP54746-HIP54718 HIP54718-HIP54811 HIP54811-HIP54360 HIP55667-HIP55528 HIP55528-C2_Cen C2_Cen-HIP56497 HIP56497-A_Cen A_Cen-HIP57322 HIP57322-C3_Cen C3_Cen-HIP57371 HIP57371-HIP56000 HIP57013-B_Cen B_Cen-HIP58242 HIP58242-HIP58453 HIP58453-rho_Cen rho_Cen-del_Cen del_Cen-E_Cen E_Cen-HIP59229 HIP59229-HIP58803 HIP54746-pi_Cen pi_Cen-HIP56497 HIP57322-HIP56970 HIP56970-HIP58453
