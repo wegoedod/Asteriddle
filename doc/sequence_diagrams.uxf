@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>1970</w>
+<h>750</h>
+</coordinates>
+<panel_attributes>title=sd UC-01 Basic Course - 기본 문제 모드로 새 게임 시작
+desc=사용자가 체계, 기본 문제 모드, 난이도를 골라 새 게임을 시작한다. 밤하늘 모드를 고르면 7단계에서 UC-03 (SD-04)으로 진행한다.\nAlternate: 5a 밤하늘은 난이도 생략 / 6a 누락 항목 안내 / 6b 취소 시 시작 화면 / 7a 문제 데이터 없음 (SD-02)
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:StartPanel_~sp
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\nBasicGame~bg
+obj=&lt;&lt;entity&gt;&gt;\nGameSession~gs
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+u-&gt;&gt;&gt;sp : 1: 새 게임 클릭
+sp-&gt;&gt;&gt;mf : 2: showSetup()
+mf-&gt;&gt;&gt;st : 3: reset()
+u-&gt;&gt;&gt;st : 4: 체계, 기본 문제 모드, 난이도 선택 후 확인
+st-&gt;&gt;&gt;st + : 5: confirm()
+tick=
+st-&gt;&gt;&gt;u : 6: 선택한 설정 확인 요청
+u-&gt;&gt;&gt;st : 7: 확인
+st-&gt;&gt;&gt;mf : 8: ok = startBasic(system, difficulty)
+mf-&gt;&gt;&gt;bg : 9: game = start(catalog, system, difficulty, random)
+mf-&gt;&gt;&gt;gs : 10: session = of(game)
+mf-&gt;&gt;&gt;mf + : 11: autoSave()
+tick=
+mf-&gt;&gt;&gt;sm : 12: save(session)
+mf-&gt;&gt;&gt;gp : 13: open(session)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>830</y>
+<w>890</w>
+<h>460</h>
+</coordinates>
+<panel_attributes>title=sd UC-01 Alternate Course 7a - 선택한 난이도에 문제 없음
+desc=선택한 체계에 해당 난이도의 별자리가 없으면 시작 불가를 안내하고 설정 변경을 요청한다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;entity&gt;&gt;\nBasicGame~bg
+
+u-&gt;&gt;&gt;st : 1: 체계, 기본 문제 모드, 난이도 선택 후 확인
+st-&gt;&gt;&gt;st + : 2: confirm()
+tick=
+st-&gt;&gt;&gt;mf : 3: ok = startBasic(system, difficulty)
+mf-&gt;&gt;&gt;bg : 4: game = start(catalog, system, difficulty, random)
+st-&gt;&gt;&gt;u : 5: [ok == false] 시작 불가 안내, 다른 난이도나 체계 선택 요청</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>920</x>
+<y>922</y>
+<w>266</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>start()는 해당 난이도의 별자리가
+하나도 없으면 null을 반환하고
+startBasic()은 false를 반환한다</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>1370</y>
+<w>1430</w>
+<h>1210</h>
+</coordinates>
+<panel_attributes>title=sd UC-02 Basic Course - 별을 이어 정답 제출 후 다음 문제
+desc=사용자가 별 배치로 별자리를 유추해 선을 잇고 제출해 정답을 맞힌 뒤 다음 문제로 넘어간다.\nAlternate: 4a 같은 별, 중복 선은 추가 안 함 / 5a 취소할 편집이 없으면 유지 / 6a 힌트, 정답 보기는 UC-04 / 7a 오답이면 연결 유지 후 재시도
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\n_:BasicGame_~bg
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+u-&gt;&gt;&gt;sc : 1: 첫 번째 별 클릭
+sc-&gt;&gt;&gt;gp : 2: starClicked(starA)
+u-&gt;&gt;&gt;sc : 3: 두 번째 별 클릭
+sc-&gt;&gt;&gt;gp : 4: starClicked(starB)
+gp-&gt;&gt;&gt;eb : 5: add(new Edge(starA, starB))
+gp-&gt;&gt;&gt;mf : 6: autoSave()
+mf-&gt;&gt;&gt;sm : 7: save(session)
+gp-&gt;&gt;&gt;sc : 8: setUserEdges(edges)
+u-&gt;&gt;&gt;gp : 9: 실행 취소 클릭
+gp-&gt;&gt;&gt;eb : 10: undo()
+gp-&gt;&gt;&gt;mf : 11: autoSave()
+u-&gt;&gt;&gt;gp : 12: 제출 클릭
+gp-&gt;&gt;&gt;bg : 13: correct = submit()
+bg-&gt;&gt;&gt;aj : 14: exactMatch(edges, current())
+gp-&gt;&gt;&gt;mf : 15: autoSave()
+gp-&gt;&gt;&gt;sc : 16: setOverlays(정답 도안)
+gp-&gt;&gt;&gt;sc : 17: setStarLabels(구성 별 이름)
+gp-&gt;&gt;&gt;u : 18: 정답과 별자리 이름 표시
+u-&gt;&gt;&gt;gp : 19: 다음 문제 클릭
+gp-&gt;&gt;&gt;bg : 20: next(random)
+gp-&gt;&gt;&gt;sc : 21: setStars(다음 문제 별 배치)
+gp-&gt;&gt;&gt;mf : 22: autoSave()</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1460</x>
+<y>1612</y>
+<w>260</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>연결 순서와 무관하게
+사용자 연결선 집합이 기준 도안과
+정확히 일치해야 정답 (점수 없음)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1460</x>
+<y>2217</y>
+<w>274</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>autoSave()는 연결선이 바뀔 때마다
+호출되며 매번 save(session)으로
+로컬 파일에 저장한다 (UC-05)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>2660</y>
+<w>2210</w>
+<h>1010</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Basic Course - 밤하늘 생성 후 별자리 완성과 득점
+desc=사용자가 위치, 날짜, 시간을 입력해 밤하늘을 만들고, 별자리를 완성해 점수를 얻는다.\nAlternate: 3a 입력 오류 안내 / 3b 낮, 박명 시간 (SD-05) / 4a 관측 대상 없음 / 6a 도움은 UC-04 / 8a 새 완성 없으면 점수 유지 / 11a 조건 변경 (SD-06)
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\n_game:NightSkyGame_~ng CREATED_LATER
+obj=&lt;&lt;utility&gt;&gt;\nAstronomy~as
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+obj=&lt;&lt;utility&gt;&gt;\nScoringPolicy~scp
+
+u-&gt;&gt;&gt;st : 1: 체계, 밤하늘 모드 선택 후 확인
+st-&gt;&gt;&gt;mf : 2: showObservation(system, null, false)
+mf-&gt;&gt;&gt;op : 3: prepare(system, null, false)
+u-&gt;&gt;&gt;op : 4: 위치, 날짜, 시간 입력 후 하늘 생성
+op-&gt;&gt;&gt;op + : 5: readInput()
+tick=
+op-&gt;&gt;&gt;as : 6: night = isNight(observation)
+op-&gt;&gt;&gt;ng : 7: &lt;&lt;create&gt;&gt; (catalog, system, observation)
+ng-&gt;&gt;&gt;as : 8: jd = julianDay(observation)
+ng-&gt;&gt;&gt;as : 9: *[모든 별] toHorizontal(star, observation, jd)
+op-&gt;&gt;&gt;mf : 10: startNight(game)
+mf-&gt;&gt;&gt;mf + : 11: autoSave()
+tick=
+mf-&gt;&gt;&gt;gp : 12: open(session)
+u-&gt;&gt;&gt;gp : 13: 별을 이어 연결선 작성 후 제출
+gp-&gt;&gt;&gt;ng : 14: awards = submit()
+ng-&gt;&gt;&gt;aj : 15: *[관측 가능한 미완료 별자리] completes(edges, c)
+ng-&gt;&gt;&gt;scp : 16: *[새로 완성된 별자리] points(difficulty, hintUsed, false)
+gp-&gt;&gt;&gt;mf : 17: autoSave()
+gp-&gt;&gt;&gt;u : 18: 완성한 별자리 도안, 구성 별 이름, 점수 표시</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2240</x>
+<y>2862</y>
+<w>312</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>구성 별이 모두 지평선 위에 있는
+별자리만 출제, 득점 대상 (9번에서 계산)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2240</x>
+<y>3367</y>
+<w>418</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>점수: 쉬움 10, 보통 20, 어려움 30
+9a 힌트를 받은 별자리는 50%
+9b 이미 득점했거나 정답 공개한 별자리는 추가 점수 없음</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>3750</y>
+<w>850</w>
+<h>660</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Alternate Course 3b - 낮 또는 박명 시간 입력
+desc=입력한 시각에 하늘이 어두워지지 않으면 가장 가까운 야간 시각으로 바꾸도록 안내한다.\n변경 후에는 SD-04의 7번부터 같다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;utility&gt;&gt;\nAstronomy~as
+
+u-&gt;&gt;&gt;op : 1: 위치, 날짜, 시간 입력 후 하늘 생성
+op-&gt;&gt;&gt;op + : 2: readInput()
+tick=
+op-&gt;&gt;&gt;as : 3: night = isNight(observation)
+op-&gt;&gt;&gt;as : 4: [night == false] nightTime = nearestNight(observation)
+op-&gt;&gt;&gt;as : 5: altitude = sunAltitude(observation)
+op-&gt;&gt;&gt;u : 6: 가장 가까운 야간 시각으로 변경 확인 요청
+u-&gt;&gt;&gt;op : 7: 예 선택
+op-&gt;&gt;&gt;op + : 8: fill(nightTime)
+tick=</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>880</x>
+<y>3882</y>
+<w>254</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>야간 기준: 태양 고도 -12° 미만
+24시간 안에 야간이 없으면(백야)
+날짜나 위치를 바꾸도록 안내</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>4490</y>
+<w>1500</w>
+<h>550</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Alternate Course 11a - 관측 조건 변경
+desc=밤하늘 플레이 중 관측 조건을 바꾸면 새 플레이 전환을 안내하고 확인받는다. 체계 변경은 새 게임(UC-01)으로 시작한다.\n입력 화면 이후는 SD-04의 4번부터 같고, 기존 점수와 기록은 새 플레이로 대체된다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+
+u-&gt;&gt;&gt;gp : 1: 관측 조건 변경 클릭
+gp-&gt;&gt;&gt;ng : 2: score()
+gp-&gt;&gt;&gt;u : 3: 현재 점수를 대체하는 새 플레이 시작 확인 요청
+u-&gt;&gt;&gt;gp : 4: 확인
+gp-&gt;&gt;&gt;ng : 5: observation()
+gp-&gt;&gt;&gt;mf : 6: showObservation(system, observation, true)
+mf-&gt;&gt;&gt;op : 7: prepare(system, observation, true)
+op-&gt;&gt;&gt;op + : 8: fill(observation)
+tick=</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>5120</y>
+<w>2260</w>
+<h>640</h>
+</coordinates>
+<panel_attributes>title=sd UC-04 Basic Course - 힌트 받기
+desc=밤하늘 모드에서 사용자가 힌트를 요청해 아직 잇지 않은 선 하나를 받는다. 기본 문제 모드는 2번 대상이 현재 문제(BasicGame.hint())인 것만 다르다.\nAlternate: 도움 대상 없음 / 이미 힌트 사용 / 추가할 선 없음 - 안내만 하고 상태와 힌트 기록을 바꾸지 않는다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+
+u-&gt;&gt;&gt;gp : 1: 힌트 클릭
+gp-&gt;&gt;&gt;ng : 2: result = hint(selectedStar)
+ng-&gt;&gt;&gt;ng + : 3: helpCandidates()
+tick=
+ng-&gt;&gt;&gt;ng + : 4: *[후보 별자리] hintsUsed(c)
+tick=
+ng-&gt;&gt;&gt;aj : 5: *[후보 별자리] correctCount(edges, c)
+ng-&gt;&gt;&gt;aj : 6: edge = hintEdge(edges, target)
+ng-&gt;&gt;&gt;eb : 7: addFromHint(edge)
+gp-&gt;&gt;&gt;mf : 8: autoSave()
+gp-&gt;&gt;&gt;sc : 9: setHintEdge(edge)
+gp-&gt;&gt;&gt;u : 10: 힌트 선 표시 (이름 비공개, 점수 50% 안내)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2290</x>
+<y>5248</y>
+<w>340</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>2단계 대상: 선택한 별이 속한 미완료 별자리,
+없으면 가장 많이 맞게 이은 별자리 (5번)
+3단계 사용 기록: 별자리마다 힌트 1회 (4번)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>5840</y>
+<w>2600</w>
+<h>670</h>
+</coordinates>
+<panel_attributes>title=sd UC-04 Alternate Course - 정답 보기
+desc=밤하늘 모드에서 대상을 정해 0점 처리를 안내하고, 확인 후 도안과 구성 별 이름을 공개한다. 기본 문제 모드는 현재 문제를 BasicGame.reveal()로 공개한다.\nAlternate: 확인을 취소하면 기존 상태를 유지한다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+
+u-&gt;&gt;&gt;gp : 1: 정답 보기 클릭
+gp-&gt;&gt;&gt;ng : 2: target = revealTarget(selectedStar)
+gp-&gt;&gt;&gt;sc : 3: setHighlight(target.starIds())
+gp-&gt;&gt;&gt;u : 4: 정답 공개, 0점 처리 안내 후 확인 요청
+u-&gt;&gt;&gt;gp : 5: 확인
+gp-&gt;&gt;&gt;ng : 6: ok = reveal(target)
+ng-&gt;&gt;&gt;ng + : 7: wrongLines = wrongLinesAround(target)
+tick=
+ng-&gt;&gt;&gt;eb : 8: applyAnswer(wrongLines, target.lines())
+gp-&gt;&gt;&gt;mf : 9: autoSave()
+gp-&gt;&gt;&gt;sc : 10: setOverlays(정답 도안)
+gp-&gt;&gt;&gt;sc : 11: setStarLabels(구성 별 이름)
+gp-&gt;&gt;&gt;u : 12: 정답 공개 완료, 다른 별자리 탐색 안내</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2630</x>
+<y>5974</y>
+<w>308</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>공개한 별자리는 정답 공개 완료로 바뀌고
+0점으로 기록되어 다시 득점할 수 없다
+대상 별에 잘못 이은 선은 지워진다</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>6590</y>
+<w>1580</w>
+<h>630</h>
+</coordinates>
+<panel_attributes>title=sd UC-05 Basic Course 1~4 - 진행 상황 자동 저장
+desc=설정, 편집, 제출, 도움으로 상태가 바뀔 때마다 상태와 기록을 모아 로컬 파일에 저장한다.\nAlternate: 3a 저장 실패 시 안내하고 기존 정상 파일은 그대로 보호한다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+u-&gt;&gt;&gt;gp : 1: 선 연결, 제출, 힌트 등으로 상태 변경
+gp-&gt;&gt;&gt;eb : 2: add(edge)
+gp-&gt;&gt;&gt;mf : 3: autoSave()
+mf-&gt;&gt;&gt;sm : 4: save(session)
+sm-&gt;&gt;&gt;sm + : 5: properties = encode(session)
+tick=
+sm-&gt;&gt;&gt;sm + : 6: 임시 파일(.tmp)에 기록
+tick=
+sm-&gt;&gt;&gt;sm + : 7: 저장 파일로 교체 (move)
+tick=
+u-&gt;&gt;&gt;mf : 8: 종료</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1610</x>
+<y>6716</y>
+<w>342</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>저장 항목: 모드, 체계, 문제 순서, 연결선,
+관측 조건, 점수, 완료, 힌트, 정답 공개 기록
+임시 파일에 다 쓴 뒤 교체하므로
+쓰기 실패 시 기존 파일이 보존된다 (3a)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>7300</y>
+<w>2740</w>
+<h>760</h>
+</coordinates>
+<panel_attributes>title=sd UC-05 Basic Course 5~9 - 재실행 후 이어 하기
+desc=프로그램을 다시 실행하면 저장 파일을 확인해 복원하고, 사용자는 이어 하기로 마지막 상태부터 계속한다.\nAlternate: 5a 파일이 없으면 이어 하기 비활성화, 새 게임만 가능 / 5b 손상, 읽기 실패 (SD-11) / 7a 새 게임 선택 시 대체 안내 후 UC-01
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\nMain~m
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf CREATED_LATER
+obj=&lt;&lt;UI&gt;&gt;\n_:StartPanel_~sp
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\nGameSession~gs
+obj=&lt;&lt;persistence&gt;&gt;\nCatalogLoader~cl
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm CREATED_LATER
+
+u-&gt;&gt;&gt;m : 1: 프로그램 실행
+m-&gt;&gt;&gt;cl : 2: catalog = loadDefault()
+m-&gt;&gt;&gt;sm : 3: &lt;&lt;create&gt;&gt; (defaultPath())
+m-&gt;&gt;&gt;mf : 4: &lt;&lt;create&gt;&gt;
+m-&gt;&gt;&gt;mf : 5: boot()
+mf-&gt;&gt;&gt;sm : 6: exists()
+mf-&gt;&gt;&gt;sm : 7: session = load(catalog)
+sm-&gt;&gt;&gt;sm + : 8: decode(properties, catalog)
+tick=
+sm-&gt;&gt;&gt;gs : 9: of(restoredGame)
+mf-&gt;&gt;&gt;sp : 10: refresh(session)
+u-&gt;&gt;&gt;sp : 11: 이어 하기 클릭
+sp-&gt;&gt;&gt;mf : 12: resumeGame()
+mf-&gt;&gt;&gt;gp : 13: open(session)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2770</x>
+<y>7452</y>
+<w>306</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>8번에서 저장된 모드에 따라
+BasicGame.restore() 또는
+NightSkyGame.restore()로 게임을 복원</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>8140</y>
+<w>1340</w>
+<h>520</h>
+</coordinates>
+<panel_attributes>title=sd UC-05 Alternate Course 5b - 저장 파일 손상 또는 읽기 실패
+desc=저장 파일을 읽지 못하면 사유를 안내하고 새 게임 여부를 확인한다. 새 게임을 고르면 파일을 따로 보관하고 UC-01로 이동한다.\n프로그램 실행 과정은 SD-10의 1~5번과 같다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\nMain~m
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+m-&gt;&gt;&gt;mf : 1: boot()
+mf-&gt;&gt;&gt;sm : 2: exists()
+mf-&gt;&gt;&gt;sm : 3: session = load(catalog)
+mf-&gt;&gt;&gt;u : 4: 불러오기 실패 사유 표시, 새 게임 시작 여부 확인
+u-&gt;&gt;&gt;mf : 5: 예 선택
+mf-&gt;&gt;&gt;sm : 6: quarantine()
+mf-&gt;&gt;&gt;mf + : 7: showSetup()
+tick=
+mf-&gt;&gt;&gt;st : 8: reset()</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1370</x>
+<y>8244</y>
+<w>244</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>3번에서 SaveException 발생
+읽지 못한 파일은 .broken 으로
+이름을 바꿔 보관한다 (6번)</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>
