@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>2210</w>
+<h>1010</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Basic Course - 밤하늘 생성 후 별자리 완성과 득점
+desc=사용자가 위치, 날짜, 시간을 입력해 밤하늘을 만들고, 별자리를 완성해 점수를 얻는다.\nAlternate: 3a 입력 오류 안내 / 3b 낮, 박명 시간 (SD-05) / 4a 관측 대상 없음 / 6a 도움은 UC-04 / 8a 새 완성 없으면 점수 유지 / 11a 조건 변경 (SD-06)
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\n_game:NightSkyGame_~ng CREATED_LATER
+obj=&lt;&lt;utility&gt;&gt;\nAstronomy~as
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+obj=&lt;&lt;utility&gt;&gt;\nScoringPolicy~scp
+
+u-&gt;&gt;&gt;st : 1: 체계, 밤하늘 모드 선택 후 확인
+st-&gt;&gt;&gt;mf : 2: showObservation(system, null, false)
+mf-&gt;&gt;&gt;op : 3: prepare(system, null, false)
+u-&gt;&gt;&gt;op : 4: 위치, 날짜, 시간 입력 후 하늘 생성
+op-&gt;&gt;&gt;op + : 5: readInput()
+tick=
+op-&gt;&gt;&gt;as : 6: night = isNight(observation)
+op-&gt;&gt;&gt;ng : 7: &lt;&lt;create&gt;&gt; (catalog, system, observation)
+ng-&gt;&gt;&gt;as : 8: jd = julianDay(observation)
+ng-&gt;&gt;&gt;as : 9: *[모든 별] toHorizontal(star, observation, jd)
+op-&gt;&gt;&gt;mf : 10: startNight(game)
+mf-&gt;&gt;&gt;mf + : 11: autoSave()
+tick=
+mf-&gt;&gt;&gt;gp : 12: open(session)
+u-&gt;&gt;&gt;gp : 13: 별을 이어 연결선 작성 후 제출
+gp-&gt;&gt;&gt;ng : 14: awards = submit()
+ng-&gt;&gt;&gt;aj : 15: *[관측 가능한 미완료 별자리] completes(edges, c)
+ng-&gt;&gt;&gt;scp : 16: *[새로 완성된 별자리] points(difficulty, hintUsed, false)
+gp-&gt;&gt;&gt;mf : 17: autoSave()
+gp-&gt;&gt;&gt;u : 18: 완성한 별자리 도안, 구성 별 이름, 점수 표시</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2240</x>
+<y>202</y>
+<w>312</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>구성 별이 모두 지평선 위에 있는
+별자리만 출제, 득점 대상 (9번에서 계산)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2240</x>
+<y>707</y>
+<w>418</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>점수: 쉬움 10, 보통 20, 어려움 30
+9a 힌트를 받은 별자리는 50%
+9b 이미 득점했거나 정답 공개한 별자리는 추가 점수 없음</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

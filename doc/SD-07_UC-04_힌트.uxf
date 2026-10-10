@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>2260</w>
+<h>640</h>
+</coordinates>
+<panel_attributes>title=sd UC-04 Basic Course - 힌트 받기
+desc=밤하늘 모드에서 사용자가 힌트를 요청해 아직 잇지 않은 선 하나를 받는다. 기본 문제 모드는 2번 대상이 현재 문제(BasicGame.hint())인 것만 다르다.\nAlternate: 도움 대상 없음 / 이미 힌트 사용 / 추가할 선 없음 - 안내만 하고 상태와 힌트 기록을 바꾸지 않는다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+
+u-&gt;&gt;&gt;gp : 1: 힌트 클릭
+gp-&gt;&gt;&gt;ng : 2: result = hint(selectedStar)
+ng-&gt;&gt;&gt;ng + : 3: helpCandidates()
+tick=
+ng-&gt;&gt;&gt;ng + : 4: *[후보 별자리] hintsUsed(c)
+tick=
+ng-&gt;&gt;&gt;aj : 5: *[후보 별자리] correctCount(edges, c)
+ng-&gt;&gt;&gt;aj : 6: edge = hintEdge(edges, target)
+ng-&gt;&gt;&gt;eb : 7: addFromHint(edge)
+gp-&gt;&gt;&gt;mf : 8: autoSave()
+gp-&gt;&gt;&gt;sc : 9: setHintEdge(edge)
+gp-&gt;&gt;&gt;u : 10: 힌트 선 표시 (이름 비공개, 점수 50% 안내)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2290</x>
+<y>128</y>
+<w>340</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>2단계 대상: 선택한 별이 속한 미완료 별자리,
+없으면 가장 많이 맞게 이은 별자리 (5번)
+3단계 사용 기록: 별자리마다 힌트 1회 (4번)</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

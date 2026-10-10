@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>2600</w>
+<h>670</h>
+</coordinates>
+<panel_attributes>title=sd UC-04 Alternate Course - 정답 보기
+desc=밤하늘 모드에서 대상을 정해 0점 처리를 안내하고, 확인 후 도안과 구성 별 이름을 공개한다. 기본 문제 모드는 현재 문제를 BasicGame.reveal()로 공개한다.\nAlternate: 확인을 취소하면 기존 상태를 유지한다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+
+u-&gt;&gt;&gt;gp : 1: 정답 보기 클릭
+gp-&gt;&gt;&gt;ng : 2: target = revealTarget(selectedStar)
+gp-&gt;&gt;&gt;sc : 3: setHighlight(target.starIds())
+gp-&gt;&gt;&gt;u : 4: 정답 공개, 0점 처리 안내 후 확인 요청
+u-&gt;&gt;&gt;gp : 5: 확인
+gp-&gt;&gt;&gt;ng : 6: ok = reveal(target)
+ng-&gt;&gt;&gt;ng + : 7: wrongLines = wrongLinesAround(target)
+tick=
+ng-&gt;&gt;&gt;eb : 8: applyAnswer(wrongLines, target.lines())
+gp-&gt;&gt;&gt;mf : 9: autoSave()
+gp-&gt;&gt;&gt;sc : 10: setOverlays(정답 도안)
+gp-&gt;&gt;&gt;sc : 11: setStarLabels(구성 별 이름)
+gp-&gt;&gt;&gt;u : 12: 정답 공개 완료, 다른 별자리 탐색 안내</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2630</x>
+<y>134</y>
+<w>308</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>공개한 별자리는 정답 공개 완료로 바뀌고
+0점으로 기록되어 다시 득점할 수 없다
+대상 별에 잘못 이은 선은 지워진다</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

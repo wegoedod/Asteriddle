@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>1500</w>
+<h>550</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Alternate Course 11a - 관측 조건 변경
+desc=밤하늘 플레이 중 관측 조건을 바꾸면 새 플레이 전환을 안내하고 확인받는다. 체계 변경은 새 게임(UC-01)으로 시작한다.\n입력 화면 이후는 SD-04의 4번부터 같고, 기존 점수와 기록은 새 플레이로 대체된다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;entity&gt;&gt;\n_:NightSkyGame_~ng
+
+u-&gt;&gt;&gt;gp : 1: 관측 조건 변경 클릭
+gp-&gt;&gt;&gt;ng : 2: score()
+gp-&gt;&gt;&gt;u : 3: 현재 점수를 대체하는 새 플레이 시작 확인 요청
+u-&gt;&gt;&gt;gp : 4: 확인
+gp-&gt;&gt;&gt;ng : 5: observation()
+gp-&gt;&gt;&gt;mf : 6: showObservation(system, observation, true)
+mf-&gt;&gt;&gt;op : 7: prepare(system, observation, true)
+op-&gt;&gt;&gt;op + : 8: fill(observation)
+tick=</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

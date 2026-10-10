@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>1340</w>
+<h>520</h>
+</coordinates>
+<panel_attributes>title=sd UC-05 Alternate Course 5b - 저장 파일 손상 또는 읽기 실패
+desc=저장 파일을 읽지 못하면 사유를 안내하고 새 게임 여부를 확인한다. 새 게임을 고르면 파일을 따로 보관하고 UC-01로 이동한다.\n프로그램 실행 과정은 SD-10의 1~5번과 같다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\nMain~m
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+m-&gt;&gt;&gt;mf : 1: boot()
+mf-&gt;&gt;&gt;sm : 2: exists()
+mf-&gt;&gt;&gt;sm : 3: session = load(catalog)
+mf-&gt;&gt;&gt;u : 4: 불러오기 실패 사유 표시, 새 게임 시작 여부 확인
+u-&gt;&gt;&gt;mf : 5: 예 선택
+mf-&gt;&gt;&gt;sm : 6: quarantine()
+mf-&gt;&gt;&gt;mf + : 7: showSetup()
+tick=
+mf-&gt;&gt;&gt;st : 8: reset()</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1370</x>
+<y>104</y>
+<w>244</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>3번에서 SaveException 발생
+읽지 못한 파일은 .broken 으로
+이름을 바꿔 보관한다 (6번)</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

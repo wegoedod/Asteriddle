@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>1970</w>
+<h>750</h>
+</coordinates>
+<panel_attributes>title=sd UC-01 Basic Course - 기본 문제 모드로 새 게임 시작
+desc=사용자가 체계, 기본 문제 모드, 난이도를 골라 새 게임을 시작한다. 밤하늘 모드를 고르면 7단계에서 UC-03 (SD-04)으로 진행한다.\nAlternate: 5a 밤하늘은 난이도 생략 / 6a 누락 항목 안내 / 6b 취소 시 시작 화면 / 7a 문제 데이터 없음 (SD-02)
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:StartPanel_~sp
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\nBasicGame~bg
+obj=&lt;&lt;entity&gt;&gt;\nGameSession~gs
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+u-&gt;&gt;&gt;sp : 1: 새 게임 클릭
+sp-&gt;&gt;&gt;mf : 2: showSetup()
+mf-&gt;&gt;&gt;st : 3: reset()
+u-&gt;&gt;&gt;st : 4: 체계, 기본 문제 모드, 난이도 선택 후 확인
+st-&gt;&gt;&gt;st + : 5: confirm()
+tick=
+st-&gt;&gt;&gt;u : 6: 선택한 설정 확인 요청
+u-&gt;&gt;&gt;st : 7: 확인
+st-&gt;&gt;&gt;mf : 8: ok = startBasic(system, difficulty)
+mf-&gt;&gt;&gt;bg : 9: game = start(catalog, system, difficulty, random)
+mf-&gt;&gt;&gt;gs : 10: session = of(game)
+mf-&gt;&gt;&gt;mf + : 11: autoSave()
+tick=
+mf-&gt;&gt;&gt;sm : 12: save(session)
+mf-&gt;&gt;&gt;gp : 13: open(session)</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

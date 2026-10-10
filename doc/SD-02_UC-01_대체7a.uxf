@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>890</w>
+<h>460</h>
+</coordinates>
+<panel_attributes>title=sd UC-01 Alternate Course 7a - 선택한 난이도에 문제 없음
+desc=선택한 체계에 해당 난이도의 별자리가 없으면 시작 불가를 안내하고 설정 변경을 요청한다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:SetupPanel_~st
+obj=&lt;&lt;entity&gt;&gt;\nBasicGame~bg
+
+u-&gt;&gt;&gt;st : 1: 체계, 기본 문제 모드, 난이도 선택 후 확인
+st-&gt;&gt;&gt;st + : 2: confirm()
+tick=
+st-&gt;&gt;&gt;mf : 3: ok = startBasic(system, difficulty)
+mf-&gt;&gt;&gt;bg : 4: game = start(catalog, system, difficulty, random)
+st-&gt;&gt;&gt;u : 5: [ok == false] 시작 불가 안내, 다른 난이도나 체계 선택 요청</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>920</x>
+<y>92</y>
+<w>266</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>start()는 해당 난이도의 별자리가
+하나도 없으면 null을 반환하고
+startBasic()은 false를 반환한다</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

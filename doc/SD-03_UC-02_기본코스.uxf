@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>1430</w>
+<h>1210</h>
+</coordinates>
+<panel_attributes>title=sd UC-02 Basic Course - 별을 이어 정답 제출 후 다음 문제
+desc=사용자가 별 배치로 별자리를 유추해 선을 잇고 제출해 정답을 맞힌 뒤 다음 문제로 넘어간다.\nAlternate: 4a 같은 별, 중복 선은 추가 안 함 / 5a 취소할 편집이 없으면 유지 / 6a 힌트, 정답 보기는 UC-04 / 7a 오답이면 연결 유지 후 재시도
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf
+obj=&lt;&lt;UI&gt;&gt;\n_:StarCanvas_~sc
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\n_:BasicGame_~bg
+obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
+obj=&lt;&lt;utility&gt;&gt;\nAnswerJudge~aj
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm
+
+u-&gt;&gt;&gt;sc : 1: 첫 번째 별 클릭
+sc-&gt;&gt;&gt;gp : 2: starClicked(starA)
+u-&gt;&gt;&gt;sc : 3: 두 번째 별 클릭
+sc-&gt;&gt;&gt;gp : 4: starClicked(starB)
+gp-&gt;&gt;&gt;eb : 5: add(new Edge(starA, starB))
+gp-&gt;&gt;&gt;mf : 6: autoSave()
+mf-&gt;&gt;&gt;sm : 7: save(session)
+gp-&gt;&gt;&gt;sc : 8: setUserEdges(edges)
+u-&gt;&gt;&gt;gp : 9: 실행 취소 클릭
+gp-&gt;&gt;&gt;eb : 10: undo()
+gp-&gt;&gt;&gt;mf : 11: autoSave()
+u-&gt;&gt;&gt;gp : 12: 제출 클릭
+gp-&gt;&gt;&gt;bg : 13: correct = submit()
+bg-&gt;&gt;&gt;aj : 14: exactMatch(edges, current())
+gp-&gt;&gt;&gt;mf : 15: autoSave()
+gp-&gt;&gt;&gt;sc : 16: setOverlays(정답 도안)
+gp-&gt;&gt;&gt;sc : 17: setStarLabels(구성 별 이름)
+gp-&gt;&gt;&gt;u : 18: 정답과 별자리 이름 표시
+u-&gt;&gt;&gt;gp : 19: 다음 문제 클릭
+gp-&gt;&gt;&gt;bg : 20: next(random)
+gp-&gt;&gt;&gt;sc : 21: setStars(다음 문제 별 배치)
+gp-&gt;&gt;&gt;mf : 22: autoSave()</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1460</x>
+<y>242</y>
+<w>260</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>연결 순서와 무관하게
+사용자 연결선 집합이 기준 도안과
+정확히 일치해야 정답 (점수 없음)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>1460</x>
+<y>847</y>
+<w>274</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>autoSave()는 연결선이 바뀔 때마다
+호출되며 매번 save(session)으로
+로컬 파일에 저장한다 (UC-05)</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

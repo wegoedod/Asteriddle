@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>850</w>
+<h>660</h>
+</coordinates>
+<panel_attributes>title=sd UC-03 Alternate Course 3b - 낮 또는 박명 시간 입력
+desc=입력한 시각에 하늘이 어두워지지 않으면 가장 가까운 야간 시각으로 바꾸도록 안내한다.\n변경 후에는 SD-04의 7번부터 같다.
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;UI&gt;&gt;\n_:ObservationPanel_~op
+obj=&lt;&lt;utility&gt;&gt;\nAstronomy~as
+
+u-&gt;&gt;&gt;op : 1: 위치, 날짜, 시간 입력 후 하늘 생성
+op-&gt;&gt;&gt;op + : 2: readInput()
+tick=
+op-&gt;&gt;&gt;as : 3: night = isNight(observation)
+op-&gt;&gt;&gt;as : 4: [night == false] nightTime = nearestNight(observation)
+op-&gt;&gt;&gt;as : 5: altitude = sunAltitude(observation)
+op-&gt;&gt;&gt;u : 6: 가장 가까운 야간 시각으로 변경 확인 요청
+u-&gt;&gt;&gt;op : 7: 예 선택
+op-&gt;&gt;&gt;op + : 8: fill(nightTime)
+tick=</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>880</x>
+<y>132</y>
+<w>254</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>야간 기준: 태양 고도 -12° 미만
+24시간 안에 야간이 없으면(백야)
+날짜나 위치를 바꾸도록 안내</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>

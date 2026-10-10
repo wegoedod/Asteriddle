@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLSequenceAllInOne</id>
+<coordinates>
+<x>0</x>
+<y>0</y>
+<w>2740</w>
+<h>760</h>
+</coordinates>
+<panel_attributes>title=sd UC-05 Basic Course 5~9 - 재실행 후 이어 하기
+desc=프로그램을 다시 실행하면 저장 파일을 확인해 복원하고, 사용자는 이어 하기로 마지막 상태부터 계속한다.\nAlternate: 5a 파일이 없으면 이어 하기 비활성화, 새 게임만 가능 / 5b 손상, 읽기 실패 (SD-11) / 7a 새 게임 선택 시 대체 안내 후 UC-01
+obj=사용자~u ACTOR EXECUTION
+obj=&lt;&lt;controller&gt;&gt;\nMain~m
+obj=&lt;&lt;controller&gt;&gt;\n_:MainFrame_~mf CREATED_LATER
+obj=&lt;&lt;UI&gt;&gt;\n_:StartPanel_~sp
+obj=&lt;&lt;UI&gt;&gt;\n_:GamePanel_~gp
+obj=&lt;&lt;entity&gt;&gt;\nGameSession~gs
+obj=&lt;&lt;persistence&gt;&gt;\nCatalogLoader~cl
+obj=&lt;&lt;persistence&gt;&gt;\n_:SaveManager_~sm CREATED_LATER
+
+u-&gt;&gt;&gt;m : 1: 프로그램 실행
+m-&gt;&gt;&gt;cl : 2: catalog = loadDefault()
+m-&gt;&gt;&gt;sm : 3: &lt;&lt;create&gt;&gt; (defaultPath())
+m-&gt;&gt;&gt;mf : 4: &lt;&lt;create&gt;&gt;
+m-&gt;&gt;&gt;mf : 5: boot()
+mf-&gt;&gt;&gt;sm : 6: exists()
+mf-&gt;&gt;&gt;sm : 7: session = load(catalog)
+sm-&gt;&gt;&gt;sm + : 8: decode(properties, catalog)
+tick=
+sm-&gt;&gt;&gt;gs : 9: of(restoredGame)
+mf-&gt;&gt;&gt;sp : 10: refresh(session)
+u-&gt;&gt;&gt;sp : 11: 이어 하기 클릭
+sp-&gt;&gt;&gt;mf : 12: resumeGame()
+mf-&gt;&gt;&gt;gp : 13: open(session)</panel_attributes>
+<additional_attributes/>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>2770</x>
+<y>152</y>
+<w>306</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>8번에서 저장된 모드에 따라
+BasicGame.restore() 또는
+NightSkyGame.restore()로 게임을 복원</panel_attributes>
+<additional_attributes/>
+</element>
+</diagram>
