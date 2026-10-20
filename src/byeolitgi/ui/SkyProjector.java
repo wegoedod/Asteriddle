@@ -21,6 +21,8 @@ final class SkyProjector {
     private static final double FIT = 0.78;
     /** 이 범위 안의 주변 별까지 함께 보여 준다. */
     private static final double FIELD = 1.9;
+    /** 작은 별자리도 주변 별자리로 구분할 수 있게 최소 이 각반경(도)까지는 보여 준다. */
+    private static final double MIN_FIELD_DEG = 40;
 
     private SkyProjector() {
     }
@@ -52,6 +54,7 @@ final class SkyProjector {
         double cy = (minY + maxY) / 2;
         double half = Math.max(Math.max(maxX - minX, maxY - minY) / 2, 0.01);
         double scale = FIT / half;
+        double field = Math.max(FIELD, Math.tan(Math.toRadians(MIN_FIELD_DEG)) * scale);
 
         List<PlotStar> result = new ArrayList<>();
         for (Star s : catalog.stars()) {
@@ -61,7 +64,7 @@ final class SkyProjector {
             }
             double x = (p[0] - cx) * scale;
             double y = (p[1] - cy) * scale;
-            if (Math.abs(x) <= FIELD && Math.abs(y) <= FIELD) {
+            if (Math.abs(x) <= field && Math.abs(y) <= field) {
                 result.add(new PlotStar(s.id(), x, y, s.magnitude()));
             }
         }

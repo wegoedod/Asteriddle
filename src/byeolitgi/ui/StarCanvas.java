@@ -66,6 +66,8 @@ public final class StarCanvas extends JPanel {
     private boolean editable = true;
 
     private double zoom = 1;
+    /** 표시된 별 전체가 화면에 들어올 때까지 축소할 수 있다. */
+    private double minZoom = 0.6;
     private double panX;
     private double panY;
     private Edge hoverEdge;
@@ -151,9 +153,12 @@ public final class StarCanvas extends JPanel {
         this.stars = List.copyOf(stars);
         this.horizon = horizon;
         byId.clear();
+        double extent = 0;
         for (PlotStar s : stars) {
             byId.put(s.id(), s);
+            extent = Math.max(extent, Math.max(Math.abs(s.x()), Math.abs(s.y())));
         }
+        minZoom = extent > 0 ? Math.min(0.6, 1 / extent) : 0.6;
         repaint();
     }
 
@@ -208,7 +213,7 @@ public final class StarCanvas extends JPanel {
     }
 
     private void zoomAt(Point p, double factor) {
-        double newZoom = Math.max(0.6, Math.min(12, zoom * factor));
+        double newZoom = Math.max(minZoom, Math.min(12, zoom * factor));
         double cx = getWidth() / 2.0 + panX;
         double cy = getHeight() / 2.0 + panY;
         double mx = (p.x - cx) / unit();
@@ -235,7 +240,7 @@ public final class StarCanvas extends JPanel {
 
     private double radius(PlotStar s) {
         double r = Math.max(1.6, Math.min(7.0, 5.0 - 0.8 * s.magnitude()));
-        return r * Math.min(1.8, Math.pow(zoom, 0.25));
+        return r * Math.max(0.6, Math.min(1.8, Math.pow(zoom, 0.25)));
     }
 
     private String starAt(Point p) {
