@@ -66,7 +66,6 @@ public final class StarCanvas extends JPanel {
     private Map<String, String> starLabels = Map.of();
     private Edge hintEdge;
     private String selected;
-    private Set<String> highlight = Set.of();
     private boolean editable = true;
 
     private double zoom = 1;
@@ -198,12 +197,6 @@ public final class StarCanvas extends JPanel {
     /** 선택한 별을 강조한다. */
     public void setSelected(String starId) {
         this.selected = starId;
-        repaint();
-    }
-
-    /** 하늘색 원으로 강조할 별. 정답 보기 확인 중 공개 대상을 보여 줄 때 쓴다. */
-    public void setHighlight(Set<String> starIds) {
-        this.highlight = Set.copyOf(starIds);
         repaint();
     }
 
@@ -361,9 +354,6 @@ public final class StarCanvas extends JPanel {
         g.fill(new Ellipse2D.Double(p.getX() - r * 2.2, p.getY() - r * 2.2, r * 4.4, r * 4.4));
         g.setColor(Theme.STAR);
         g.fill(new Ellipse2D.Double(p.getX() - r, p.getY() - r, 2 * r, 2 * r));
-        if (highlight.contains(s.id())) {
-            ring(g, p, r + 7, Theme.HIGHLIGHT);
-        }
         if (s.id().equals(selected)) {
             ring(g, p, r + 5, Theme.SELECTED);
         }

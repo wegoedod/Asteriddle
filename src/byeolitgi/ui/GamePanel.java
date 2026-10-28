@@ -34,7 +34,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
 
 /** 문제 풀이·밤하늘 탐색 화면 (UC-02, UC-03, UC-04). */
 final class GamePanel extends JPanel implements StarCanvas.Listener {
@@ -440,13 +439,15 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
             status("정답을 볼 수 있는 미완료 별자리가 없습니다.", Theme.INFO);
             return;
         }
-        canvas.setHighlight(target.starIds());
+        // 공개 전에는 대상이 어떤 별자리인지 보여 주지 않는다. 확인 창에서 대상을 보고 취소하면
+        // 점수를 잃지 않고 정답을 알 수 있기 때문이다. 안내 문구도 대상과 관계없이 같다.
         int answer = JOptionPane.showConfirmDialog(this,
-                "하늘색 원으로 표시한 별자리의 정답 도안과 별 이름을 공개합니다.\n"
+                "미완료 별자리 하나의 정답 도안과 별 이름을 공개합니다.\n"
+                        + "대상: 선택한 별이 속한 별자리 (없으면 가장 많이 맞게 이은 별자리)\n"
+                        + "어떤 별자리인지는 공개한 뒤에 표시됩니다.\n\n"
                         + "이 별자리의 별에 잘못 이은 선은 지워지며, 실행 취소 기록도 초기화됩니다.\n"
                         + "공개한 별자리는 이번 밤하늘 플레이에서 0점 처리되며 다시 득점할 수 없습니다.\n\n계속할까요?",
                 "정답 보기", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
-        canvas.setHighlight(Set.of());
         if (answer == JOptionPane.OK_OPTION && n.reveal(target)) {
             frame.autoSave();
             refresh();

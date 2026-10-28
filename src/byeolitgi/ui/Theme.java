@@ -36,8 +36,6 @@ public final class Theme {
     public static final Color DELETE_LINE = new Color(255, 90, 90);
     /** 선택한 별 색. */
     public static final Color SELECTED = new Color(255, 225, 80);
-    /** 강조한 별 색. */
-    public static final Color HIGHLIGHT = new Color(90, 230, 255);
     /** 별 이름표 색. */
     public static final Color LABEL = new Color(200, 210, 235);
 
