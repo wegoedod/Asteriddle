@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>330</x>
+<y>20</y>
+<w>90</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*JFrame*
+bg=#DDDDDD</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>120</y>
+<w>160</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>&lt;&lt;controller&gt;&gt;
+*Main*
+--
+_+main(args: String[])_</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>330</x>
+<y>120</y>
+<w>430</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>&lt;&lt;controller&gt;&gt;
+*MainFrame*
+--
+~catalog: Catalog
+~random: Random
+-saves: SaveManager
+-session: GameSession
+-cards: CardLayout
+--
++MainFrame(catalog: Catalog, saves: SaveManager)
++boot()
+~showStart()
+~showSetup()
+~showObservation(system, prefill, fromGame)
+~resumeGame()
+~startBasic(system: StarSystem, difficulty: Difficulty): boolean
+~startNight(game: NightSkyGame)
+-begin(session: GameSession)
+~autoSave()</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLNote</id>
+<coordinates>
+<x>20</x>
+<y>1010</y>
+<w>360</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>StartPanel, SetupPanel, ObservationPanel,
+GamePanel, StarCanvas 는 JPanel 을 상속한다.
+bg=#FFFFE0</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>660</y>
+<w>230</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>&lt;&lt;UI&gt;&gt;
+*StartPanel*
+--
+-resume: JButton
+-summary: JLabel
+--
+~refresh(session: GameSession)</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>300</x>
+<y>660</y>
+<w>310</w>
+<h>150</h>
+</coordinates>
+<panel_attributes>&lt;&lt;UI&gt;&gt;
+*SetupPanel*
+--
+-systems: Map&lt;StarSystem, JRadioButton&gt;
+-modes: Map&lt;GameMode, JRadioButton&gt;
+-difficulties: Map&lt;Difficulty, JRadioButton&gt;
+--
+~reset()
+-updateState()
+-confirm()</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>660</x>
+<y>660</y>
+<w>260</w>
+<h>170</h>
+</coordinates>
+<panel_attributes>&lt;&lt;UI&gt;&gt;
+*ObservationPanel*
+--
+-preset: JComboBox&lt;Place&gt;
+-lat, lon, date, time: JTextField
+-zone: JComboBox&lt;String&gt;
+--
+~prepare(system, prefill, fromGame)
+-readInput(): Observation
+-generate()
+-cancel()</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>980</x>
+<y>660</y>
+<w>250</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>&lt;&lt;UI&gt;&gt;
+*GamePanel*
+--
+-session: GameSession
+-selected: String
+-lastHint: Edge
+--
+~open(s: GameSession)
+~status(text: String, color: Color)
++starClicked(starId: String)
++emptyClicked()
++edgeDeleteRequested(edge: Edge)
+-undo()
+-clearLines()
+-submit()
+-hint()
+-reveal()
+-nextProblem()
+-changeConditions()</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>980</x>
+<y>1020</y>
+<w>350</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>&lt;&lt;UI&gt;&gt;
+*StarCanvas*
+--
+-stars: List&lt;PlotStar&gt;
+-userEdges: Set&lt;Edge&gt;
+-overlays: List&lt;Overlay&gt;
+-zoom, panX, panY: double
+--
++setStars(stars: List&lt;PlotStar&gt;, horizon: boolean)
++setUserEdges(edges: Set&lt;Edge&gt;)
++setOverlays(overlays: List&lt;Overlay&gt;)
++setStarLabels(labels: Map&lt;String, String&gt;)
++setHintEdge(e: Edge)
++setSelected(starId: String)
++setHighlight(starIds: Set&lt;String&gt;)
++setEditable(editable: boolean)
++resetView()
++zoomBy(factor: double)
+#paintComponent(g: Graphics)</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1370</x>
+<y>820</y>
+<w>250</w>
+<h>100</h>
+</coordinates>
+<panel_attributes>&lt;&lt;interface&gt;&gt;
+*StarCanvas.Listener*
+--
++starClicked(starId: String)
++emptyClicked()
++edgeDeleteRequested(edge: Edge)</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1370</x>
+<y>660</y>
+<w>260</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*SkyProjector*
+--
+~problem(catalog, c): List&lt;PlotStar&gt;
+~sky(catalog, game): List&lt;PlotStar&gt;</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>830</y>
+<w>330</w>
+<h>140</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*Theme*
+--
++SKY_TOP, USER_LINE, HINT_LINE, ...: Color
+--
++install()
++font(style: int, size: int): Font
++title(text: String, size: int): JLabel
++button(text: String): JButton</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>900</x>
+<y>20</y>
+<w>370</w>
+<h>190</h>
+</coordinates>
+<panel_attributes>&lt;&lt;persistence&gt;&gt;
+*SaveManager*
+--
+-file: Path
+--
+_+defaultPath(): Path_
++exists(): boolean
++save(session: GameSession) {IOException}
++load(catalog: Catalog): GameSession {SaveException}
++quarantine()
+-encode(s: GameSession): Properties
+-decode(p: Properties, catalog: Catalog): GameSession</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1410</x>
+<y>20</y>
+<w>350</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>*SaveException*
+--
++SaveException(message: String)
++SaveException(message: String, cause: Throwable)</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1530</x>
+<y>160</y>
+<w>110</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Exception*
+bg=#DDDDDD</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>330</y>
+<w>300</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;persistence&gt;&gt;
+*CatalogLoader*
+--
+_+loadDefault(): Catalog_
+-parseStars(rows): Map&lt;String, Star&gt;
+-parseConstellations(system, rows, stars)
+_~sexagesimal(text: String): double_</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>900</x>
+<y>270</y>
+<w>120</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*GameSession*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>520</y>
+<w>90</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Catalog*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>725</x>
+<y>910</y>
+<w>130</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*NightSkyGame*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>355</x>
+<y>30</y>
+<w>59</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>lt=-&gt;&gt;</panel_attributes>
+<additional_attributes>39;90;39;55;20;55;20;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>160</x>
+<y>135</y>
+<w>190</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;create&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;170;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>80</x>
+<y>170</y>
+<w>40</w>
+<h>180</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;160</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>45</x>
+<y>430</y>
+<w>40</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;create&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;90</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>740</x>
+<y>57</y>
+<w>180</w>
+<h>112</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1
+saves</panel_attributes>
+<additional_attributes>20;92;90;92;90;20;160;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>740</x>
+<y>265</y>
+<w>180</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=0..1
+session</panel_attributes>
+<additional_attributes>20;20;160;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>940</x>
+<y>190</y>
+<w>40</w>
+<h>100</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;80</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1250</x>
+<y>35</y>
+<w>180</w>
+<h>81</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+<additional_attributes>20;61;90;61;90;20;160;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1565</x>
+<y>70</y>
+<w>40</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>lt=-&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;90</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>115</x>
+<y>390</y>
+<w>278</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>258;20;258;145;20;145;20;270</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>435</x>
+<y>390</y>
+<w>44</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>24;20;24;145;20;145;20;270</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>568</x>
+<y>390</y>
+<w>216</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>20;20;20;145;196;145;196;270</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>697</x>
+<y>390</y>
+<w>378</w>
+<h>290</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>20;20;20;220;358;220;358;270</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1035</x>
+<y>930</y>
+<w>70</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>20;20;20;55;50;55;50;90</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>742</y>
+<w>180</w>
+<h>148</h>
+</coordinates>
+<panel_attributes>lt=.&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;90;20;90;128;160;128</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1310</x>
+<y>900</y>
+<w>205</w>
+<h>184</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1
+listener</panel_attributes>
+<additional_attributes>20;164;185;164;185;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>663</y>
+<w>180</w>
+<h>62</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;90;20;90;42;160;42</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>770</x>
+<y>810</y>
+<w>40</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;create&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;100</additional_attributes>
+</element>
+</diagram>

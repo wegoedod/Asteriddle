@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>20</y>
+<w>530</w>
+<h>200</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*Catalog*
+--
+-stars: Map&lt;String, Star&gt;
+-bySystem: Map&lt;StarSystem, List&lt;Constellation&gt;&gt;
+--
++Catalog(stars, constellations)
++star(id: String): Star
++hasStar(id: String): boolean
++stars(): Collection&lt;Star&gt;
++constellations(system: StarSystem): List&lt;Constellation&gt;
++constellations(system: StarSystem, difficulty: Difficulty): List&lt;Constellation&gt;
++constellation(system: StarSystem, id: String): Constellation</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>360</y>
+<w>170</w>
+<h>170</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*Star*
+--
+id: String
+properName: String
+designation: String
+raDeg: double
+decDeg: double
+magnitude: double
+--
++displayName(): String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>710</x>
+<y>20</y>
+<w>390</w>
+<h>250</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*Constellation*
+--
+-id: String
+-system: StarSystem
+-name: String
+-subtitle: String
+-lines: Set&lt;Edge&gt; {readOnly}
+-starIds: Set&lt;String&gt; {readOnly}
+-difficulty: Difficulty
+--
++Constellation(id, system, name, subtitle, lines, difficulty)
++contains(starId: String): boolean
++fullName(): String
++lines(): Set&lt;Edge&gt;
++starIds(): Set&lt;String&gt;</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>710</x>
+<y>360</y>
+<w>300</w>
+<h>150</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*Edge*
+--
+a: String
+b: String
+--
++Edge(a: String, b: String) {a &lt; b 로 정규화}
++touches(starId: String): boolean
++encode(): String
+_+decode(text: String): Edge_</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1240</x>
+<y>20</y>
+<w>140</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*StarSystem*
+--
+IAU
+KOREAN
+--
+-label: String
+-dataFile: String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1240</x>
+<y>180</y>
+<w>140</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*Difficulty*
+--
+EASY
+NORMAL
+HARD
+--
+-label: String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>590</y>
+<w>260</w>
+<h>200</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*Observation*
+--
+placeName: String
+latitude: double
+longitude: double
+date: LocalDate
+time: LocalTime
+zone: ZoneId
+--
++dateTime(): ZonedDateTime
++at(t: ZonedDateTime): Observation
++describe(): String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>710</x>
+<y>590</y>
+<w>140</w>
+<h>110</h>
+</coordinates>
+<panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*GameMode*
+--
+BASIC
+NIGHT_SKY
+--
+-label: String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>910</x>
+<y>590</y>
+<w>150</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*CompletionState*
+--
+INCOMPLETE
+SOLVED
+REVEALED
+--
+-label: String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>80</x>
+<y>200</y>
+<w>40</w>
+<h>180</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..*</panel_attributes>
+<additional_attributes>20;20;20;160</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>530</x>
+<y>80</y>
+<w>200</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=0..*
+bySystem</panel_attributes>
+<additional_attributes>20;20;180;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>807</x>
+<y>250</y>
+<w>40</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1..*
+lines</panel_attributes>
+<additional_attributes>20;20;20;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1080</x>
+<y>38</y>
+<w>180</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+<additional_attributes>20;20;160;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1080</x>
+<y>200</y>
+<w>180</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+<additional_attributes>20;20;160;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>170</x>
+<y>392</y>
+<w>560</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+m2=2
+&lt;&lt;id 참조&gt;&gt;</panel_attributes>
+<additional_attributes>540;20;20;20</additional_attributes>
+</element>
+</diagram>

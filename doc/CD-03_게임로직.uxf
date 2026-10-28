@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+<zoom_level>10</zoom_level>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>495</x>
+<y>20</y>
+<w>280</w>
+<h>190</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*GameSession*
+--
+-mode: GameMode
+-basic: BasicGame
+-night: NightSkyGame
+--
+_+of(basic: BasicGame): GameSession_
+_+of(night: NightSkyGame): GameSession_
++system(): StarSystem
++board(): EdgeBoard
++summary(): String</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>300</y>
+<w>370</w>
+<h>330</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*BasicGame*
+--
+-system: StarSystem
+-difficulty: Difficulty
+-order: List&lt;String&gt;
+-index: int
+-state: CompletionState
+-hintsUsed: int
+-solved: Set&lt;String&gt;
+-revealed: Set&lt;String&gt;
+--
+_+start(catalog, system, difficulty, random): BasicGame_
+_+restore(catalog, system, difficulty, order, index,_
+_   edges, state, hintsUsed, solved, revealed): BasicGame_
++current(): Constellation
++editable(): boolean
++submit(): boolean
++hint(): HelpResult
++reveal(): boolean
++next(random: Random)</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>880</x>
+<y>300</y>
+<w>350</w>
+<h>330</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*NightSkyGame*
+--
+-system: StarSystem
+-states: Map&lt;String, CompletionState&gt;
+-hints: Map&lt;String, Integer&gt;
+-earned: Map&lt;String, Integer&gt;
+-positions: Map&lt;String, Horizontal&gt;
+--
++NightSkyGame(catalog, system, observation)
+_+restore(catalog, system, observation,_
+_   edges, states, hints, earned): NightSkyGame_
+-computeSky()
++submit(): List&lt;Award&gt;
++hint(selectedStar: String): HelpResult
++revealTarget(selectedStar: String): Constellation
++reveal(c: Constellation): boolean
++state(c: Constellation): CompletionState
++hintsUsed(c: Constellation): int
++score(): int
++count(s: CompletionState): int</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>510</x>
+<y>300</y>
+<w>250</w>
+<h>230</h>
+</coordinates>
+<panel_attributes>&lt;&lt;entity&gt;&gt;
+*EdgeBoard*
+--
+-edges: Set&lt;Edge&gt;
+-history: Deque&lt;Action&gt;
+--
++add(e: Edge): boolean
++remove(e: Edge): boolean
++clear(): boolean
++undo(): boolean
++addFromHint(e: Edge)
++applyAnswer(wrong, answer)
++restore(saved: Collection&lt;Edge&gt;)
++contains(e: Edge): boolean
++edges(): Set&lt;Edge&gt;</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>435</x>
+<y>720</y>
+<w>400</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*AnswerJudge*
+--
++exactMatch(user: Set&lt;Edge&gt;, c: Constellation): boolean
++completes(user: Set&lt;Edge&gt;, c: Constellation): boolean
++within(user: Set&lt;Edge&gt;, members: Set&lt;String&gt;): Set&lt;Edge&gt;
++correctCount(user: Set&lt;Edge&gt;, c: Constellation): int
++hintEdge(user: Set&lt;Edge&gt;, c: Constellation): Edge</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>720</y>
+<w>230</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*HelpResult*
+--
+status: Status
+target: Constellation
+edge: Edge
+--
+_+of(status: Status): HelpResult_</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>20</x>
+<y>900</y>
+<w>160</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>&lt;&lt;enumeration&gt;&gt;
+*HelpResult.Status*
+--
+ADDED
+ALREADY_USED
+NO_TARGET
+NOTHING_TO_ADD
+FINISHED</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1350</x>
+<y>40</y>
+<w>210</w>
+<h>100</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*NightSkyGame.Award*
+--
+constellation: Constellation
+points: int
+hintUsed: boolean</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>880</x>
+<y>720</y>
+<w>280</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*ScoringPolicy*
+--
++HINT_RATE: double = 0.5
+--
++basePoints(d: Difficulty): int
++points(d: Difficulty, hintUsed: boolean,
+   revealed: boolean): int</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>240</x>
+<y>900</y>
+<w>230</w>
+<h>70</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*HelpPolicy*
+--
++HINTS_PER_TARGET: int = 1</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1210</x>
+<y>720</y>
+<w>320</w>
+<h>120</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*ObservationPolicy*
+--
++NIGHT_SUN_ALTITUDE_DEG: double = -12.0
++MIN_STAR_ALTITUDE_DEG: double = 0.0
++NIGHT_SEARCH_STEP_MINUTES: int = 5
++NIGHT_SEARCH_RANGE_HOURS: int = 24</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1610</x>
+<y>740</y>
+<w>440</w>
+<h>210</h>
+</coordinates>
+<panel_attributes>&lt;&lt;utility&gt;&gt;
+*Astronomy*
+--
++julianDay(obs: Observation): double
++gmstDeg(jd: double): double
++toHorizontal(star: Star, obs: Observation, jd: double): Horizontal
++sunAltitude(obs: Observation): double
++isNight(obs: Observation): boolean
++nearestNight(obs: Observation): Optional&lt;Observation&gt;
++centroid(stars: Collection&lt;Star&gt;): double[]
++angularDistance(ra1, dec1, ra2, dec2): double
++gnomonic(ra, dec, ra0, dec0): double[]
++domeProjection(h: Horizontal): double[]</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1350</x>
+<y>450</y>
+<w>180</w>
+<h>90</h>
+</coordinates>
+<panel_attributes>&lt;&lt;record&gt;&gt;
+*Astronomy.Horizontal*
+--
+altitude: double
+azimuth: double</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>60</x>
+<y>60</y>
+<w>90</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Catalog*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1350</x>
+<y>310</y>
+<w>130</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Constellation*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>1350</x>
+<y>380</y>
+<w>120</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Observation*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>UMLClass</id>
+<coordinates>
+<x>600</x>
+<y>590</y>
+<w>70</w>
+<h>30</h>
+</coordinates>
+<panel_attributes>*Edge*
+bg=#EEEEEE</panel_attributes>
+<additional_attributes></additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>222</x>
+<y>190</y>
+<w>335</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1</panel_attributes>
+<additional_attributes>315;20;315;65;20;65;20;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>713</x>
+<y>190</y>
+<w>292</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=0..1</panel_attributes>
+<additional_attributes>20;20;20;65;272;65;272;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>85</x>
+<y>70</y>
+<w>40</w>
+<h>250</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1
+catalog</panel_attributes>
+<additional_attributes>20;230;20;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>370</x>
+<y>320</y>
+<w>160</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>20;20;140;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>740</x>
+<y>320</y>
+<w>160</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes>
+<additional_attributes>140;20;20;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>615</x>
+<y>510</y>
+<w>40</w>
+<h>100</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=0..*</panel_attributes>
+<additional_attributes>20;20;20;80</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>305</y>
+<w>160</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=0..*
+observable</panel_attributes>
+<additional_attributes>20;20;140;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>375</y>
+<w>160</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1
+observation</panel_attributes>
+<additional_attributes>20;20;140;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>475</y>
+<w>160</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=0..*
+positions</panel_attributes>
+<additional_attributes>20;20;140;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1158</x>
+<y>70</y>
+<w>212</w>
+<h>250</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;create&gt;&gt;</panel_attributes>
+<additional_attributes>20;230;20;20;192;20</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>115</x>
+<y>610</y>
+<w>40</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;create&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>80</x>
+<y>820</y>
+<w>40</w>
+<h>100</h>
+</coordinates>
+<panel_attributes>lt=-&gt;
+m2=1</panel_attributes>
+<additional_attributes>20;20;20;80</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>335</x>
+<y>610</y>
+<w>40</w>
+<h>310</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;290</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>370</x>
+<y>584</y>
+<w>133</w>
+<h>156</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;113;20;113;136</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>767</x>
+<y>584</y>
+<w>133</w>
+<h>156</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>113;20;20;20;20;136</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1000</x>
+<y>610</y>
+<w>40</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1230</x>
+<y>610</y>
+<w>40</w>
+<h>130</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;20;110</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1210</x>
+<y>597</y>
+<w>508</w>
+<h>163</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>20;20;488;20;488;143</additional_attributes>
+</element>
+<element>
+<id>Relation</id>
+<coordinates>
+<x>1510</x>
+<y>772</y>
+<w>120</w>
+<h>40</h>
+</coordinates>
+<panel_attributes>lt=.&gt;
+&lt;&lt;use&gt;&gt;</panel_attributes>
+<additional_attributes>100;20;20;20</additional_attributes>
+</element>
+</diagram>
