@@ -307,17 +307,16 @@ obj=<<entity>>\n_:EdgeBoard_~eb
 
 u->>>gp : 1: 정답 보기 클릭
 gp->>>ng : 2: target = revealTarget(selectedStar)
-gp->>>sc : 3: setHighlight(target.starIds())
-gp->>>u : 4: 정답 공개, 0점 처리 안내 후 확인 요청
-u->>>gp : 5: 확인
-gp->>>ng : 6: ok = reveal(target)
-ng->>>ng + : 7: wrongLines = wrongLinesAround(target)
+gp->>>u : 3: 공개 기준, 0점 처리 안내 후 확인 요청 (대상은 공개 후 표시)
+u->>>gp : 4: 확인
+gp->>>ng : 5: ok = reveal(target)
+ng->>>ng + : 6: wrongLines = wrongLinesAround(target)
 tick=
-ng->>>eb : 8: applyAnswer(wrongLines, target.lines())
-gp->>>mf : 9: autoSave()
-gp->>>sc : 10: setOverlays(정답 도안)
-gp->>>sc : 11: setStarLabels(구성 별 이름)
-gp->>>u : 12: 정답 공개 완료, 다른 별자리 탐색 안내
+ng->>>eb : 7: applyAnswer(wrongLines, target.lines())
+gp->>>mf : 8: autoSave()
+gp->>>sc : 9: setOverlays(정답 도안)
+gp->>>sc : 10: setStarLabels(구성 별 이름)
+gp->>>u : 11: 정답 공개 완료, 다른 별자리 탐색 안내
 ----- 복사 끝 -----
 [노트]
 ----- 복사 시작 -----

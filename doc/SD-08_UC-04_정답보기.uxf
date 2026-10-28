@@ -20,17 +20,16 @@ obj=&lt;&lt;entity&gt;&gt;\n_:EdgeBoard_~eb
 
 u-&gt;&gt;&gt;gp : 1: 정답 보기 클릭
 gp-&gt;&gt;&gt;ng : 2: target = revealTarget(selectedStar)
-gp-&gt;&gt;&gt;sc : 3: setHighlight(target.starIds())
-gp-&gt;&gt;&gt;u : 4: 정답 공개, 0점 처리 안내 후 확인 요청
-u-&gt;&gt;&gt;gp : 5: 확인
-gp-&gt;&gt;&gt;ng : 6: ok = reveal(target)
-ng-&gt;&gt;&gt;ng + : 7: wrongLines = wrongLinesAround(target)
+gp-&gt;&gt;&gt;u : 3: 공개 기준, 0점 처리 안내 후 확인 요청 (대상은 공개 후 표시)
+u-&gt;&gt;&gt;gp : 4: 확인
+gp-&gt;&gt;&gt;ng : 5: ok = reveal(target)
+ng-&gt;&gt;&gt;ng + : 6: wrongLines = wrongLinesAround(target)
 tick=
-ng-&gt;&gt;&gt;eb : 8: applyAnswer(wrongLines, target.lines())
-gp-&gt;&gt;&gt;mf : 9: autoSave()
-gp-&gt;&gt;&gt;sc : 10: setOverlays(정답 도안)
-gp-&gt;&gt;&gt;sc : 11: setStarLabels(구성 별 이름)
-gp-&gt;&gt;&gt;u : 12: 정답 공개 완료, 다른 별자리 탐색 안내</panel_attributes>
+ng-&gt;&gt;&gt;eb : 7: applyAnswer(wrongLines, target.lines())
+gp-&gt;&gt;&gt;mf : 8: autoSave()
+gp-&gt;&gt;&gt;sc : 9: setOverlays(정답 도안)
+gp-&gt;&gt;&gt;sc : 10: setStarLabels(구성 별 이름)
+gp-&gt;&gt;&gt;u : 11: 정답 공개 완료, 다른 별자리 탐색 안내</panel_attributes>
 <additional_attributes/>
 </element>
 <element>
@@ -39,11 +38,13 @@ gp-&gt;&gt;&gt;u : 12: 정답 공개 완료, 다른 별자리 탐색 안내</pan
 <x>2630</x>
 <y>134</y>
 <w>308</w>
-<h>90</h>
+<h>130</h>
 </coordinates>
 <panel_attributes>공개한 별자리는 정답 공개 완료로 바뀌고
 0점으로 기록되어 다시 득점할 수 없다
-대상 별에 잘못 이은 선은 지워진다</panel_attributes>
+대상 별에 잘못 이은 선은 지워진다
+확인 창에서는 대상 별자리를 표시하지 않는다
+(취소해도 정답을 알 수 없도록)</panel_attributes>
 <additional_attributes/>
 </element>
 </diagram>

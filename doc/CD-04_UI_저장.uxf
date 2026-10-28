@@ -162,7 +162,7 @@ bg=#FFFFE0</panel_attributes>
 <x>980</x>
 <y>1020</y>
 <w>350</w>
-<h>290</h>
+<h>280</h>
 </coordinates>
 <panel_attributes>&lt;&lt;UI&gt;&gt;
 *StarCanvas*
@@ -178,7 +178,6 @@ bg=#FFFFE0</panel_attributes>
 +setStarLabels(labels: Map&lt;String, String&gt;)
 +setHintEdge(e: Edge)
 +setSelected(starId: String)
-+setHighlight(starIds: Set&lt;String&gt;)
 +setEditable(editable: boolean)
 +resetView()
 +zoomBy(factor: double)
@@ -521,12 +520,12 @@ m2=1</panel_attributes>
 <x>1310</x>
 <y>900</y>
 <w>205</w>
-<h>184</h>
+<h>182</h>
 </coordinates>
 <panel_attributes>lt=-&gt;
 m2=1
 listener</panel_attributes>
-<additional_attributes>20;164;185;164;185;20</additional_attributes>
+<additional_attributes>20;162;185;162;185;20</additional_attributes>
 </element>
 <element>
 <id>Relation</id>
