@@ -24,7 +24,9 @@ import java.util.Set;
  */
 public final class DifficultyPolicy {
 
+    /** 이 점수 이하이면 쉬움. */
     public static final double EASY_MAX = 10.0;
+    /** 이 점수 이하이면 보통. */
     public static final double NORMAL_MAX = 16.0;
 
     private static final double LINE_WEIGHT = 0.5;
@@ -36,6 +38,7 @@ public final class DifficultyPolicy {
     private DifficultyPolicy() {
     }
 
+    /** 기준 도안의 점수로 난이도를 정한다. */
     public static Difficulty classify(Set<Edge> lines, Map<String, Star> stars) {
         double s = score(lines, stars);
         if (s <= EASY_MAX) {
@@ -44,6 +47,7 @@ public final class DifficultyPolicy {
         return s <= NORMAL_MAX ? Difficulty.NORMAL : Difficulty.HARD;
     }
 
+    /** 클래스 설명의 식으로 계산한 난이도 점수. */
     public static double score(Set<Edge> lines, Map<String, Star> stars) {
         Map<String, Integer> degree = new HashMap<>();
         for (Edge e : lines) {

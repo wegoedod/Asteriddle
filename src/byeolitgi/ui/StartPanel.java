@@ -24,6 +24,7 @@ final class StartPanel extends JPanel {
     private final JButton resume = Theme.button("이어 하기");
     private final JLabel summary = new JLabel(" ");
 
+    /** 제목과 이어 하기·새 게임·종료 버튼을 배치한다. */
     StartPanel(MainFrame frame) {
         setLayout(new GridBagLayout());
 
@@ -68,6 +69,7 @@ final class StartPanel extends JPanel {
         add(column);
     }
 
+    /** 저장된 게임 요약과 이어 하기 버튼 상태를 갱신한다. */
     void refresh(GameSession session) {
         resume.setEnabled(session != null);
         summary.setText(session == null ? "저장된 게임이 없습니다" : session.summary());

@@ -6,6 +6,7 @@ package byeolitgi.model;
  */
 public record Edge(String a, String b) {
 
+    /** 두 별 id 를 정렬해 저장한다. 같은 별이거나 빈 id 면 IllegalArgumentException. */
     public Edge {
         if (a == null || b == null || a.isBlank() || b.isBlank() || a.equals(b)) {
             throw new IllegalArgumentException("잘못된 연결선: " + a + "-" + b);
@@ -17,14 +18,17 @@ public record Edge(String a, String b) {
         }
     }
 
+    /** 한쪽 끝이 starId 이면 true. */
     public boolean touches(String starId) {
         return a.equals(starId) || b.equals(starId);
     }
 
+    /** 저장 파일용 표기 "a-b". */
     public String encode() {
         return a + "-" + b;
     }
 
+    /** encode() 표기를 연결선으로 되돌린다. */
     public static Edge decode(String text) {
         int i = text.indexOf('-');
         if (i <= 0 || i == text.length() - 1) {

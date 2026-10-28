@@ -30,10 +30,12 @@ public final class Astronomy {
     public record Horizontal(double altitude, double azimuth) {
     }
 
+    /** 시각을 율리우스일로 바꾼다. */
     public static double julianDay(Instant t) {
         return t.toEpochMilli() / 86_400_000.0 + 2_440_587.5;
     }
 
+    /** 관측 시각의 율리우스일. */
     public static double julianDay(Observation obs) {
         return julianDay(obs.dateTime().toInstant());
     }
@@ -45,6 +47,7 @@ public final class Astronomy {
         return normalize(280.46061837 + 360.98564736629 * d + 0.000387933 * t * t - t * t * t / 38_710_000.0);
     }
 
+    /** 적경·적위(도)를 관측지의 지평 좌표로 바꾼다. */
     public static Horizontal toHorizontal(double raDeg, double decDeg,
                                           double latDeg, double lonDeg, double jd) {
         double lst = gmstDeg(jd) + lonDeg;
@@ -57,6 +60,7 @@ public final class Astronomy {
         return new Horizontal(toDegrees(alt), normalize(toDegrees(az)));
     }
 
+    /** 별 하나의 관측 시각 지평 좌표. */
     public static Horizontal toHorizontal(Star star, Observation obs, double jd) {
         return toHorizontal(star.raDeg(), star.decDeg(), obs.latitude(), obs.longitude(), jd);
     }
@@ -73,12 +77,14 @@ public final class Astronomy {
         return new double[]{normalize(ra), dec};
     }
 
+    /** 관측 조건에서의 태양 고도(도). */
     public static double sunAltitude(Observation obs) {
         double jd = julianDay(obs);
         double[] sun = sunEquatorial(jd);
         return toHorizontal(sun[0], sun[1], obs.latitude(), obs.longitude(), jd).altitude();
     }
 
+    /** 태양 고도가 야간 기준(ObservationPolicy)보다 낮으면 true. */
     public static boolean isNight(Observation obs) {
         return sunAltitude(obs) < ObservationPolicy.NIGHT_SUN_ALTITUDE_DEG;
     }
@@ -117,6 +123,7 @@ public final class Astronomy {
         return new double[]{normalize(ra), dec};
     }
 
+    /** 두 천구 좌표 사이의 각거리(도). */
     public static double angularDistance(double ra1, double dec1, double ra2, double dec2) {
         double d1 = toRadians(dec1);
         double d2 = toRadians(dec2);
@@ -150,6 +157,7 @@ public final class Astronomy {
         return new double[]{-r * sin(az), -r * cos(az)};
     }
 
+    /** 각도를 0 이상 360 미만으로 맞춘다. */
     public static double normalize(double deg) {
         double r = deg % 360.0;
         return r < 0 ? r + 360.0 : r;

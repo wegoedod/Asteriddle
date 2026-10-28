@@ -15,6 +15,7 @@ public final class Main {
     private Main() {
     }
 
+    /** 데이터를 불러오고 메인 창을 띄운다. 데이터를 읽지 못하면 오류를 알리고 끝낸다. */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Theme.install();

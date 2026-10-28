@@ -51,6 +51,7 @@ public final class BasicGame {
         return new BasicGame(catalog, system, difficulty, ids, 0);
     }
 
+    /** 저장 파일의 값으로 진행 중이던 게임을 되살린다 (UC-05). */
     public static BasicGame restore(Catalog catalog, StarSystem system, Difficulty difficulty,
                                     List<String> order, int index, Collection<Edge> edges,
                                     CompletionState state, int hintsUsed,
@@ -64,10 +65,12 @@ public final class BasicGame {
         return g;
     }
 
+    /** 지금 풀고 있는 문제의 별자리. */
     public Constellation current() {
         return catalog.constellation(system, order.get(index));
     }
 
+    /** 현재 문제가 풀이 중이면 true. 정답 완성·공개 후에는 선을 편집할 수 없다. */
     public boolean editable() {
         return state == CompletionState.INCOMPLETE;
     }
@@ -85,6 +88,7 @@ public final class BasicGame {
         return false;
     }
 
+    /** 힌트 (FR-14~16). 현재 문제의 기준 선 하나를 추가한다. 문제당 1회. */
     public HelpResult hint() {
         if (!editable()) {
             return HelpResult.of(HelpResult.Status.FINISHED);
@@ -132,13 +136,22 @@ public final class BasicGame {
         hintsUsed = 0;
     }
 
+    /** 선택한 체계. */
     public StarSystem system() { return system; }
+    /** 선택한 난이도. */
     public Difficulty difficulty() { return difficulty; }
+    /** 섞은 문제 순서 (별자리 id). */
     public List<String> order() { return Collections.unmodifiableList(order); }
+    /** order 에서 현재 문제의 위치. */
     public int index() { return index; }
+    /** 사용자가 그린 연결선. */
     public EdgeBoard board() { return board; }
+    /** 현재 문제의 완료 상태. */
     public CompletionState state() { return state; }
+    /** 현재 문제에서 사용한 힌트 수. */
     public int hintsUsed() { return hintsUsed; }
+    /** 지금까지 맞힌 별자리 id. */
     public Set<String> solved() { return Collections.unmodifiableSet(solved); }
+    /** 지금까지 정답을 공개한 별자리 id. */
     public Set<String> revealed() { return Collections.unmodifiableSet(revealed); }
 }

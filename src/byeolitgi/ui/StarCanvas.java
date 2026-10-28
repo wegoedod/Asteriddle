@@ -34,11 +34,15 @@ import java.util.Set;
  */
 public final class StarCanvas extends JPanel {
 
+    /** 캔버스 조작을 게임 화면에 알린다. */
     public interface Listener {
+        /** 별을 클릭했다. */
         void starClicked(String starId);
 
+        /** 빈 곳을 클릭했다. */
         void emptyClicked();
 
+        /** 선을 클릭해 삭제를 요청했다. */
         void edgeDeleteRequested(Edge edge);
     }
 
@@ -76,6 +80,7 @@ public final class StarCanvas extends JPanel {
     private double pressPanY;
     private boolean dragging;
 
+    /** 마우스·휠 조작을 listener 에 전달하는 캔버스. */
     public StarCanvas(Listener listener) {
         this.listener = listener;
         setBackground(Theme.SKY_TOP);
@@ -149,6 +154,7 @@ public final class StarCanvas extends JPanel {
 
     // ------------------------------------------------------------------ 상태
 
+    /** 그릴 별을 바꾼다. horizon 이면 지평선 원을 그린다. */
     public void setStars(List<PlotStar> stars, boolean horizon) {
         this.stars = List.copyOf(stars);
         this.horizon = horizon;
@@ -162,6 +168,7 @@ public final class StarCanvas extends JPanel {
         repaint();
     }
 
+    /** 사용자가 그린 선을 바꾼다. */
     public void setUserEdges(Set<Edge> edges) {
         this.userEdges = new LinkedHashSet<>(edges);
         if (hoverEdge != null && !userEdges.contains(hoverEdge)) {
@@ -170,26 +177,31 @@ public final class StarCanvas extends JPanel {
         repaint();
     }
 
+    /** 정답 도안(완성·공개)을 바꾼다. */
     public void setOverlays(List<Overlay> overlays) {
         this.overlays = List.copyOf(overlays);
         repaint();
     }
 
+    /** 별 이름표를 바꾼다. 정답을 맞히거나 공개한 별에만 쓴다. */
     public void setStarLabels(Map<String, String> labels) {
         this.starLabels = Map.copyOf(labels);
         repaint();
     }
 
+    /** 마지막 힌트 선을 주황색으로 강조한다. null 이면 강조하지 않는다. */
     public void setHintEdge(Edge e) {
         this.hintEdge = e;
         repaint();
     }
 
+    /** 선택한 별을 강조한다. */
     public void setSelected(String starId) {
         this.selected = starId;
         repaint();
     }
 
+    /** 하늘색 원으로 강조할 별. 정답 보기 확인 중 공개 대상을 보여 줄 때 쓴다. */
     public void setHighlight(Set<String> starIds) {
         this.highlight = Set.copyOf(starIds);
         repaint();
@@ -201,6 +213,7 @@ public final class StarCanvas extends JPanel {
         repaint();
     }
 
+    /** 확대·이동을 처음 상태로 되돌린다. */
     public void resetView() {
         zoom = 1;
         panX = 0;
@@ -208,6 +221,7 @@ public final class StarCanvas extends JPanel {
         repaint();
     }
 
+    /** 화면 중심을 기준으로 확대·축소한다. */
     public void zoomBy(double factor) {
         zoomAt(new Point(getWidth() / 2, getHeight() / 2), factor);
     }

@@ -14,6 +14,7 @@ public final class ScoringPolicy {
     private ScoringPolicy() {
     }
 
+    /** 난이도별 기본 점수: 쉬움 10, 보통 20, 어려움 30. */
     public static int basePoints(Difficulty difficulty) {
         return switch (difficulty) {
             case EASY -> 10;
@@ -22,6 +23,7 @@ public final class ScoringPolicy {
         };
     }
 
+    /** 별자리 하나의 점수. 힌트를 썼으면 50%, 정답을 공개했으면 0점. */
     public static int points(Difficulty difficulty, boolean hintUsed, boolean revealed) {
         if (revealed) {
             return 0;

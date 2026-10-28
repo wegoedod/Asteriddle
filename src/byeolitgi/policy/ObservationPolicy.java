@@ -12,8 +12,10 @@ public final class ObservationPolicy {
     /** 구성 별이 모두 이 고도보다 높아야 관측 가능한 별자리로 본다. */
     public static final double MIN_STAR_ALTITUDE_DEG = 0.0;
 
-    /** 낮 시각을 야간으로 바꿀 때 탐색 간격과 범위. */
+    /** 낮 시각을 야간으로 바꿀 때의 탐색 간격(분). */
     public static final int NIGHT_SEARCH_STEP_MINUTES = 5;
+
+    /** 낮 시각을 야간으로 바꿀 때의 앞뒤 탐색 범위(시간). */
     public static final int NIGHT_SEARCH_RANGE_HOURS = 24;
 
     private ObservationPolicy() {

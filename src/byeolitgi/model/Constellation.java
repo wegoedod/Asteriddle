@@ -18,6 +18,7 @@ public final class Constellation {
     private final Set<String> starIds;
     private final Difficulty difficulty;
 
+    /** 기준 도안(lines)으로 별자리를 만든다. 구성 별은 선에서 뽑는다. */
     public Constellation(String id, StarSystem system, String name, String subtitle,
                          Set<Edge> lines, Difficulty difficulty) {
         this.id = id;
@@ -34,14 +35,22 @@ public final class Constellation {
         this.difficulty = difficulty;
     }
 
+    /** 데이터 파일의 식별자 (예: UMa). */
     public String id() { return id; }
+    /** 속한 체계. */
     public StarSystem system() { return system; }
+    /** 한글 이름. */
     public String name() { return name; }
+    /** 보조 이름 (라틴어 이름 또는 한자). 없으면 null. */
     public String subtitle() { return subtitle; }
+    /** 기준 도안. 정답 판정의 기준이다. */
     public Set<Edge> lines() { return lines; }
+    /** 구성 별 id. */
     public Set<String> starIds() { return starIds; }
+    /** 데이터를 불러올 때 분류한 난이도. */
     public Difficulty difficulty() { return difficulty; }
 
+    /** 구성 별이면 true. */
     public boolean contains(String starId) {
         return starIds.contains(starId);
     }

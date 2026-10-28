@@ -64,6 +64,7 @@ final class ObservationPanel extends JPanel {
     private StarSystem system;
     private boolean fromGame;
 
+    /** 장소 프리셋, 위도·경도, 날짜·시간·시간대 입력란을 배치한다. */
     ObservationPanel(MainFrame frame) {
         this.frame = frame;
         setLayout(new GridBagLayout());
@@ -127,6 +128,7 @@ final class ObservationPanel extends JPanel {
         form.add(h, c);
     }
 
+    /** 입력란을 채운다. fromGame 이면 취소 시 게임 화면으로 돌아간다. */
     void prepare(StarSystem system, Observation prefill, boolean fromGame) {
         this.system = system;
         this.fromGame = fromGame;

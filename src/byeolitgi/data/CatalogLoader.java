@@ -27,6 +27,7 @@ public final class CatalogLoader {
     private CatalogLoader() {
     }
 
+    /** 내장 데이터 파일에서 별 목록과 두 체계의 기준 도안을 읽는다. 난이도는 이때 분류한다. */
     public static Catalog loadDefault() throws IOException {
         Map<String, Star> stars = parseStars(readLines("stars.txt"));
         Map<StarSystem, List<Constellation>> constellations = new EnumMap<>(StarSystem.class);

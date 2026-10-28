@@ -33,6 +33,7 @@ public final class EdgeBoard {
         return true;
     }
 
+    /** 없는 선이면 false. */
     public boolean remove(Edge e) {
         if (!edges.remove(e)) {
             return false;
@@ -41,6 +42,7 @@ public final class EdgeBoard {
         return true;
     }
 
+    /** 모든 선을 지운다. 지울 선이 없으면 false. */
     public boolean clear() {
         if (edges.isEmpty()) {
             return false;
@@ -86,10 +88,12 @@ public final class EdgeBoard {
         history.clear();
     }
 
+    /** 이미 그린 선이면 true. */
     public boolean contains(Edge e) {
         return edges.contains(e);
     }
 
+    /** 현재 연결선 (읽기 전용). */
     public Set<Edge> edges() {
         return Collections.unmodifiableSet(edges);
     }

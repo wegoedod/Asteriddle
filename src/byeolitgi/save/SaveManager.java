@@ -42,6 +42,7 @@ public final class SaveManager {
 
     private final Path file;
 
+    /** file 에 저장하고 읽는 관리자. */
     public SaveManager(Path file) {
         this.file = file;
     }
@@ -55,14 +56,17 @@ public final class SaveManager {
         return Paths.get(System.getProperty("user.home"), ".byeolitgi", "save.properties");
     }
 
+    /** 저장 파일 경로. */
     public Path file() {
         return file;
     }
 
+    /** 저장 파일이 있으면 true. */
     public boolean exists() {
         return Files.isRegularFile(file);
     }
 
+    /** 세션을 임시 파일에 쓴 뒤 바꿔치기한다. 실패해도 기존 파일은 그대로 남는다 (FR-21). */
     public void save(GameSession session) throws IOException {
         Properties p = encode(session);
         Path dir = file.toAbsolutePath().getParent();
@@ -80,6 +84,7 @@ public final class SaveManager {
         }
     }
 
+    /** 저장 파일을 읽어 세션을 복원한다. 읽지 못하거나 손상되었으면 SaveException (UC-05 5b). */
     public GameSession load(Catalog catalog) throws SaveException {
         Properties p = new Properties();
         try (Reader r = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {

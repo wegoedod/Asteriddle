@@ -6,6 +6,7 @@ import byeolitgi.model.Edge;
 /** 힌트 요청 결과 (UC-04). */
 public record HelpResult(Status status, Constellation target, Edge edge) {
 
+    /** 힌트 요청 결과 종류. */
     public enum Status {
         /** 선 하나를 추가했다. */
         ADDED,
@@ -19,6 +20,7 @@ public record HelpResult(Status status, Constellation target, Edge edge) {
         FINISHED
     }
 
+    /** 선을 추가하지 못한 결과. */
     public static HelpResult of(Status status) {
         return new HelpResult(status, null, null);
     }

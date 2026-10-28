@@ -31,6 +31,7 @@ public final class AnswerJudge {
         return within(user, c.starIds()).equals(c.lines());
     }
 
+    /** 양 끝이 모두 members 에 속한 선만 뽑는다. */
     public static Set<Edge> within(Set<Edge> user, Set<String> members) {
         Set<Edge> result = new HashSet<>();
         for (Edge e : user) {

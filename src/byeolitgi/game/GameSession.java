@@ -16,22 +16,29 @@ public final class GameSession {
         this.night = night;
     }
 
+    /** 기본 문제 모드 세션. */
     public static GameSession of(BasicGame basic) {
         return new GameSession(GameMode.BASIC, basic, null);
     }
 
+    /** 밤하늘 모드 세션. */
     public static GameSession of(NightSkyGame night) {
         return new GameSession(GameMode.NIGHT_SKY, null, night);
     }
 
+    /** 게임 모드. */
     public GameMode mode() { return mode; }
+    /** 기본 문제 게임. 밤하늘 모드면 null. */
     public BasicGame basic() { return basic; }
+    /** 밤하늘 게임. 기본 문제 모드면 null. */
     public NightSkyGame night() { return night; }
 
+    /** 선택한 체계. */
     public StarSystem system() {
         return mode == GameMode.BASIC ? basic.system() : night.system();
     }
 
+    /** 현재 모드의 연결선. */
     public EdgeBoard board() {
         return mode == GameMode.BASIC ? basic.board() : night.board();
     }

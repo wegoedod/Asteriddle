@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><title>별잇기 API</title></head>
+<body>
+별잇기(Byeolitgi) API 매뉴얼. 별의 배치만 보고 별자리를 유추해 선으로 잇는 학습형 별자리 게임이다.
+
+<h2>계층 구조</h2>
+<ul>
+  <li><b>UI</b> {@link byeolitgi.ui}: 화면 표시와 사용자 입력. {@link byeolitgi.ui.MainFrame} 이 화면 전환·게임 시작·자동 저장을 맡는다.</li>
+  <li><b>게임 로직</b> {@link byeolitgi.game}: 기본 문제 모드와 밤하늘 모드의 진행, 연결선 편집, 정답 판정, 힌트·정답 보기.</li>
+  <li><b>규칙·계산</b> {@link byeolitgi.policy}, {@link byeolitgi.astro}: 난이도·점수·관측 기준 값과 천문 계산.</li>
+  <li><b>데이터</b> {@link byeolitgi.model}, {@link byeolitgi.data}, {@link byeolitgi.save}: 별·별자리 엔티티, 데이터 파일 읽기, 진행 상황 저장.</li>
+</ul>
+
+<h2>실행</h2>
+<pre>java -jar ssd_ip_cp4_2026f_233575_app.jar</pre>
+JDK 17 이상이 필요하다. 진행 상황은 <code>~/.byeolitgi/save.properties</code> 에 자동 저장된다.
+</body>
+</html>

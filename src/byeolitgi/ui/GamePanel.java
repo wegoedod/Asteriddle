@@ -58,6 +58,7 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
     private String selected;
     private Edge lastHint;
 
+    /** 캔버스와 사이드바(정보·버튼·기록)를 배치한다. */
     GamePanel(MainFrame frame) {
         this.frame = frame;
         setLayout(new BorderLayout());
@@ -154,6 +155,7 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
 
     // ------------------------------------------------------------------ 화면 갱신
 
+    /** 세션을 화면에 연다. 모드에 맞게 버튼과 별 배치를 바꾼다. */
     void open(GameSession s) {
         session = s;
         selected = null;
@@ -176,6 +178,7 @@ final class GamePanel extends JPanel implements StarCanvas.Listener {
         }
     }
 
+    /** 상태 메시지를 바꾼다. */
     void status(String text, Color color) {
         status.setForeground(color);
         status.setText("<html>" + text + "</html>");

@@ -42,6 +42,7 @@ public final class NightSkyGame {
     private final Map<String, Horizontal> positions = new HashMap<>();
     private final List<Constellation> observable = new ArrayList<>();
 
+    /** 관측 조건의 별 위치를 계산하고 관측 가능한 별자리를 정한다 (UC-03). */
     public NightSkyGame(Catalog catalog, StarSystem system, Observation observation) {
         this.catalog = catalog;
         this.system = system;
@@ -49,6 +50,7 @@ public final class NightSkyGame {
         computeSky();
     }
 
+    /** 저장 파일의 값으로 진행 중이던 플레이를 되살린다 (UC-05). */
     public static NightSkyGame restore(Catalog catalog, StarSystem system, Observation observation,
                                        Collection<Edge> edges, Map<String, CompletionState> states,
                                        Map<String, Integer> hints, Map<String, Integer> earned) {
@@ -202,14 +204,17 @@ public final class NightSkyGame {
         return best;
     }
 
+    /** 별자리의 완료 상태. */
     public CompletionState state(Constellation c) {
         return states.getOrDefault(c.id(), CompletionState.INCOMPLETE);
     }
 
+    /** 별자리에 사용한 힌트 수. */
     public int hintsUsed(Constellation c) {
         return hints.getOrDefault(c.id(), 0);
     }
 
+    /** 지금까지 얻은 점수 합계. */
     public int score() {
         int sum = 0;
         for (int p : earned.values()) {
@@ -218,6 +223,7 @@ public final class NightSkyGame {
         return sum;
     }
 
+    /** 관측 가능한 별자리 중 해당 상태인 것의 수. */
     public int count(CompletionState s) {
         int n = 0;
         for (Constellation c : observable) {
@@ -228,15 +234,23 @@ public final class NightSkyGame {
         return n;
     }
 
+    /** 관측 시각의 별 지평 좌표. */
     public Horizontal position(String starId) {
         return positions.get(starId);
     }
 
+    /** 선택한 체계. */
     public StarSystem system() { return system; }
+    /** 관측 조건. */
     public Observation observation() { return observation; }
+    /** 사용자가 그린 연결선. */
     public EdgeBoard board() { return board; }
+    /** 구성 별이 모두 지평선 위에 있는 별자리. */
     public List<Constellation> observable() { return Collections.unmodifiableList(observable); }
+    /** 완료 상태가 바뀐 별자리 (id → 상태). */
     public Map<String, CompletionState> states() { return Collections.unmodifiableMap(states); }
+    /** 힌트를 사용한 별자리 (id → 횟수). */
     public Map<String, Integer> hints() { return Collections.unmodifiableMap(hints); }
+    /** 완료한 별자리의 점수 (id → 점수). */
     public Map<String, Integer> earned() { return Collections.unmodifiableMap(earned); }
 }

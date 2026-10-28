@@ -41,6 +41,7 @@ public final class MainFrame extends JFrame {
     private final ObservationPanel observationPanel;
     private final GamePanel gamePanel;
 
+    /** 네 화면(시작·설정·관측 조건·게임)을 CardLayout 으로 묶는다. */
     public MainFrame(Catalog catalog, SaveManager saves) {
         super("별잇기");
         this.catalog = catalog;
@@ -88,29 +89,35 @@ public final class MainFrame extends JFrame {
         }
     }
 
+    /** 진행 중인 세션. 없으면 null. */
     GameSession session() {
         return session;
     }
 
+    /** 진행 중인 세션이나 저장 파일이 있으면 true. */
     boolean hasProgress() {
         return session != null || saves.exists();
     }
 
+    /** 시작 화면(UI-01)으로 간다. */
     void showStart() {
         startPanel.refresh(session);
         cards.show(root, START);
     }
 
+    /** 새 게임 설정 화면(UI-02)으로 간다. */
     void showSetup() {
         setupPanel.reset();
         cards.show(root, SETUP);
     }
 
+    /** 관측 조건 입력 화면으로 간다. prefill 이 있으면 그 값을 채운다. */
     void showObservation(StarSystem system, Observation prefill, boolean fromGame) {
         observationPanel.prepare(system, prefill, fromGame);
         cards.show(root, OBSERVE);
     }
 
+    /** 진행 중인 세션을 게임 화면(UI-03, UI-04)에 연다. */
     void resumeGame() {
         if (session == null) {
             showStart();
@@ -130,6 +137,7 @@ public final class MainFrame extends JFrame {
         return true;
     }
 
+    /** 밤하늘 모드 새 게임을 시작한다. */
     void startNight(NightSkyGame game) {
         begin(GameSession.of(game));
     }

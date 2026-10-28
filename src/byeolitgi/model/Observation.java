@@ -13,6 +13,7 @@ public record Observation(String placeName, double latitude, double longitude,
 
     private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+    /** 관측 시각 (시간대 포함). */
     public ZonedDateTime dateTime() {
         return ZonedDateTime.of(date, time, zone);
     }
@@ -24,6 +25,7 @@ public record Observation(String placeName, double latitude, double longitude,
                 z.toLocalTime().withSecond(0).withNano(0), zone);
     }
 
+    /** 화면과 시작 화면 요약에 쓰는 한 줄 설명. */
     public String describe() {
         return String.format(Locale.ROOT, "%s (%.2f°%s, %.2f°%s) · %s %s",
                 placeName,

@@ -34,6 +34,7 @@ final class SetupPanel extends JPanel {
     private final ButtonGroup difficultyGroup = new ButtonGroup();
     private final JLabel modeNote = new JLabel(" ");
 
+    /** 체계·모드·난이도 선택 버튼과 확인·취소 버튼을 배치한다. */
     SetupPanel(MainFrame frame) {
         this.frame = frame;
         setLayout(new GridBagLayout());
